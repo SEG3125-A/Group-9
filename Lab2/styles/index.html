@@ -41,10 +41,10 @@
             <select name="dietary-options" id="dietary-options" style="font-size: 18px; width: 40%;"
                 onchange="setDietaryPreferences(event)" multiple>
                 <option disabled selected>Select an option</option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Gluten-Free">Gluten-free</option>
+                <option value="Vegan">Vegan</option>
+                <option value="GlutenFree">Gluten-Free</option>
                 <option value="Organic">Organic</option>
-                <option value="Non-organic">Non-Organic</option>
+                <option value="NonOrganic">Non-Organic</option>
                 <option value="None">None</option>
             </select>
             </p>
@@ -58,7 +58,7 @@
         <h2>Products</h2>
 
         <div id="product-list">
-            <!-- need to set inner html here from javascript based on the preference of user -->
+            <!-- is handled in products.js class -->
         </div>
     </div>
 
@@ -67,7 +67,9 @@
         <h2>View my cart</h2>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <script src="../scripts/customer.js"></script>
+    <script src="../scripts/products.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 
 <footer id="signature">
