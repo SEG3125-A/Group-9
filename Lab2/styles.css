@@ -82,3 +82,47 @@ h1 {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+#signature {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.8em;
+  background-color: #282c34;
+  border-top: 1px solid #444;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.quantity-selector button {
+  background-color: #282c34;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.quantity-selector button:hover {
+  transform: scale(1.2);
+}
+
+.quantity-selector span {
+  min-width: 20px;
+  color: #282c34;
+}
+
+.quantity-selector button,
+.quantity-selector span {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-align: center;
+}

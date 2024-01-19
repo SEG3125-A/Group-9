@@ -70,19 +70,36 @@ const products = [
   { name: "Oranges", description: "Juicy oranges", price: "$4 per lb" },
 ];
 
+const quantities = new Array(products.length).fill(0);
+
+function changeQuantity(action, index) {
+  if (action === "plus") {
+    quantities[index]++;
+  } else if (action === "minus" && quantities[index] > 0) {
+    quantities[index]--;
+  }
+
+  document.getElementById(`quantity-${index}`).innerText = quantities[index];
+}
+
 function displayProducts() {
   const productList = document.getElementById("product-list");
   productList.innerHTML = "";
 
-  products.forEach((product) => {
+  products.forEach((product, index) => {
     const productDiv = document.createElement("div");
     productDiv.className = "product";
 
     productDiv.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <p>${product.price}</p>
-        `;
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <p>${product.price}</p>
+        <div class="quantity-selector">
+            <button onclick="changeQuantity('minus', ${index})">-</button>
+            <span id="quantity-${index}">${quantities[index]}</span>
+            <button onclick="changeQuantity('plus', ${index})">+</button>
+        </div>
+    `;
 
     productList.appendChild(productDiv);
   });
