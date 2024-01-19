@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Insta Fat</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -14,19 +14,60 @@
         Insta Fat
     </h1>
 
-
     <div class="button-container">
-        <button>
-            Customer Information
-        </button>
-        <button>
-            Product Page
-        </button>
-        <button>
+        <button class="btn-nav active" type="button" onclick="displayTab(event, 'customer-info')">
+            Customer
+        </button><button class="btn-nav" type="button" onclick="displayTab(event, 'products-page')">
+            Products
+        </button><button class="btn-nav" type="button" onclick="displayTab(event, 'cart-page')">
             View Cart
         </button>
     </div>
 
+
+    <div id="customer-info">
+
+        <h2>Welcome to Insta Fat!</h2>
+        <hr>
+        <p>We are happy that you chose Insta Fat to do your groceries.</p>
+
+        <p>Before you start, please provide us with the
+            following information, so that we can recommend you the products that fit you the best:
+        </p>
+
+        <div>
+            <label for="dietary-options">Please specify your dietary restrictions: <span
+                    style="color: red;">*</span></label>
+            <select name="dietary-options" id="dietary-options" style="font-size: 18px; width: 40%;"
+                onchange="setDietaryPreferences(event)" multiple>
+                <option disabled selected>Select an option</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Gluten-Free">Gluten-free</option>
+                <option value="Organic">Organic</option>
+                <option value="Non-organic">Non-Organic</option>
+                <option value="None">None</option>
+            </select>
+            </p>
+        </div>
+        <button style="font-size: 18px;" onclick="display()">Show my preferences</button>
+        <p id="preference"></p>
+    </div>
+
+    <div id="products-page">
+
+        <h2>Products</h2>
+
+        <div id="product-list">
+            <!-- need to set inner html here from javascript based on the preference of user -->
+        </div>
+    </div>
+
+    <div id="cart-page">
+
+        <h2>View my cart</h2>
+    </div>
+
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
