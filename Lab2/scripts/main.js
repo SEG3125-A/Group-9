@@ -29,6 +29,7 @@ function displayTab(event, tabName) {
     customer.style.display = "none";
     products.style.display = "none";
     cart.style.display = "block";
+    displayCart();
   }
 
   event.currentTarget.className += " active";
