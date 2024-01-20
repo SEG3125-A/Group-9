@@ -107,3 +107,12 @@ function setDietaryPreferences(event) {
     dietaryPreferences = selectedOptions;
 }
 
+
+
+function displayShoppingCart(){
+    for(i = 0; i < products.length; i++){
+        console.log(products[i].name + " " + quantities[i]);
+    }
+}
+
+
