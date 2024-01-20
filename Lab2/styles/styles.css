@@ -119,3 +119,18 @@ h1 {
   padding: 5px 10px;
   text-align: center;
 }
+
+.cart-container{
+  display: flex;
+}
+
+.cart-item-container p{
+  margin: 5px;
+}
+
+.cart-item-container{
+  display:flex;
+  margin: 0px;
+  flex-direction: row;
+  width: 200px;
+}

@@ -1,14 +1,14 @@
 const products = [
-    { name: "Lettuce", description: "Fresh lettuce", price: "$1.50 per head", Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
-    { name: "Bread", description: "Whole wheat bread", price: "$2 per loaf", Vegan: true, GlutenFree: false, Organic: true, NonOrganic: false},
-    { name: "Tomatoes", description: "Ripe tomatoes", price: "$2 per lb", Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
-    { name: "Potatoes", description: "Russet potatoes", price: "$2 per lb", Vegan: false, GlutenFree: false, Organic: false, NonOrganic: true},
-    { name: "Apples", description: "Fresh green apples", price: "$3 per lb", Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
-    { name: "Eggs", description: "Free-range eggs", price: "$3 per dozen", Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
-    { name: "Milk", description: "Organic 2% milk", price: "$4 per gallon", Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
-    { name: "Oranges", description: "Juicy oranges", price: "$4 per lb", Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
-    { name: "Cheese", description: "Cheddar cheese block", price: "$5", Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
-    { name: "Chicken", description: "Boneless chicken breast", price: "$5 per lb", Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
+    { name: "Lettuce", description: "Fresh lettuce", price: "$1.50 per head", unitPrice: 1.50, Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
+    { name: "Bread", description: "Whole wheat bread", price: "$2 per loaf", unitPrice: 2, Vegan: true, GlutenFree: false, Organic: true, NonOrganic: false},
+    { name: "Tomatoes", description: "Ripe tomatoes", price: "$2 per lb", unitPrice: 2, Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
+    { name: "Potatoes", description: "Russet potatoes", price: "$2 per lb", unitPrice: 2, Vegan: false, GlutenFree: false, Organic: false, NonOrganic: true},
+    { name: "Apples", description: "Fresh green apples", price: "$3 per lb", unitPrice: 3, Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
+    { name: "Eggs", description: "Free-range eggs", price: "$3 per dozen", unitPrice: 3, Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
+    { name: "Milk", description: "Organic 2% milk", price: "$4 per gallon", unitPrice: 4, Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
+    { name: "Oranges", description: "Juicy oranges", price: "$4 per lb", unitPrice: 4, Vegan: true, GlutenFree: true, Organic: true, NonOrganic: false},
+    { name: "Cheese", description: "Cheddar cheese block", price: "$5", unitPrice: 5, Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
+    { name: "Chicken", description: "Boneless chicken breast", price: "$5 per lb", unitPrice: 5, Vegan: false, GlutenFree: true, Organic: false, NonOrganic: true},
 ];
 
 const quantities = new Array(products.length).fill(0);
