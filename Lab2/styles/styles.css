@@ -158,3 +158,18 @@ h1 {
   padding: 15px 15px 15px 5px;
   align-items: center;
 }
+
+
+.bold-text{
+  font-weight: bold;
+}
+
+.checkout-btn{
+  background-color: #282c34;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 20px 5px 20px;
+
+}

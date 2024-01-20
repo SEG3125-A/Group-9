@@ -7,8 +7,6 @@ function displayCart(){
     cartContainer.innerHTML = '';
     
     for(i = 0; i < products.length; i++){
-        console.log(products[i].name + " " + quantities[i]);
-
         if (quantities[i] != 0){
             //set the cart items
     
@@ -22,7 +20,7 @@ function displayCart(){
 
             // Create a div for the quantity
             var quantity = document.createElement('div');
-            quantity.className = 'cart-quantity';
+            quantity.className = 'bold-text';
             quantity.textContent = '$' + products[i].unitPrice + ' (x' + quantities[i] + ')';
 
             //build checkout item
@@ -48,14 +46,13 @@ function displayCart(){
         //div for total text
         var totalText = document.createElement('div');
         totalText.textContent = "Total Cost:";
-        totalText.style.fontWeight = 'bold';
+        totalText.className = 'bold-text';
 
         //div for total cost
         const sum = calculateTotalCost();
         totalCost = document.createElement('div');
-        totalCost.className = 'cart-quantity';
+        totalCost.className = 'bold-text';
         totalCost.textContent = '$ ' + sum;
-        totalCost.style.fontWeight = 'bold';
 
         totalCostDiv.appendChild(totalText);
         totalCostDiv.appendChild(totalCost);
@@ -66,15 +63,8 @@ function displayCart(){
         payContainer.className = 'pay-container';
         
         checkoutBtn = document.createElement('BUTTON');
+        checkoutBtn.className = 'checkout-btn';
         var text = document.createTextNode("Pay");
-
-        //style
-        checkoutBtn.style.backgroundColor = '#282c34';
-        checkoutBtn.style.color = 'white';
-        checkoutBtn.style.border = 'none';
-        checkoutBtn.style.borderRadius = '10px';
-        checkoutBtn.style.cursor = 'pointer';
-        checkoutBtn.style.padding = '5px 20px 5px 20px';
 
         checkoutBtn.appendChild(text);
         payContainer.appendChild(checkoutBtn);
