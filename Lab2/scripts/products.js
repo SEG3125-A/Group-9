@@ -27,6 +27,8 @@ function displayProducts(dietaryPreferences) {
     displayPreference(dietaryPreferences);
     const productList = document.getElementById("product-list");
     productList.innerHTML = "";
+    preferenceDiv = document.getElementById("preference")
+    var productsExist = false;
 
     products.forEach((product, index) => {
         // Check if the dietary restrictions hold
@@ -44,9 +46,16 @@ function displayProducts(dietaryPreferences) {
         if (restrictionsHold) {
             const productDiv = displayProduct(product, index);
             productList.appendChild(productDiv);
+            productsExist = true; //set to true if we have at least one product in the category chosen
         }
 
     });
+
+    // we did not append any product to the productList
+    if (!productsExist){
+        var newText = document.createTextNode('No products match your dietary preferences.');
+        preferenceDiv.appendChild(newText);
+    }
 }
 
 function displayProduct(product, index) {
