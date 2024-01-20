@@ -65,8 +65,9 @@ function displayCart(){
         checkoutBtn = document.createElement('BUTTON');
         checkoutBtn.className = 'checkout-btn';
         var text = document.createTextNode("Pay");
-
         checkoutBtn.appendChild(text);
+        checkoutBtn.addEventListener("click", pay);
+
         payContainer.appendChild(checkoutBtn);
         cartContainer.appendChild(payContainer);
     }
@@ -79,3 +80,12 @@ function calculateTotalCost(){
     }
     return totalCost.toFixed(2);
 } 
+
+function pay(){
+    var paymentMessage = document.getElementById("payment-message");
+    paymentMessage.style.display = "flex";  
+}
+
+function closePaymentMessage() {
+    document.getElementById("payment-message").style.display = "none";
+}
