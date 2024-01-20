@@ -223,3 +223,14 @@ h1 {
 .hover-btn:hover{
   transform: scale(1.1);
 }
+
+.button-content {
+  display: flex;
+  align-items: center;
+}
+
+.tab-images {
+  width: 2em;
+  height: auto; 
+  margin-right: 5px; 
+}
