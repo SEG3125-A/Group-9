@@ -23,7 +23,7 @@ function displayCart(){
             // Create a div for the quantity
             var quantity = document.createElement('div');
             quantity.className = 'cart-quantity';
-            quantity.textContent = 'x ' + quantities[i];
+            quantity.textContent = '$' + products[i].unitPrice + ' (x' + quantities[i] + ')';
 
             //build checkout item
             checkoutItem.appendChild(productName);
