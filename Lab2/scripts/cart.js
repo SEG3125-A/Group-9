@@ -9,7 +9,6 @@ function displayCart(){
         console.log(products[i].name + " " + quantities[i]);
 
         if (quantities[i] != 0){
-
             //set the cart items
             cartItemDiv = document.createElement('div');
             cartItemDiv.classList.add('cart-item-container');
@@ -27,28 +26,33 @@ function displayCart(){
         cartContainer.innerHTML = "Shopping cart is empty.";
     }else{
         //shopping cart is not empty, display total price
-
         totalCostDiv = document.createElement('div');
         totalCostDiv.classList.add('cart-item-container');
 
         const total = calculateTotalCost();
         totalCostDiv = document.createElement('div');
         totalCostDiv.classList.add('cart-item-container')
+
+        cartContainer.appendChild(document.createElement("HR"));
         totalCostDiv.innerHTML = `
             <p style="font-weight:bold">Total Cost: </p>
             <p style="font-weight:bold"> $ ${total}</p>`
 
-        cartContainer.appendChild(totalCostDiv);      
+        cartContainer.appendChild(totalCostDiv);    
+        
+        //TODO: style the pay button
+        checkout = document.createElement('BUTTON');
+        var t = document.createTextNode("Pay");
+        checkout.appendChild(t);
+        cartContainer.appendChild(checkout);
     }
     
 }
 
 function calculateTotalCost(){
     var totalCost = 0;
-
     for(i = 0; i < products.length; i++){
         totalCost = totalCost + (products[i].unitPrice * quantities[i]);
     }
-
     return totalCost.toFixed(2);
 } 
