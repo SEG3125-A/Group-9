@@ -12,11 +12,17 @@ function setDietaryPreferences(event) {
   
 function displayCustomerSection() {
     let result = "";
+    preferenceDiv =  document.getElementById("preference")
+    preferenceDiv.innerHTML = `<p>You chose no dietery restrictions.</p>`;
+    
+    if(dietaryPreferences.length == 0) return;
+
     for (i = 0; i < dietaryPreferences.length; i++) {
+        if(dietaryPreferences[i] == "None"){
+            return;
+        }
       result += `<li>${dietaryPreferences[i]}</li>`;
     }
-    document.getElementById(
-      "preference"
-    ).innerHTML = `<p>Your preferences are: <ul>${result}</ul></p>`;
+    preferenceDiv.innerHTML = `<p>Chosen dietery restrictions: <ul>${result}</ul></p>`;
 }
   
