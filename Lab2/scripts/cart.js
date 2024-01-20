@@ -63,7 +63,7 @@ function displayCart(){
         payContainer.className = 'pay-container';
         
         checkoutBtn = document.createElement('BUTTON');
-        checkoutBtn.className = 'checkout-btn';
+        checkoutBtn.className = 'checkout-btn hover-btn';
         var text = document.createTextNode("Pay");
         checkoutBtn.appendChild(text);
         checkoutBtn.addEventListener("click", pay);
