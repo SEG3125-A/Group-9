@@ -18,7 +18,6 @@ function displayTab(event, tabName) {
     customer.style.display = "block";
     products.style.display = "none";
     cart.style.display = "none";
-    displayCustomerSection();
 
   } else if (tabName == productPage) {
     customer.style.display = "none";
