@@ -1,0 +1,226 @@
+html {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn-nav {
+  background-color: beige;
+  cursor: pointer;
+  border: 0px;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.active,
+.btn-nav:hover {
+  background-color: rgb(213, 213, 191);
+}
+
+.button-container {
+  background-color: beige;
+  text-align: center;
+}
+
+#customer-info {
+  display: block;
+  padding: 25px;
+}
+
+#products-page {
+  display: none;
+  padding: 25px;
+}
+
+#cart-page {
+  display: none;
+  padding: 25px;
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.product p {
+  color: #666;
+}
+
+#signature {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.8em;
+  background-color: #282c34;
+  border-top: 1px solid #444;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.quantity-selector button {
+  background-color: #282c34;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.quantity-selector button:hover {
+  transform: scale(1.2);
+}
+
+.quantity-selector span {
+  min-width: 20px;
+  color: #282c34;
+}
+
+.quantity-selector button,
+.quantity-selector span {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+#cart-container{
+  background-color: white;
+  color: rgb(75, 73, 95);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.cart-checkout-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #282c34;
+  padding: 6px;
+}
+
+.cart-quantity{
+  text-align: right;
+  width: 70px;
+}
+
+#cart-page{
+  width: 50%;
+  margin: auto;
+}
+
+.total-checkout{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+}
+
+.pay-container{
+  margin: auto;
+  padding: 15px 15px 15px 5px;
+  align-items: center;
+}
+
+
+.bold-text{
+  font-weight: bold;
+}
+
+.checkout-btn{
+  background-color: #282c34;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 20px 5px 20px;
+  transition: transform 0.3s ease;
+}
+
+#payment-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation: fadeIn 0.5s;
+}
+
+#message-wrapper {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #282c34;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#message-string{
+  font-size: 1.5em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 15px;
+  background-color: #282c34;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+
+.hover-btn:hover{
+  transform: scale(1.1);
+}
+

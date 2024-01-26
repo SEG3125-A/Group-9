@@ -1,0 +1,100 @@
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+  
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 0.8em solid #ccc;
+  width: 100%;
+  top: 25%;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 0.8em solid #ccc;
+  width: 100%;
+  top: 25%;
+  left: 50%;
+  z-index: 2;
+}
+  
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 6px;
+}
+
+  .stepper-item.active {
+    font-weight: bold;
+  }
+  
+  .stepper-item.completed .step-counter {
+    background-color: #4bb543;
+  }
+  
+  .stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 0.8em solid #4bb543;
+    width: 100%;
+    top: 25%;
+    left: 50%;
+    z-index: 3;
+  }
+  
+  .stepper-item:first-child::before {
+    content: none;
+  }
+  .stepper-item:last-child::after {
+    content: none;
+  }
+
+
+.stepper-item button.active {
+  background-color: #4bb543;
+}
+
+.button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.tab-images {
+  width: 50px;
+  height: 50px;
+  
+}
+
+.btn-nav-cart {
+  background-color: beige;
+  cursor: pointer;
+  border: 0px;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
