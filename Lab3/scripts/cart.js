@@ -3,6 +3,8 @@ function displayCart(){
     var cartPage = document.getElementById("cart-page");
     var emptyCart = true;
 
+    cartContainer.innerHTML = ""
+
     for(i = 0; i < products.length; i++){
         if (quantities[i] != 0){
             //set the cart items
@@ -110,10 +112,9 @@ function changeCartTab(event, tabName) {
     }
 
     tabs[tabName].style.display = "block";
-  
-    changeProgressBar(event)
-  
+    changeProgressBar(event);
     event.currentTarget.className += " active";
+    
   }
   
 
