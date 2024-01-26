@@ -1,11 +1,9 @@
-let cart = document.getElementById("cart-container");
-let billing = document.getElementById("billing-container");
-let shipping = document.getElementById("shipping-container");
-let payment = document.getElementById("payment-container");
-
 function displayCart(){
+    
+    // Switches to cart page
+    clickButton("cart-button");
+
     var cartContainer = document.getElementById("cart-container");
-    var cartPage = document.getElementById("cart-page");
     var emptyCart = true;
 
     cartContainer.innerHTML = ""
@@ -88,6 +86,10 @@ function calculateTotalCost(){
 
 
 function changeCartTab(event, tabName) {
+    let cart = document.getElementById("cart-container");
+    let billing = document.getElementById("billing-container");
+    let shipping = document.getElementById("shipping-container");
+    let payment = document.getElementById("payment-container");
 
     let tabs = {"cart": cart, "billing": billing, "shipping": shipping, "payment": payment};
     // Array that only contains document elements
@@ -118,9 +120,14 @@ function changeProgressBar(event) {
     }
 }
 
+// Switches to billing page
 function pay(){
-    const billingButton = document.getElementById('billing-button');
-    billingButton.click();
+    clickButton("billing-button");
 }
 
+
+function clickButton(buttonName){
+    const billingButton = document.getElementById(buttonName);
+    billingButton.click();
+}
 
