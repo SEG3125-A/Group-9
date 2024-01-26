@@ -1,3 +1,8 @@
+let cart = document.getElementById("cart-container");
+let billing = document.getElementById("billing-container");
+let shipping = document.getElementById("shipping-container");
+let payment = document.getElementById("payment-container");
+
 function displayCart(){
     var cartContainer = document.getElementById("cart-container");
     var cartPage = document.getElementById("cart-page");
@@ -80,24 +85,9 @@ function calculateTotalCost(){
     return totalCost.toFixed(2);
 } 
 
-function pay(){
-    var paymentMessage = document.getElementById("payment-message");
-    paymentMessage.style.display = "flex";  
-}
-
-function closePaymentMessage() {
-    document.getElementById("payment-message").style.display = "none";
-}
-
-
-
 
 
 function changeCartTab(event, tabName) {
-    let cart = document.getElementById("cart-container");
-    let billing = document.getElementById("billing-container");
-    let shipping = document.getElementById("shipping-container");
-    let payment = document.getElementById("payment-container");
 
     let tabs = {"cart": cart, "billing": billing, "shipping": shipping, "payment": payment};
     // Array that only contains document elements
@@ -107,19 +97,17 @@ function changeCartTab(event, tabName) {
     buttonsNav = document.getElementsByClassName("btn-nav-cart");
     for (i = 0; i < buttonsNav.length; i++) {
       buttonsNav[i].className = buttonsNav[i].className.replace(" active", "");
-      console.log(tabValues);
       tabValues[i].style.display = "none";
     }
 
     tabs[tabName].style.display = "block";
     changeProgressBar(event);
     event.currentTarget.className += " active";
-    
+
   }
   
 
 function changeProgressBar(event) {
-    console.log("yes")
     const stepperItems = document.querySelectorAll('.stepper-item');
     stepperItems.forEach(item => item.classList.remove('completed'));
     const selectedButton = event.currentTarget;
@@ -129,3 +117,10 @@ function changeProgressBar(event) {
       stepperItems[i].classList.add('completed');
     }
 }
+
+function pay(){
+    const billingButton = document.getElementById('billing-button');
+    billingButton.click();
+}
+
+
