@@ -170,3 +170,7 @@ function goToShipping() {
     document.getElementById("billing-feedback").style.color = "red";
   }
 }
+
+function gotoPayment(){
+    clickButton("payment-button");
+}

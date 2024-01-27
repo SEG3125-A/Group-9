@@ -313,3 +313,50 @@ h1 {
   background-color: #dff0d8;
   border: 1px solid #d6e9c6;
 }
+
+#shipping-container{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+.shipping-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping-info-container{
+  display:flex;
+  flex-direction: column;
+}
+
+.shipping-btn{
+  background-color: #282c34;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.shipping-info-container > label{
+  display:block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.shipping-info-container > input{
+  padding: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
