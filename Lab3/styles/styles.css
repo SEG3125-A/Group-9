@@ -18,7 +18,12 @@ h1 {
 .big-wrapper{
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 95vh;
+  margin: 5px;
+}
+
+.main-content{
+ flex-grow: 1;
 }
 
 #signature {
@@ -30,6 +35,7 @@ h1 {
   background-color: #282c34;
   border-top: 1px solid #444;
 }
+
 
 .btn-nav {
   background-color: beige;
@@ -60,6 +66,13 @@ h1 {
 #products-page {
   display: none;
   padding: 25px;
+}
+
+#cart-page {
+  display: none;
+  padding: 25px;
+  width: 50%;
+  margin: auto;
 }
 
 #product-list {
@@ -141,13 +154,6 @@ h1 {
 .cart-quantity {
   text-align: right;
   width: 70px;
-}
-
-#cart-page {
-  width: 50%;
-  margin: auto;
-  display: none;
-  padding: 25px;
 }
 
 .total-checkout {
