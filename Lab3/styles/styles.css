@@ -15,6 +15,22 @@ h1 {
   text-align: center;
 }
 
+.big-wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
+#signature {
+  text-align: center;
+  padding: 10px;
+  color: #ccc;
+  font-style: italic;
+  font-size: 0.8em;
+  background-color: #282c34;
+  border-top: 1px solid #444;
+}
+
 .btn-nav {
   background-color: beige;
   cursor: pointer;
@@ -46,11 +62,6 @@ h1 {
   padding: 25px;
 }
 
-#cart-page {
-  display: none;
-  padding: 25px;
-}
-
 #product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -76,15 +87,6 @@ h1 {
   color: #666;
 }
 
-#signature {
-  text-align: center;
-  padding: 20px;
-  color: #ccc;
-  font-style: italic;
-  font-size: 0.8em;
-  background-color: #282c34;
-  border-top: 1px solid #444;
-}
 
 .quantity-selector {
   display: flex;
@@ -144,6 +146,8 @@ h1 {
 #cart-page {
   width: 50%;
   margin: auto;
+  display: none;
+  padding: 25px;
 }
 
 .total-checkout {
