@@ -1,6 +1,5 @@
 
 function listenPriceChange(){
-
     const rangeInput = document.querySelectorAll(".range-input input");
     priceInput = document.querySelectorAll(".price-input input");
     let priceGap = 0;
@@ -13,6 +12,16 @@ function listenPriceChange(){
         input.addEventListener("input", e =>{
             let minPrice = parseInt(priceInput[0].value),
             maxPrice = parseInt(priceInput[1].value);
+
+            if(maxPrice > 40){
+                console.log("yes");
+                document.querySelector('.input-max').value = 40;
+                maxPrice = 40;
+            }
+            if(minPrice < 0){
+                document.querySelector('.input-min').value = 0;
+                minPrice = 0;
+            }
             
 
             if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
@@ -56,4 +65,31 @@ function updateBlueBar(minVal, maxVal, rangeInput){
     range = document.querySelector(".slider .progress");
     range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
     range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Set the initial values for the range inputs
+    document.querySelector('.range-min').value = 0;
+    document.querySelector('.range-max').value = 40;
+
+    const rangeMinInput = document.querySelector('.input-min');
+    const rangeMaxInput = document.querySelector('.input-max');
+
+    rangeMinInput.value = 0;
+    rangeMaxInput.value = 40;
+
+    console.log(rangeMinInput);
+
+    // Reset the thumb position
+    resetThumbPosition('.range-min');
+    resetThumbPosition('.range-max');
+});
+
+function resetThumbPosition(selector) {
+    const rangeInput = document.querySelector(selector);
+    const thumbPosition = ((rangeInput.value - rangeInput.min) / (rangeInput.max - rangeInput.min)) * 100;
+    
+    rangeInput.style.setProperty(`--${selector}-thumb-position`, `${thumbPosition}%`);
 }
