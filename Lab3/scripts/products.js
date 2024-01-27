@@ -135,7 +135,7 @@ function displayProducts(dietaryPreferences, searchQuery = "") {
 
     const matchesSearch = product.name
       .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+      .startsWith(searchQuery.toLowerCase());
     // If dietary restrictions hold display the product
     if (restrictionsHold && matchesSearch) {
       const productDiv = displayProduct(product, index);
