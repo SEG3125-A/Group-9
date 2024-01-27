@@ -1,9 +1,10 @@
 .stepper-wrapper {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .stepper-item {
   position: relative;
   display: flex;
@@ -11,7 +12,7 @@
   align-items: center;
   flex: 1;
 }
-  
+
 .stepper-item::before {
   position: absolute;
   content: "";
@@ -31,7 +32,7 @@
   left: 50%;
   z-index: 2;
 }
-  
+
 .stepper-item .step-counter {
   position: relative;
   z-index: 5;
@@ -45,30 +46,31 @@
   margin-bottom: 6px;
 }
 
-  .stepper-item.active {
-    font-weight: bold;
-  }
-  
-  .stepper-item.completed .step-counter {
-    background-color: #4bb543;
-  }
-  
-  .stepper-item.completed::after {
-    position: absolute;
-    content: "";
-    border-bottom: 0.8em solid #4bb543;
-    width: 100%;
-    top: 25%;
-    left: 50%;
-    z-index: 3;
-  }
-  
-  .stepper-item:first-child::before {
-    content: none;
-  }
-  .stepper-item:last-child::after {
-    content: none;
-  }
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+  background-color: #4bb543;
+}
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 0.8em solid #4bb543;
+  width: 100%;
+  top: 25%;
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+
+.stepper-item:last-child::after {
+  content: none;
+}
 
 
 .stepper-item button.active {
@@ -85,7 +87,6 @@
 .tab-images {
   width: 50px;
   height: 50px;
-  
 }
 
 .btn-nav-cart {
