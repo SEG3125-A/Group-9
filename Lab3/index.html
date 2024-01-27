@@ -8,6 +8,7 @@
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <link href="styles/progressBar.css" rel="stylesheet" type="text/css">
     <link href="styles/carousel.css" rel="stylesheet" type="text/css">
+    <link href="styles/priceRangeSlider.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -99,6 +100,34 @@
             <div id="products-page">
                 <h2>Products</h2>
                 <hr>
+                
+                <!-- Start of Price Range Slider -->
+
+                <div class="price-range-slider">
+                    <p>Price Range</p>
+                    <div class="price-input">
+                        <div class="price-field">
+                            <span>Min</span>
+                            <input type="number" class="input-min" value="0">
+                        </div>
+                        <div class="separator">-</div>
+                        <div class="price-field">
+                          <span>Max</span>
+                          <input type="number" class="input-max" value="40">
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="range-input">
+                        <input type="range" class="range-min" min="0" max="40" value="0" step="1">
+                        <input type="range" class="range-max" min="0" max="40" value="40" step="1">
+                    </div>
+                </div>
+
+                <!-- End of Price Range Slider -->
+                    
+
                 <input type="text" id="search-input" placeholder="Search products..." oninput="onSearchInput()">
                 <p id="preference"></p>
                 <div id="product-list">
@@ -207,10 +236,12 @@
                 </div>
             </div>
 
+            <script src="scripts/productsList.js"></script>
             <script src="scripts/products.js"></script>
             <script src="scripts/cart.js"></script>
             <script src="scripts/main.js"></script>
             <script src="scripts/carousel.js"></script>
+            <script src="scripts/priceRangeSlider.js"></script>
         </div>
         <div class="footer-content">
             <footer id="signature">

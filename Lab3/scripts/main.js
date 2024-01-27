@@ -23,7 +23,7 @@ function displayTab(event, tabName) {
     customer.style.display = "none";
     products.style.display = "block";
     cart.style.display = "none";
-    displayProducts(dietaryPreferences);
+    listenPriceChange();
 
   } else if (tabName == cartPage) {
     customer.style.display = "none";
@@ -32,11 +32,8 @@ function displayTab(event, tabName) {
     displayCart();
   }
   changeProgressBar(event)
+  console.log(products.style.display === "none");
 
   event.currentTarget.className += " active";
 }
-
-
-
-
 

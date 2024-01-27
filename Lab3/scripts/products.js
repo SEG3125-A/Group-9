@@ -1,116 +1,3 @@
-const products = [
-  {
-    name: "Lettuce",
-    description: "Fresh lettuce",
-    price: "$1.50 per head",
-    unitPrice: 1.5,
-    Vegan: true,
-    GlutenFree: true,
-    Organic: true,
-    NonOrganic: false,
-    image: "images/lettuce.png",
-  },
-  {
-    name: "Bread",
-    description: "Whole wheat bread",
-    price: "$2 per loaf",
-    unitPrice: 2,
-    Vegan: true,
-    GlutenFree: false,
-    Organic: true,
-    NonOrganic: false,
-    image: "images/bread.png",
-  },
-  {
-    name: "Tomatoes",
-    description: "Ripe tomatoes",
-    price: "$2 per lb",
-    unitPrice: 2,
-    Vegan: true,
-    GlutenFree: true,
-    Organic: true,
-    NonOrganic: false,
-    image: "images/tomato.png",
-  },
-  {
-    name: "Potatoes",
-    description: "Russet potatoes",
-    price: "$2 per lb",
-    unitPrice: 2,
-    Vegan: false,
-    GlutenFree: false,
-    Organic: false,
-    NonOrganic: true,
-    image: "images/potato.png",
-  },
-  {
-    name: "Apples",
-    description: "Fresh green apples",
-    price: "$3 per lb",
-    unitPrice: 3,
-    Vegan: true,
-    GlutenFree: true,
-    Organic: true,
-    NonOrganic: false,
-    image: "images/apple.png",
-  },
-  {
-    name: "Eggs",
-    description: "Free-range eggs",
-    price: "$3 per dozen",
-    unitPrice: 3,
-    Vegan: false,
-    GlutenFree: true,
-    Organic: false,
-    NonOrganic: true,
-    image: "images/egg.png",
-  },
-  {
-    name: "Milk",
-    description: "Organic 2% milk",
-    price: "$4 per gallon",
-    unitPrice: 4,
-    Vegan: false,
-    GlutenFree: true,
-    Organic: false,
-    NonOrganic: true,
-    image: "images/milk.png",
-  },
-  {
-    name: "Oranges",
-    description: "Juicy oranges",
-    price: "$4 per lb",
-    unitPrice: 4,
-    Vegan: true,
-    GlutenFree: true,
-    Organic: true,
-    NonOrganic: false,
-    image: "images/orange.png",
-  },
-  {
-    name: "Cheese",
-    description: "Cheddar cheese block",
-    price: "$5",
-    unitPrice: 5,
-    Vegan: false,
-    GlutenFree: true,
-    Organic: false,
-    NonOrganic: true,
-    image: "images/cheddar.png",
-  },
-  {
-    name: "Chicken",
-    description: "Boneless chicken breast",
-    price: "$5 per lb",
-    unitPrice: 5,
-    Vegan: false,
-    GlutenFree: true,
-    Organic: false,
-    NonOrganic: true,
-    image: "images/chicken.png",
-  },
-];
-
 const quantities = new Array(products.length).fill(0);
 
 function changeQuantity(action, index) {
@@ -123,14 +10,23 @@ function changeQuantity(action, index) {
   document.getElementById(`quantity-${index}`).innerText = quantities[index];
 }
 
-function displayProducts(dietaryPreferences, searchQuery = "") {
-  displayPreference(dietaryPreferences);
+function displayProducts(searchQuery = "") {
+  displayPreference();
   const productList = document.getElementById("product-list");
   productList.innerHTML = "";
   preferenceDiv = document.getElementById("preference");
   var productsExist = false;
+  
+  let priceInput = document.querySelectorAll(".price-input input");
 
   products.forEach((product, index) => {
+
+    //Check price range 
+
+    var minPrice = parseInt(priceInput[0].value);
+    var maxPrice = parseInt(priceInput[1].value);
+    const isWithinPriceRange = (product.unitPrice <= maxPrice && product.unitPrice >= minPrice);
+
     // Check if the dietary restrictions hold
     let restrictionsHold = true;
     for (let i = 0; i < dietaryPreferences.length; i++) {
@@ -147,7 +43,7 @@ function displayProducts(dietaryPreferences, searchQuery = "") {
       .toLowerCase()
       .startsWith(searchQuery.toLowerCase());
     // If dietary restrictions hold display the product
-    if (restrictionsHold && matchesSearch) {
+    if (restrictionsHold && matchesSearch && isWithinPriceRange) {
       const productDiv = displayProduct(product, index);
       productList.appendChild(productDiv);
       productsExist = true; //set to true if we have at least one product in the category chosen
@@ -157,7 +53,7 @@ function displayProducts(dietaryPreferences, searchQuery = "") {
   // we did not append any product to the productList
   if (!productsExist) {
     var newText = document.createTextNode(
-      "No products match your dietary preferences."
+      "No products match your preferences."
     );
     preferenceDiv.appendChild(newText);
   }
@@ -184,7 +80,7 @@ function displayProduct(product, index) {
   return productDiv;
 }
 
-function displayPreference(dietaryPreferences) {
+function displayPreference() {
   let result = "";
   preferenceDiv = document.getElementById("preference");
   preferenceDiv.innerHTML = `<p>You chose no dietary restrictions.</p>`;
@@ -223,5 +119,6 @@ function displayShoppingCart() {
 
 function onSearchInput() {
   const searchQuery = document.getElementById("search-input").value;
-  displayProducts(dietaryPreferences, searchQuery);
+  displayProducts(searchQuery);
 }
+
