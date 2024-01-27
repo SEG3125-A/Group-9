@@ -8,6 +8,7 @@ const products = [
     GlutenFree: true,
     Organic: true,
     NonOrganic: false,
+    image: "images/lettuce.png",
   },
   {
     name: "Bread",
@@ -18,6 +19,7 @@ const products = [
     GlutenFree: false,
     Organic: true,
     NonOrganic: false,
+    image: "images/bread.png",
   },
   {
     name: "Tomatoes",
@@ -28,6 +30,7 @@ const products = [
     GlutenFree: true,
     Organic: true,
     NonOrganic: false,
+    image: "images/tomato.png",
   },
   {
     name: "Potatoes",
@@ -38,6 +41,7 @@ const products = [
     GlutenFree: false,
     Organic: false,
     NonOrganic: true,
+    image: "images/potato.png",
   },
   {
     name: "Apples",
@@ -48,6 +52,7 @@ const products = [
     GlutenFree: true,
     Organic: true,
     NonOrganic: false,
+    image: "images/apple.png",
   },
   {
     name: "Eggs",
@@ -58,6 +63,7 @@ const products = [
     GlutenFree: true,
     Organic: false,
     NonOrganic: true,
+    image: "images/egg.png",
   },
   {
     name: "Milk",
@@ -68,6 +74,7 @@ const products = [
     GlutenFree: true,
     Organic: false,
     NonOrganic: true,
+    image: "images/milk.png",
   },
   {
     name: "Oranges",
@@ -78,6 +85,7 @@ const products = [
     GlutenFree: true,
     Organic: true,
     NonOrganic: false,
+    image: "images/orange.png",
   },
   {
     name: "Cheese",
@@ -88,6 +96,7 @@ const products = [
     GlutenFree: true,
     Organic: false,
     NonOrganic: true,
+    image: "images/cheddar.png",
   },
   {
     name: "Chicken",
@@ -98,6 +107,7 @@ const products = [
     GlutenFree: true,
     Organic: false,
     NonOrganic: true,
+    image: "images/chicken.png",
   },
 ];
 
@@ -159,6 +169,7 @@ function displayProduct(product, index) {
 
   productDiv.innerHTML = `
         <h3>${product.name}</h3>
+        <img src=${product.image} alt=${product.name}>
         <p>${product.description}</p>
         <p>${product.price}</p>
         <div class="quantity-selector">
