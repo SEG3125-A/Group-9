@@ -1,9 +1,10 @@
+var emptyCart = true;
+
 function displayCart() {
   // Switches to cart page
   clickButton("cart-button");
 
   var cartContainer = document.getElementById("cart-container");
-  var emptyCart = true;
 
   cartContainer.innerHTML = "";
 
@@ -72,6 +73,11 @@ function displayCart() {
 
     payContainer.appendChild(checkoutBtn);
     cartContainer.appendChild(payContainer);
+
+    if(sum == 0){
+      emptyCart = true;
+      cartContainer.innerHTML = "Shopping cart is empty.";
+    }
   }
 }
 
@@ -84,6 +90,9 @@ function calculateTotalCost() {
 }
 
 function changeCartTab(event, tabName) {
+  // If the cart is empty don't let the tab change
+  if(emptyCart) return;
+
   let cart = document.getElementById("cart-container");
   let billing = document.getElementById("billing-container");
   let shipping = document.getElementById("shipping-container");
