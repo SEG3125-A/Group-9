@@ -106,8 +106,24 @@
             Shopping cart is empty.
             <!-- is handled in cart.js -->
         </div>
-        <div id="billing-container">
+        <div id="billing-container" style="display: none;">
             <!-- is handled in cart.js -->
+            <p id="billing-feedback" class="feedback-message"></p>
+            <form id="billing-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                </div>
+                <div class="form-group">
+                    <label for="card">Credit Card Number:</label>
+                    <input type="text" id="card" name="card">
+                </div>
+                <button type="button" class="next-btn" onclick="goToShipping()">Next Page</button>
+            </form>
         </div>
         <div id="shipping-container">
             <!-- is handled in cart.js -->
