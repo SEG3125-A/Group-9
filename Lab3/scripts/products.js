@@ -169,7 +169,9 @@ function displayProduct(product, index) {
 
   productDiv.innerHTML = `
         <h3>${product.name}</h3>
-        <img src=${product.image} alt=${product.name}>
+        <div class="product-img">
+          <img src=${product.image} alt=${product.name}>
+        </div>
         <p>${product.description}</p>
         <p>${product.price}</p>
         <div class="quantity-selector">
