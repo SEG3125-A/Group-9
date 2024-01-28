@@ -17,14 +17,16 @@ function displayProducts(searchQuery = "") {
   preferenceDiv = document.getElementById("preference");
   var productsExist = false;
   
-  let priceInput = document.querySelectorAll(".price-input input");
+  let minPriceText = document.querySelector(".input-min");
+  let maxPriceText = document.querySelector(".input-max");
+  var minPrice = parseInt(minPriceText.textContent);
+  var maxPrice = parseInt(maxPriceText.textContent);
+  console.log(minPriceText);
 
   products.forEach((product, index) => {
 
     //Check price range 
 
-    var minPrice = parseInt(priceInput[0].value);
-    var maxPrice = parseInt(priceInput[1].value);
     const isWithinPriceRange = (product.unitPrice <= maxPrice && product.unitPrice >= minPrice);
 
     // Check if the dietary restrictions hold
