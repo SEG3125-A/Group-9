@@ -16,7 +16,7 @@
 .stepper-item::before {
   position: absolute;
   content: "";
-  border-bottom: 0.8em solid #ccc;
+  border-bottom: 0.5em solid #ccc;
   width: 100%;
   top: 25%;
   left: -50%;
@@ -26,7 +26,7 @@
 .stepper-item::after {
   position: absolute;
   content: "";
-  border-bottom: 0.8em solid #ccc;
+  border-bottom: 0.5em solid #ccc;
   width: 100%;
   top: 25%;
   left: 50%;
@@ -57,7 +57,7 @@
 .stepper-item.completed::after {
   position: absolute;
   content: "";
-  border-bottom: 0.8em solid #4bb543;
+  border-bottom: 0.5em solid #4bb543;
   width: 100%;
   top: 25%;
   left: 50%;
@@ -81,12 +81,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-
-.tab-images {
-  width: 50px;
-  height: 50px;
 }
 
 .btn-nav-cart {
