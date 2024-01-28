@@ -1,4 +1,5 @@
 const quantities = new Array(products.length).fill(0);
+let selectedCategory = "All";
 
 function changeQuantity(action, index) {
   if (action === "plus") {
@@ -16,7 +17,7 @@ function displayProducts(searchQuery = "") {
   productList.innerHTML = "";
   preferenceDiv = document.getElementById("preference");
   var productsExist = false;
-  
+
   let minPriceText = document.querySelector(".input-min");
   let maxPriceText = document.querySelector(".input-max");
   var minPrice = parseInt(minPriceText.textContent);
@@ -24,10 +25,9 @@ function displayProducts(searchQuery = "") {
   console.log(minPriceText);
 
   products.forEach((product, index) => {
-
-    //Check price range 
-
-    const isWithinPriceRange = (product.unitPrice <= maxPrice && product.unitPrice >= minPrice);
+    //Check price range
+    const isWithinPriceRange =
+      product.unitPrice <= maxPrice && product.unitPrice >= minPrice;
 
     // Check if the dietary restrictions hold
     let restrictionsHold = true;
@@ -44,11 +44,18 @@ function displayProducts(searchQuery = "") {
     const matchesSearch = product.name
       .toLowerCase()
       .startsWith(searchQuery.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
     // If dietary restrictions hold display the product
-    if (restrictionsHold && matchesSearch && isWithinPriceRange) {
+    if (
+      restrictionsHold &&
+      matchesSearch &&
+      isWithinPriceRange &&
+      matchesCategory
+    ) {
       const productDiv = displayProduct(product, index);
       productList.appendChild(productDiv);
-      productsExist = true; //set to true if we have at least one product in the category chosen
+      productsExist = true;
     }
   });
 
@@ -124,3 +131,7 @@ function onSearchInput() {
   displayProducts(searchQuery);
 }
 
+function onCategoryChange() {
+  selectedCategory = document.getElementById("category-select").value;
+  displayProducts();
+}

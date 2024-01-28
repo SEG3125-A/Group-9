@@ -415,3 +415,30 @@ input::placeholder {
 .back-btn:hover {
   background-color: #ddd;
 }
+
+.category-filter-container {
+  text-align: right;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  float: right;
+  margin-top: 20px;
+}
+
+#category-select {
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#products-page::after {
+  content: "";
+  display: block;
+  clear: both;
+}
