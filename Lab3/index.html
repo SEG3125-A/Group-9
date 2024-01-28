@@ -181,16 +181,24 @@
                     <p id="billing-feedback" class="feedback-message"></p>
                     <form id="billing-form">
                         <div class="form-group">
-                            <label for="name">Full Name:</label>
-                            <input type="text" id="name" name="name" placeholder="Celine">
+                            <label for="cardholder-name">Cardholder Name:</label>
+                            <input type="text" id="cardholder-name" name="cardholder-name" placeholder="Cardholder Name">
                         </div>
                         <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" id="address" name="address" placeholder="Wan">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX">
                         </div>
                         <div class="form-group">
-                            <label for="card">Credit Card Number:</label>
-                            <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX" required>
+                            <label for="expiration-date">Expiration Date:</label>
+                            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="CVV">
+                        </div>
+                        <div class="form-group">
+                            <label for="postal-zip">Postal/ZIP Code:</label>
+                            <input type="text" id="postal-zip" name="postal-zip" placeholder="Postal/ZIP">
                         </div>
                         <button type="button" class="next-btn" onclick="goToShipping()">Next Page</button>
                     </form>
@@ -202,22 +210,22 @@
 
                         <div class="shipping-info-container">
                             <label for="Firstname">First Name:</label>
-                            <input type="text" id="fname" name="fname" placeholder="Amy" required>
+                            <input type="text" id="fname" name="fname" placeholder="John" required>
 
                             <label for="Last name">Last Name:</label>
-                            <input type="text" id="lname" name="lname" placeholder="Kkiti" required>
+                            <input type="text" id="lname" name="lname" placeholder="Doe" required>
 
                             <label for="street">Street:</label>
-                            <input type="text" id="street" name="street" placeholder="123 Bay Street" required>
+                            <input type="text" id="street" name="street" placeholder="Street Name" required>
 
                             <label for="city">City:</label>
-                            <input type="text" id="city" name="city" placeholder="Ottawa" required>
+                            <input type="text" id="city" name="city" placeholder="City" required>
 
                             <label for="province">Province:</label>
-                            <input type="text" id="province" name="province" placeholder="Ontario" required>
+                            <input type="text" id="province" name="province" placeholder="Province" required>
 
                             <label for="zip">ZIP Code:</label>
-                            <input type="text" id="zip" name="zip" placeholder="K1A 3D3" required>
+                            <input type="text" id="zip" name="zip" placeholder="XXX XXX" required>
                         </div>
 
                         <div class="shipping-btn-container">

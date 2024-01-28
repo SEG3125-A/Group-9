@@ -1,11 +1,11 @@
 var emptyCart = true;
-var card = '';
-var firstName = '';
-var lastName = '';
-var street = '';
-var city = '';
-var province = '';
-var zipCode = '';
+var card = "";
+var firstName = "";
+var lastName = "";
+var street = "";
+var city = "";
+var province = "";
+var zipCode = "";
 
 function displayCart() {
   // Switches to cart page
@@ -164,15 +164,17 @@ document
   });
 
 function goToShipping() {
-  cname = document.getElementById("name").value;
-  address = document.getElementById("address").value;
-  card = document.getElementById("card").value;
+  var cardHolderName = document.getElementById("cardholder-name").value;
+  var cardNumber = document.getElementById("card-number").value;
+  var expirationDate = document.getElementById("expiration-date").value;
+  var cvv = document.getElementById("cvv").value;
+  var postalZip = document.getElementById("postal-zip").value;
 
-  if (cname && address && card) {
+  if (cardHolderName && cardNumber && expirationDate && cvv && postalZip) {
     document.getElementById("billing-feedback").textContent =
       "Billing information saved successfully.";
-    document.getElementById("billing-container").style.display = "none";
     document.getElementById("billing-feedback").style.color = "green";
+    document.getElementById("billing-container").style.display = "none";
     document.getElementById("shipping-container").style.display = "block";
     clickButton("shipping-button");
   } else {
@@ -183,12 +185,12 @@ function goToShipping() {
 }
 
 function gotoPayment() {
-  firstName = document.getElementById('fname').value;
-  lastName = document.getElementById('lname').value;
-  street = document.getElementById('street').value;
-  city = document.getElementById('city').value;
-  province = document.getElementById('province').value;
-  zipCode = document.getElementById('zip').value;
+  firstName = document.getElementById("fname").value;
+  lastName = document.getElementById("lname").value;
+  street = document.getElementById("street").value;
+  city = document.getElementById("city").value;
+  province = document.getElementById("province").value;
+  zipCode = document.getElementById("zip").value;
 
   if (firstName && lastName && street && city && province && zipCode) {
     document.getElementById("shipping-feedback").textContent =
@@ -203,12 +205,9 @@ function gotoPayment() {
       "Please fill out all fields in the shipping form.";
     document.getElementById("shipping-feedback").style.color = "red";
   }
-
-
 }
 
 function getShippingInfo() {
-
   var shippingInfoDiv = document.createElement("div");
   shippingInfoDiv.className = "shipping-summary";
 
@@ -230,17 +229,18 @@ function getShippingInfo() {
 
   console.log(shippingInfoDiv);
   return shippingInfoDiv;
-
 }
 
 function getCardInfo() {
   var paymentMethodDiv = document.createElement("div");
-  paymentMethodDiv.style.lineHeight = '5px';
+  paymentMethodDiv.style.lineHeight = "5px";
   var paymentMethodLine = document.createElement("p");
   console.log(typeof card);
   console.log(card);
   console.log(card.trim().slice(-4));
-  var cardInfoEnd = document.createTextNode(`Paying with card ending in ${card.slice(-4)}`);
+  var cardInfoEnd = document.createTextNode(
+    `Paying with card ending in ${card.slice(-4)}`
+  );
 
   paymentMethodLine.appendChild(cardInfoEnd);
   paymentMethodDiv.appendChild(paymentMethodLine);
@@ -276,7 +276,6 @@ function displayCheckout() {
 
   for (i = 0; i < products.length; i++) {
     if (quantities[i] != 0) {
-
       var checkoutItem = document.createElement("div");
       checkoutItem.className = "cart-checkout-item";
 
@@ -328,7 +327,7 @@ function displayCheckout() {
   taxDiv.appendChild(taxText);
   taxDiv.appendChild(taxAmount);
 
-  orderTotalDiv.appendChild(subtotalDiv)
+  orderTotalDiv.appendChild(subtotalDiv);
   orderTotalDiv.appendChild(taxDiv);
 
   orderTotalDiv.appendChild(document.createElement("hr"));
@@ -365,7 +364,7 @@ function displayCheckout() {
 }
 
 function getEstimatedTax(subtotal) {
-  const tax = subtotal * (0.13);
+  const tax = subtotal * 0.13;
   return tax.toFixed(2);
 }
 
