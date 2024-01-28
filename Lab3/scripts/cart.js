@@ -164,11 +164,11 @@ document
   });
 
 function goToShipping() {
-  name = document.getElementById("name").value;
+  cname = document.getElementById("name").value;
   address = document.getElementById("address").value;
   card = document.getElementById("card").value;
 
-  if (name && address && card) {
+  if (cname && address && card) {
     document.getElementById("billing-feedback").textContent =
       "Billing information saved successfully.";
     document.getElementById("billing-container").style.display = "none";
@@ -189,8 +189,22 @@ function gotoPayment() {
   city = document.getElementById('city').value;
   province = document.getElementById('province').value;
   zipCode = document.getElementById('zip').value;
-  clickButton("payment-button");
-  displayCheckout();
+
+  if (firstName && lastName && street && city && province && zipCode) {
+    document.getElementById("shipping-feedback").textContent =
+      "Shipping information saved successfully.";
+    document.getElementById("shipping-container").style.display = "none";
+    document.getElementById("shipping-feedback").style.color = "green";
+    document.getElementById("shipping-container").style.display = "block";
+    clickButton("payment-button");
+    displayCheckout();
+  } else {
+    document.getElementById("shipping-feedback").textContent =
+      "Please fill out all fields in the shipping form.";
+    document.getElementById("shipping-feedback").style.color = "red";
+  }
+
+
 }
 
 function getShippingInfo() {
