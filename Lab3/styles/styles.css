@@ -40,7 +40,6 @@ input::placeholder {
   border-top: 1px solid #444;
 }
 
-
 .btn-nav {
   background-color: beige;
   cursor: pointer;
@@ -109,7 +108,6 @@ input::placeholder {
   color: #666;
 }
 
-
 .quantity-selector {
   display: flex;
   align-items: center;
@@ -169,7 +167,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px
+  padding: 6px;
 }
 
 .pay-container {
@@ -360,13 +358,13 @@ input::placeholder {
   transition: background-color 0.2s ease;
 }
 
-.shipping-info-container>label {
+.shipping-info-container > label {
   display: block;
   margin-bottom: 8px;
   color: #333;
 }
 
-.shipping-info-container>input {
+.shipping-info-container > input {
   padding: 8px;
   margin-bottom: 16px;
   width: 100%;
@@ -398,4 +396,22 @@ input::placeholder {
 
 .shipping-summary {
   line-height: 5px;
+}
+
+.back-btn {
+  background-color: white;
+  color: #282c34;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+  transition: all 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  background-color: #ddd;
 }

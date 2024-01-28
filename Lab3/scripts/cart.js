@@ -155,6 +155,18 @@ function clickButton(buttonName) {
   billingButton.click();
 }
 
+function goBackToCart() {
+  clickButton("cart-button");
+}
+
+function goBackToBilling() {
+  clickButton("billing-button");
+}
+
+function goBackToShipping() {
+  clickButton("shipping-button");
+}
+
 document
   .getElementById("billing-form")
   .addEventListener("submit", function (event) {
