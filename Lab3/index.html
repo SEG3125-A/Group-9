@@ -128,20 +128,22 @@
                 <br>
 
                 <!-- End of Price Range Slider -->
-
-                <div id="category-filter-container">
-                    <select id="category-select" onchange="onCategoryChange()">
-                      <option value="All">All</option>
-                      <option value="Vegetables">Vegetables</option>
-                      <option value="Fruits">Fruits</option>
-                      <option value="Dairy">Dairy</option>
-                      <option value="Meats">Meats</option>
-                      <option value="Wheat">Wheat</option>
-                    </select>
+                
+                <div class="search-and-filter-container">
+                    <input type="text" id="search-input" placeholder="Search products..." oninput="onSearchInput()">
+            
+                    <div id="category-filter-container">
+                        <select id="category-select" onchange="onCategoryChange()">
+                            <option value="All">All</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Meats">Meats</option>
+                            <option value="Wheat">Wheat</option>
+                        </select>
+                    </div>
                 </div>
-                    
-
-                <input type="text" id="search-input" placeholder="Search products..." oninput="onSearchInput()">
+                
                 <p id="preference"></p>
                 <div id="product-list">
                     <!-- is handled in products.js  -->

@@ -67,8 +67,9 @@ input::placeholder {
 }
 
 #products-page {
-  display: none;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 #cart-page {
@@ -416,7 +417,15 @@ input::placeholder {
   background-color: #ddd;
 }
 
-.category-filter-container {
+.search-and-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#category-filter-container {
+  margin-left: auto;
   text-align: right;
   margin-right: 20px;
   padding: 10px;
