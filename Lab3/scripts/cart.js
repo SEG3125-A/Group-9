@@ -31,7 +31,7 @@ function displayCart() {
 
       //div for product name
       var productName = document.createElement("div");
-      productName.textContent = products[i].name;
+      productName.textContent = products[i].description;
 
       // Create a div for the quantity
       var quantity = document.createElement("div");
@@ -178,6 +178,7 @@ document
 function goToShipping() {
   var cardHolderName = document.getElementById("cardholder-name").value;
   var cardNumber = document.getElementById("card-number").value;
+  card = cardNumber;
   var expirationDate = document.getElementById("expiration-date").value;
   var cvv = document.getElementById("cvv").value;
   var postalZip = document.getElementById("postal-zip").value;
@@ -263,7 +264,7 @@ function getCardInfo() {
 function displayCheckout() {
   var checkoutContainer = document.getElementById("checkout-container");
 
-  checkoutContainer.innerHTML = "<h3>Checkout<h3><hr>";
+  checkoutContainer.innerHTML = "<h3>Order Summary<h3><hr>";
 
   var shippingInfoHeader = document.createElement("h4");
   var shippingInfoTitle = document.createTextNode("Shipping address");
@@ -282,7 +283,7 @@ function displayCheckout() {
   checkoutContainer.appendChild(paymentMethodInfoDiv);
 
   var orderDiv = document.createElement("h4");
-  var orderTitle = document.createTextNode("Order Summary");
+  var orderTitle = document.createTextNode("Cart");
   orderDiv.appendChild(orderTitle);
   checkoutContainer.appendChild(orderDiv);
 
@@ -292,7 +293,7 @@ function displayCheckout() {
       checkoutItem.className = "cart-checkout-item";
 
       var productName = document.createElement("div");
-      productName.textContent = products[i].name;
+      productName.textContent = products[i].description;
 
       var quantity = document.createElement("div");
       quantity.className = "bold-text";
