@@ -240,18 +240,6 @@ const products = [
     category: "Dairy",
   },
   {
-    name: "Chicken",
-    description: "Boneless Chicken Breast",
-    price: "$12.00 ea",
-    unitPrice: 12.00,
-    Vegan: false,
-    GlutenFree: true,
-    Organic: false,
-    NonOrganic: true,
-    image: "images/chicken.png",
-    category: "Meats",
-  },
-  {
     name: "Beef",
     description: "Beef Stewing Cubes",
     price: "$10.78 ea",
@@ -287,4 +275,16 @@ const products = [
     image: "images/veganMeat.png",
     category: "Meats",
   },
+  {
+    name: "Chicken",
+    description: "Boneless Chicken Breast",
+    price: "$12.00 ea",
+    unitPrice: 12.00,
+    Vegan: false,
+    GlutenFree: true,
+    Organic: false,
+    NonOrganic: true,
+    image: "images/chicken.png",
+    category: "Meats",
+  }
 ];

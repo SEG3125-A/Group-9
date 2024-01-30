@@ -1,3 +1,5 @@
+maxNumber = 10;
+minNumber = 0;
 
 function listenPriceChange(){
     const rangeInput = document.querySelectorAll(".range-input input");
@@ -6,7 +8,7 @@ function listenPriceChange(){
     let maxText = document.querySelector('.input-max')
     let priceGap = 0;
     
-    previousEntries = [0, 40];
+    previousEntries = [minNumber, maxNumber];
     updateBlueBar(previousEntries[0], previousEntries[1], rangeInput);
 
 
