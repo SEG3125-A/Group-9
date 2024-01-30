@@ -92,14 +92,15 @@ function displayProduct(product, index) {
 function displayPreference() {
   let result = "";
   preferenceDiv = document.getElementById("preference");
-  //preferenceDiv.innerHTML = `<p>You chose no dietary restrictions.</p>`;
+  preferenceDiv.innerHTML = `<p></p>`;
 
+  //no dietary preferences chosen (no checked boxes)
   if (dietaryPreferences.length == 0) return;
 
   for (i = 0; i < dietaryPreferences.length; i++) {
-    if (dietaryPreferences[i] == "None") {
-      return;
-    }
+    // if (dietaryPreferences[i] == "None") {
+    //   return;
+    // }
     if (dietaryPreferences[i] == "GlutenFree") result += `<li>Gluten-Free Products</li>`;
     else if (dietaryPreferences[i] == "NonOrganic")
       result += `<li>Non-Organic Products</li>`;
@@ -107,22 +108,39 @@ function displayPreference() {
       result += `<li>Non-Animal Products</li>`;
     else if (dietaryPreferences[i] == "Organic")
       result += `<li>Organic Products</li>`;
-      
   }
   preferenceDiv.innerHTML = `<p>Here are our products based on your preselection: <ul>${result}</ul></p>`;
 }
 
-function setDietaryPreferences(event) {
-  var selectedOptions = [];
-  var options = event.target.options;
+// function setDietaryPreferences(event) {
+//   var selectedOptions = [];
+//   var options = event.target.options;
 
-  for (i = 0; i < options.length; i++) {
-    if (options[i].selected) {
-      selectedOptions.push(options[i].value);
-    }
-  }
-  dietaryPreferences = selectedOptions;
+//   for (i = 0; i < options.length; i++) {
+//     if (options[i].selected) {
+//       selectedOptions.push(options[i].value);
+//     }
+//   }
+//   dietaryPreferences = selectedOptions;
+
+//   //document.getElementById('output').textContent = "Chosen Products: " + dietaryPreferences.join(", ");
+// }
+
+function updateDietaryPreferences() {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  var checkedValues = [];
+
+  checkboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+          checkedValues.push(checkbox.value);
+      }
+  });
+
+  dietaryPreferences = checkedValues;
+
+  //document.getElementById('output').textContent = "Chosen Products: " + checkedValues.join(", ");
 }
+
 
 function displayShoppingCart() {
   for (i = 0; i < products.length; i++) {

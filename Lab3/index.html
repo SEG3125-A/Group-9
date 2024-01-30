@@ -76,14 +76,13 @@
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
 
-                <p>Before you start, please provide us with the
+                <p>(Optional) Please feel free to provide us with the
                     following information, so that we can recommend you the products that fit you the best:
                 </p>
 
                 <div>
-                    <label for="dietary-options">What products would you like to shop for? <span
-                            style="color: red;">*</span></label>
-                    <select name="dietary-options" id="dietary-options" style="font-size: 18px; width: 40%;"
+                    <div for="dietary-options">What specific products would you like to shop for? </div>
+                    <!-- <select name="dietary-options" id="dietary-options" style="font-size: 18px; width: 40%;"
                         onchange="setDietaryPreferences(event)" multiple>
                         <option disabled selected>Select an option</option>
                         <option value="None">All Products</option>
@@ -91,8 +90,32 @@
                         <option value="GlutenFree">Gluten-Free Products</option>
                         <option value="Organic">Organic Products</option>
                         <option value="NonOrganic">Non-Organic Products</option>
-                    </select>
-                    </p>
+                    </select> -->
+
+                    <div class="checkbox-container">
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="Vegan" onchange="updateDietaryPreferences()">
+                            Non-Animal Products 
+                            <span class="checkmark"></span>
+                        </label>           
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="GlutenFree" onchange="updateDietaryPreferences()">
+                            Gluten-Free Products
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="Organic" onchange="updateDietaryPreferences()">
+                            Organic Products
+                            <span class="checkmark"></span>
+                        </label>  
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="NonOrganic" onchange="updateDietaryPreferences()">
+                            Non-Organic Products
+                            <span class="checkmark"></span>
+                        </label>  
+                    </div>
+                    <!-- <br>
+                    <div id="output"></div> -->
                 </div>
 
             </div>
