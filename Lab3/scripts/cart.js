@@ -9,7 +9,7 @@ var zipCode = "";
 
 function displayCart() {
   // Switches to cart page
-  clickButton("cart-button");
+  goToCart();
 
   var cartContainer = document.getElementById("cart-container");
 
@@ -82,7 +82,7 @@ function displayCart() {
     checkoutBtn.className = "checkout-btn";
     var text = document.createTextNode("Proceed to checkout");
     checkoutBtn.appendChild(text);
-    checkoutBtn.addEventListener("click", pay);
+    checkoutBtn.addEventListener("click", goToBilling);
 
     payContainer.appendChild(checkoutBtn);
     cartContainer.appendChild(payContainer);
@@ -102,7 +102,7 @@ function calculateSubtotalCost() {
   return totalCost.toFixed(2);
 }
 
-function changeCartTab(event, tabName) {
+function changeCartTab(index) {
   // If the cart is empty don't let the tab change
   if (emptyCart) return;
 
@@ -111,31 +111,26 @@ function changeCartTab(event, tabName) {
   let shipping = document.getElementById("shipping-container");
   let payment = document.getElementById("checkout-container");
 
-  let tabs = {
-    cart: cart,
-    billing: billing,
-    shipping: shipping,
-    payment: payment,
-  };
-  // Array that only contains document elements
-  let tabValues = Object.values(tabs);
-
-  // used code from lab to make buttons active
+  let tabs = [cart,billing,shipping,payment];
+  // all buttons
   buttonsNav = document.getElementsByClassName("btn-nav-cart");
-  for (i = 0; i < buttonsNav.length; i++) {
-    buttonsNav[i].className = buttonsNav[i].className.replace(" active", "");
-    tabValues[i].style.display = "none";
-  }
 
-  tabs[tabName].style.display = "block";
-  changeProgressBar(event);
-  event.currentTarget.className += " active";
+  var i = 0;
+  // for each button, change active, make tabs invisible 
+  for (let tab in tabs) {
+    buttonsNav[i].className = buttonsNav[i++].className.replace(" active", "");
+    tabs[tab].style.display = "none";
+  }
+  // make selected tab visible
+  tabs[index].style.display = "block";
+  nextButton = buttonsNav[index];
+  changeProgressBar(nextButton);
+  nextButton.className += " active";
 }
 
-function changeProgressBar(event) {
+function changeProgressBar(selectedButton) {
   const stepperItems = document.querySelectorAll(".stepper-item");
   stepperItems.forEach((item) => item.classList.remove("completed"));
-  const selectedButton = event.currentTarget;
   const selectedTabIndex = Array.from(stepperItems).indexOf(
     selectedButton.parentNode
   );
@@ -146,36 +141,32 @@ function changeProgressBar(event) {
 }
 
 // Switches to billing page
-function pay() {
-  clickButton("billing-button");
+
+function goToCart() {
+  changeCartTab(0);
 }
 
-function clickButton(buttonName) {
-  const billingButton = document.getElementById(buttonName);
-  billingButton.click();
+function goToBilling() {
+  changeCartTab(1);
 }
 
-function goBackToCart() {
-  clickButton("cart-button");
+function goToShipping(){
+  changeCartTab(2);
 }
 
-function goBackToBilling() {
-  clickButton("billing-button");
+function goToCheckout(){
+  changeCartTab(3);
 }
 
-function goBackToShipping() {
-  clickButton("shipping-button");
-}
 
 document
   .getElementById("billing-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-
     card = document.getElementById("card").value;
   });
 
-function goToShipping() {
+function displayShipping() {
   var cardHolderName = document.getElementById("cardholder-name").value;
   var cardNumber = document.getElementById("card-number").value;
   card = cardNumber;
@@ -189,7 +180,7 @@ function goToShipping() {
     document.getElementById("billing-feedback").style.color = "green";
     document.getElementById("billing-container").style.display = "none";
     document.getElementById("shipping-container").style.display = "block";
-    clickButton("shipping-button");
+    goToShipping();
   } else {
     document.getElementById("billing-feedback").textContent =
       "Please fill out all fields in the billing form.";
@@ -197,7 +188,7 @@ function goToShipping() {
   }
 }
 
-function gotoPayment() {
+function displayPayment() {
   firstName = document.getElementById("fname").value;
   lastName = document.getElementById("lname").value;
   street = document.getElementById("street").value;
@@ -211,7 +202,7 @@ function gotoPayment() {
     document.getElementById("shipping-container").style.display = "none";
     document.getElementById("shipping-feedback").style.color = "green";
     document.getElementById("shipping-container").style.display = "block";
-    clickButton("payment-button");
+    goToCheckout();
     displayCheckout();
   } else {
     document.getElementById("shipping-feedback").textContent =

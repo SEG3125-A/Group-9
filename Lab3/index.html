@@ -176,32 +176,28 @@
             <div id="cart-page">
                 <div class="stepper-wrapper">
                     <div class="stepper-item">
-                        <button class="step-counter btn-nav-cart active" id="cart-button" type="button"
-                            onclick="changeCartTab(event, 'cart')">
+                        <button class="step-counter btn-nav-cart active" id="cart-button" type="button">
                             <div class="button-content">1
                             </div>
                         </button>
                         <div>Cart</div>
                     </div>
                     <div class="stepper-item">
-                        <button class="step-counter btn-nav-cart" id="billing-button" type="button"
-                            onclick="changeCartTab(event, 'billing')">
+                        <button class="step-counter btn-nav-cart" id="billing-button" type="button">
                             <div class="button-content">2
                             </div>
                         </button>
                         <div>Payment Method</div>
                     </div>
                     <div class="stepper-item">
-                        <button class="step-counter btn-nav-cart" id="shipping-button" type="button"
-                            onclick="changeCartTab(event, 'shipping')">
+                        <button class="step-counter btn-nav-cart" id="shipping-button" type="button">
                             <div class="button-content">3
                             </div>
                         </button>
                         <div>Shipping</div>
                     </div>
                     <div class="stepper-item">
-                        <button class="step-counter btn-nav-cart" id="payment-button" type="button"
-                            onclick="changeCartTab(event, 'payment')">
+                        <button class="step-counter btn-nav-cart" id="payment-button" type="button">
                             <div class="button-content">4
                             </div>
                         </button>
@@ -214,7 +210,7 @@
                     <!-- is handled in cart.js -->
                 </div>
                 <div id="billing-container" style="display: none;">
-                    <button type="button" class="back-btn" onclick="goBackToCart()">Go Back</button>
+                    <button type="button" class="back-btn" onclick="goToCart()">Go Back</button>
                     <p id="billing-feedback" class="feedback-message"></p>
                     <form id="billing-form">
                         <div class="form-group">
@@ -238,11 +234,11 @@
                             <label for="postal-zip">Postal/ZIP Code:</label>
                             <input type="text" id="postal-zip" name="postal-zip" placeholder="Postal/ZIP">
                         </div>
-                        <button type="button" class="next-btn" onclick="goToShipping()">Next Page</button>
+                        <button type="button" class="next-btn" onclick="displayShipping()">Next Page</button>
                     </form>
                 </div>
                 <div id="shipping-container" style="display:none">
-                    <button type="button" class="back-btn" onclick="goBackToBilling()">Go Back</button>
+                    <button type="button" class="back-btn" onclick="goToBilling()">Go Back</button>
                     <p id="shipping-feedback" class="feedback-message"></p>
                     <form class="shipping-form">
                         <h2 style="color: #333;">Ship To</h2>
@@ -268,13 +264,13 @@
                         </div>
 
                         <div class="shipping-btn-container">
-                            <button type="button" class="shipping-btn" onclick="gotoPayment()">Next Page</button>
+                            <button type="button" class="shipping-btn" onclick="displayPayment()">Next Page</button>
                         </div>
 
                     </form>
                 </div>
                 <div id="checkout-container" style="display: none;">
-                    <button type="button" class="back-btn" onclick="goBackToShipping()">Go Back</button>
+                    <button type="button" class="back-btn" onclick="goToShipping()">Go Back</button>
                     <!-- is handled in cart.js -->
                 </div>
             </div>
