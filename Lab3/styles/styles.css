@@ -67,9 +67,8 @@ input::placeholder {
 }
 
 #products-page {
+  display: none;
   padding: 25px;
-  display: flex;
-  flex-direction: column;
 }
 
 #cart-page {
