@@ -92,7 +92,7 @@ function displayProduct(product, index) {
 function displayPreference() {
   let result = "";
   preferenceDiv = document.getElementById("preference");
-  preferenceDiv.innerHTML = `<p>You chose no dietary restrictions.</p>`;
+  //preferenceDiv.innerHTML = `<p>You chose no dietary restrictions.</p>`;
 
   if (dietaryPreferences.length == 0) return;
 
@@ -100,12 +100,16 @@ function displayPreference() {
     if (dietaryPreferences[i] == "None") {
       return;
     }
-    if (dietaryPreferences[i] == "GlutenFree") result += `<li>Gluten-free</li>`;
+    if (dietaryPreferences[i] == "GlutenFree") result += `<li>Gluten-Free Products</li>`;
     else if (dietaryPreferences[i] == "NonOrganic")
-      result += `<li>Non-organic</li>`;
-    else result += `<li>${dietaryPreferences[i]}</li>`;
+      result += `<li>Non-Organic Products</li>`;
+    else if (dietaryPreferences[i] == "Vegan")
+      result += `<li>Non-Animal Products</li>`;
+    else if (dietaryPreferences[i] == "Organic")
+      result += `<li>Organic Products</li>`;
+      
   }
-  preferenceDiv.innerHTML = `<p>Chosen dietary restrictions: <ul>${result}</ul></p>`;
+  preferenceDiv.innerHTML = `<p>Here are our products based on your preselection: <ul>${result}</ul></p>`;
 }
 
 function setDietaryPreferences(event) {
