@@ -1,4 +1,4 @@
-## Lab 2: Grocery store website
+## Lab 3: Grocery store website
 
 Amar Ghazi (300202841)
 Selin Kararmaz (300163876)
