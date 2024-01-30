@@ -240,7 +240,6 @@ function getShippingInfo() {
   shippingInfoDiv.appendChild(addressLine1);
   shippingInfoDiv.appendChild(addressLine2);
 
-  console.log(shippingInfoDiv);
   return shippingInfoDiv;
 }
 
@@ -248,9 +247,6 @@ function getCardInfo() {
   var paymentMethodDiv = document.createElement("div");
   paymentMethodDiv.style.lineHeight = "5px";
   var paymentMethodLine = document.createElement("p");
-  console.log(typeof card);
-  console.log(card);
-  console.log(card.trim().slice(-4));
   var cardInfoEnd = document.createTextNode(
     `Paying with card ending in ${card.slice(-4)}`
   );
