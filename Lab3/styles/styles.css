@@ -86,9 +86,10 @@ input::placeholder {
 }
 
 .product {
+  position: relative;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 15px;
+  height: 22em;
   background-color: white;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -106,23 +107,39 @@ input::placeholder {
 
 .product p {
   color: #666;
+  margin: 0; 
+  font-size: 2vh;
+}
+
+.quantity-bottom-div{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 23%;
+  width: 100%;
+  justify-content: center;
 }
 
 .quantity-selector {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  display: table-row;
+  width: 100%;
   justify-content: center;
-  margin-top: 10px;
+  align-items: center;
+  bottom: 0;
+  padding-bottom: 2%;
 }
 
 .quantity-selector button {
   background-color: #282c34;
   color: white;
   border: none;
-  padding: 5px 10px;
-  margin: 0 5px;
   cursor: pointer;
   border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  font-size: 12px;
   transition: transform 0.3s ease;
 }
 
@@ -137,7 +154,6 @@ input::placeholder {
 
 .quantity-selector button,
 .quantity-selector span {
-  margin: 0 5px;
   padding: 5px 10px;
   text-align: center;
 }

@@ -79,8 +79,10 @@ function displayProduct(product, index) {
         <div class="product-img">
           <img src=${product.image} alt=${product.name}>
         </div>
-        <p>${product.description}</p>
-        <p>${product.price}</p>
+        <div class="quantity-bottom-div">
+          <p>${product.description}</p>
+          <p>${product.price}</p>
+        </div>
         <div class="quantity-selector">
             <button onclick="changeQuantity('minus', ${index})">-</button>
             <span id="quantity-${index}">${quantities[index]}</span>
