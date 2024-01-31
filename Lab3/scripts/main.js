@@ -26,6 +26,8 @@ function displayTab(event, tabName) {
     cart.style.display = "none";
 
   } else if (tabName == productPage) {
+    resetFont("products");
+
     customer.style.display = "none";
     products.style.display = "block";
     cart.style.display = "none";
@@ -53,6 +55,8 @@ function changeFont(fontSize, page){
     // dont change the progress bar, it's a hustle
     customerInfoElements = document.body.querySelectorAll('.checkout-container-wrapper *');}
   else if(page == "customer") customerInfoElements = document.body.querySelectorAll('#customer-info *');
+  else if(page == "products") customerInfoElements = document.body.querySelectorAll('.price-range-slider, .search-and-filter-container *');
+  else return;
 
   var desiredFontSize = fontSize;
   for (var i = 0; i < customerInfoElements.length; i++) {
