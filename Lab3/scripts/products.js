@@ -1,6 +1,8 @@
 const quantities = new Array(products.length).fill(0);
 let selectedCategory = "All";
 
+products.sort((a, b) => a.unitPrice - b.unitPrice);
+
 function changeQuantity(action, index) {
   if (action === "plus") {
     quantities[index]++;
