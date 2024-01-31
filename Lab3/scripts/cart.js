@@ -7,6 +7,32 @@ var city = "";
 var province = "";
 var zipCode = "";
 
+const CartTabs = {
+  CART: 0,
+  PAYMENT: 1,
+  SHIPPING: 2,
+  SUMMARY: 3,
+};
+
+// Tab switches
+
+function goToCart() {
+  changeCartTab(CartTabs.CART);
+}
+
+function goToPayment() {
+  changeCartTab(CartTabs.PAYMENT);
+}
+
+function goToShipping(){
+  changeCartTab(CartTabs.SHIPPING);
+}
+
+function goToSummary(){
+  changeCartTab(CartTabs.SUMMARY);
+}
+
+
 function displayCart() {
   // Switches to cart page
   goToCart();
@@ -82,7 +108,7 @@ function displayCart() {
     checkoutBtn.className = "checkout-btn";
     var text = document.createTextNode("Proceed to checkout");
     checkoutBtn.appendChild(text);
-    checkoutBtn.addEventListener("click", goToBilling);
+    checkoutBtn.addEventListener("click", goToPayment);
 
     payContainer.appendChild(checkoutBtn);
     cartContainer.appendChild(payContainer);
@@ -140,23 +166,7 @@ function changeProgressBar(selectedButton) {
   }
 }
 
-// Switches to billing page
 
-function goToCart() {
-  changeCartTab(0);
-}
-
-function goToBilling() {
-  changeCartTab(1);
-}
-
-function goToShipping(){
-  changeCartTab(2);
-}
-
-function goToCheckout(){
-  changeCartTab(3);
-}
 
 
 document
@@ -202,7 +212,7 @@ function displayPayment() {
     document.getElementById("shipping-container").style.display = "none";
     document.getElementById("shipping-feedback").style.color = "green";
     document.getElementById("shipping-container").style.display = "block";
-    goToCheckout();
+    goToSummary();
     displayCheckout();
   } else {
     document.getElementById("shipping-feedback").textContent =
