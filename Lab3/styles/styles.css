@@ -260,6 +260,9 @@ input::placeholder {
   border-color: #007bff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
+.feedback{
+  display: none;
+}
 
 #billing-container {
   background-color: #fff;
@@ -470,3 +473,4 @@ input::placeholder {
   cursor: pointer;
   transform: scale(1.5);
 }
+

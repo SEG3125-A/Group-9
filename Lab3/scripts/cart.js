@@ -15,7 +15,6 @@ const CartTabs = {
 };
 
 // Tab switches
-
 function goToCart() {
   changeCartTab(CartTabs.CART);
 }
@@ -32,7 +31,48 @@ function goToSummary(){
   changeCartTab(CartTabs.SUMMARY);
 }
 
+////////////////// HANDLE TAB CHANGES ///////////////////
+// Changes the tabs in the checkout
+function changeCartTab(index) {
+  // If the cart is empty don't let the tab change
+  if (emptyCart) return;
 
+  let cart = document.getElementById("cart-container");
+  let billing = document.getElementById("billing-container");
+  let shipping = document.getElementById("shipping-container");
+  let payment = document.getElementById("checkout-container");
+
+  let tabs = [cart,billing,shipping,payment];
+  // all buttons
+  buttonsNav = document.getElementsByClassName("btn-nav-cart");
+
+  var i = 0;
+  // for each button, change active, make tabs invisible 
+  for (let tab in tabs) {
+    buttonsNav[i].className = buttonsNav[i++].className.replace(" active", "");
+    tabs[tab].style.display = "none";
+  }
+  // make selected tab visible
+  tabs[index].style.display = "block";
+  nextButton = buttonsNav[index];
+  changeProgressBar(nextButton);
+  nextButton.className += " active";
+}
+
+function changeProgressBar(selectedButton) {
+  const stepperItems = document.querySelectorAll(".stepper-item");
+  stepperItems.forEach((item) => item.classList.remove("completed"));
+  const selectedTabIndex = Array.from(stepperItems).indexOf(
+    selectedButton.parentNode
+  );
+
+  for (let i = 0; i <= selectedTabIndex - 1; i++) {
+    stepperItems[i].classList.add("completed");
+  }
+}
+
+
+////////////////// CART PAGE ///////////////////
 function displayCart() {
   // Switches to cart page
   goToCart();
@@ -108,6 +148,8 @@ function displayCart() {
     checkoutBtn.className = "checkout-btn";
     var text = document.createTextNode("Proceed to checkout");
     checkoutBtn.appendChild(text);
+
+    // Change tab 
     checkoutBtn.addEventListener("click", goToPayment);
 
     payContainer.appendChild(checkoutBtn);
@@ -120,62 +162,8 @@ function displayCart() {
   }
 }
 
-function calculateSubtotalCost() {
-  var totalCost = 0;
-  for (i = 0; i < products.length; i++) {
-    totalCost = totalCost + products[i].unitPrice * quantities[i];
-  }
-  return totalCost.toFixed(2);
-}
 
-function changeCartTab(index) {
-  // If the cart is empty don't let the tab change
-  if (emptyCart) return;
-
-  let cart = document.getElementById("cart-container");
-  let billing = document.getElementById("billing-container");
-  let shipping = document.getElementById("shipping-container");
-  let payment = document.getElementById("checkout-container");
-
-  let tabs = [cart,billing,shipping,payment];
-  // all buttons
-  buttonsNav = document.getElementsByClassName("btn-nav-cart");
-
-  var i = 0;
-  // for each button, change active, make tabs invisible 
-  for (let tab in tabs) {
-    buttonsNav[i].className = buttonsNav[i++].className.replace(" active", "");
-    tabs[tab].style.display = "none";
-  }
-  // make selected tab visible
-  tabs[index].style.display = "block";
-  nextButton = buttonsNav[index];
-  changeProgressBar(nextButton);
-  nextButton.className += " active";
-}
-
-function changeProgressBar(selectedButton) {
-  const stepperItems = document.querySelectorAll(".stepper-item");
-  stepperItems.forEach((item) => item.classList.remove("completed"));
-  const selectedTabIndex = Array.from(stepperItems).indexOf(
-    selectedButton.parentNode
-  );
-
-  for (let i = 0; i <= selectedTabIndex - 1; i++) {
-    stepperItems[i].classList.add("completed");
-  }
-}
-
-
-
-
-document
-  .getElementById("billing-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    card = document.getElementById("card").value;
-  });
-
+////////////////// SHIPPING PAGE ///////////////////
 function displayShipping() {
   var cardHolderName = document.getElementById("cardholder-name").value;
   var cardNumber = document.getElementById("card-number").value;
@@ -185,18 +173,47 @@ function displayShipping() {
   var postalZip = document.getElementById("postal-zip").value;
 
   if (cardHolderName && cardNumber && expirationDate && cvv && postalZip) {
-    document.getElementById("billing-feedback").textContent =
-      "Billing information saved successfully.";
-    document.getElementById("billing-feedback").style.color = "green";
-    document.getElementById("billing-container").style.display = "none";
-    document.getElementById("shipping-container").style.display = "block";
-    goToShipping();
+    displayFeedback(true, CartTabs.SHIPPING);
+    
   } else {
-    document.getElementById("billing-feedback").textContent =
-      "Please fill out all fields in the billing form.";
-    document.getElementById("billing-feedback").style.color = "red";
+    displayFeedback(false);
+  }
+  document
+  .getElementById("billing-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    card = document.getElementById("card").value;
+  });
+}
+
+function displayFeedback(succesful, nextPage){
+  var feedbackContainer = document.querySelectorAll("#feedback");
+  
+  var index = nextPage - 2;
+
+  if(succesful){
+    feedbackContainer[index].style.color = "green";
+    feedbackContainer[index].textContent = "Information saved successfully";
+
+    // Change Tab after the message is shown
+    setTimeout(() => {
+      changeCartTab(nextPage);
+      closeFeedback(feedbackContainer);
+    }, 500);
+  }else{
+    feedbackContainer[index].style.color = "red";
+    feedbackContainer[index].textContent = "Please fill out all fields in the form";
+  }
+  feedbackContainer[index].style.display = "block";
+}
+
+function closeFeedback(feedbackContainer){
+  for(i = 0; i < feedbackContainer.length; i++){
+    feedbackContainer[i].style.display = "none";
   }
 }
+
+////////////////// PAYMENT PAGE ///////////////////
 
 function displayPayment() {
   firstName = document.getElementById("fname").value;
@@ -207,20 +224,14 @@ function displayPayment() {
   zipCode = document.getElementById("zip").value;
 
   if (firstName && lastName && street && city && province && zipCode) {
-    document.getElementById("shipping-feedback").textContent =
-      "Shipping information saved successfully.";
-    document.getElementById("shipping-container").style.display = "none";
-    document.getElementById("shipping-feedback").style.color = "green";
-    document.getElementById("shipping-container").style.display = "block";
-    goToSummary();
+    displayFeedback(true, CartTabs.SUMMARY);
     displayCheckout();
   } else {
-    document.getElementById("shipping-feedback").textContent =
-      "Please fill out all fields in the shipping form.";
-    document.getElementById("shipping-feedback").style.color = "red";
+    displayFeedback(false);
   }
 }
 
+////////////////// CHECKOUT PAGE ///////////////////
 function getShippingInfo() {
   var shippingInfoDiv = document.createElement("div");
   shippingInfoDiv.className = "shipping-summary";
@@ -261,7 +272,8 @@ function getCardInfo() {
 function displayCheckout() {
   var checkoutContainer = document.getElementById("checkout-container");
 
-  checkoutContainer.innerHTML = "<h3>Order Summary<h3><hr>";
+  checkoutContainer.innerHTML = "<button type='button' class='back-btn' onclick='goToShipping()'>Go Back</button>";
+  checkoutContainer.innerHTML += "<h3>Order Summary<h3><hr>";
 
   var shippingInfoHeader = document.createElement("h4");
   var shippingInfoTitle = document.createTextNode("Shipping address");
@@ -390,4 +402,13 @@ function placeOrder() {
 
 function closePaymentMessage() {
   document.getElementById("payment-message").style.display = "none";
+}
+
+
+function calculateSubtotalCost() {
+  var totalCost = 0;
+  for (i = 0; i < products.length; i++) {
+    totalCost = totalCost + products[i].unitPrice * quantities[i];
+  }
+  return totalCost.toFixed(2);
 }
