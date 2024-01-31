@@ -75,6 +75,9 @@ function displayProduct(product, index) {
   productDiv.className = "product";
 
   productDiv.innerHTML = `
+        <div class="read-product">
+          <button class="read-product-button" onclick="textToSpeech('${product.description}', '${product.price}')"></button>
+        </div>
         <h3>${product.name}</h3>
         <div class="product-img">
           <img src=${product.image} alt=${product.name}>

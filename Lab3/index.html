@@ -13,6 +13,13 @@
 
 <body>
 
+    <script>
+        function readText() {
+            const textToRead = document.getElementById("textToRead").textContent;
+            const utterance = new SpeechSynthesisUtterance(textToRead);
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
     <div class="big-wrapper">
         <div class="main-content">
             <h1>

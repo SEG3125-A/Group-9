@@ -111,6 +111,20 @@ input::placeholder {
   font-size: 2vh;
 }
 
+
+.read-product{
+  position: absolute;
+}
+.read-product-button{
+  background-image: url("../images/speech.png");
+  background-color: white;
+  height: 42px;
+  background-size: cover;
+  width: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
 .quantity-bottom-div{
   position: absolute;
   display: flex;

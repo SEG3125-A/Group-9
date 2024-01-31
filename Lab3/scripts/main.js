@@ -37,3 +37,10 @@ function displayTab(event, tabName) {
   event.currentTarget.className += " active";
 }
 
+
+
+function textToSpeech(productDescription, productPrice) {
+  const textToRead = productDescription + " " + productPrice;
+  const utterance = new SpeechSynthesisUtterance(textToRead);
+  window.speechSynthesis.speak(utterance);
+}
