@@ -20,10 +20,16 @@ function goToCart() {
 }
 
 function goToPayment() {
+  // To prevent "Please fill out all fields in the form" message to appear after returning from other tabs
+  closeFeedback();
+
   changeCartTab(CartTabs.PAYMENT);
 }
 
 function goToShipping(){
+  // To prevent "Please fill out all fields in the form" message to appear after returning from other tabs
+  closeFeedback();
+
   changeCartTab(CartTabs.SHIPPING);
 }
 
@@ -165,6 +171,7 @@ function displayCart() {
 
 ////////////////// SHIPPING PAGE ///////////////////
 function displayShipping() {
+
   var cardHolderName = document.getElementById("cardholder-name").value;
   var cardNumber = document.getElementById("card-number").value;
   card = cardNumber;
@@ -198,7 +205,7 @@ function displayFeedback(succesful, nextPage){
     // Change Tab after the message is shown
     setTimeout(() => {
       changeCartTab(nextPage);
-      closeFeedback(feedbackContainer);
+      closeFeedback();
     }, 500);
   }else{
     feedbackContainer[index].style.color = "red";
@@ -207,7 +214,9 @@ function displayFeedback(succesful, nextPage){
   feedbackContainer[index].style.display = "block";
 }
 
-function closeFeedback(feedbackContainer){
+function closeFeedback(){
+  console.log("y")
+  var feedbackContainer = document.querySelectorAll("#feedback");
   for(i = 0; i < feedbackContainer.length; i++){
     feedbackContainer[i].style.display = "none";
   }
@@ -216,6 +225,7 @@ function closeFeedback(feedbackContainer){
 ////////////////// PAYMENT PAGE ///////////////////
 
 function displayPayment() {
+
   firstName = document.getElementById("fname").value;
   lastName = document.getElementById("lname").value;
   street = document.getElementById("street").value;

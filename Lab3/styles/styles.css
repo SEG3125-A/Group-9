@@ -415,6 +415,15 @@ input::placeholder {
   transition: all 0.2s ease-in-out;
 }
 
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px; 
+}
+
+#checkbox{
+  accent-color: #6cd965;
+}
 
 .back-btn:hover {
   background-color: #ddd;
