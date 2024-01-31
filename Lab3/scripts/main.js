@@ -2,6 +2,10 @@ const customerInfo = "customer-info";
 const productPage = "products-page";
 const cartPage = "cart-page";
 let dietaryPreferences = "";
+let fontSmall = true;
+
+smallFontSize = "20px";
+bigFontSize = "30px";
 
 function displayTab(event, tabName) {
   let customer = document.getElementById(customerInfo);
@@ -15,6 +19,8 @@ function displayTab(event, tabName) {
   }
 
   if (tabName == customerInfo) {
+    resetFont("customer");
+
     customer.style.display = "block";
     products.style.display = "none";
     cart.style.display = "none";
@@ -26,6 +32,8 @@ function displayTab(event, tabName) {
     listenPriceChange();
 
   } else if (tabName == cartPage) {
+    resetFont("cart");
+    
     customer.style.display = "none";
     products.style.display = "none";
     cart.style.display = "block";
@@ -38,6 +46,31 @@ function displayTab(event, tabName) {
 }
 
 
+
+function changeFont(fontSize, page){
+  var customerInfoElements;
+  if(page == "cart") {
+    // dont change the progress bar, it's a hustle
+    customerInfoElements = document.body.querySelectorAll('.checkout-container-wrapper *');}
+  else if(page == "customer") customerInfoElements = document.body.querySelectorAll('#customer-info *');
+
+  var desiredFontSize = fontSize;
+  for (var i = 0; i < customerInfoElements.length; i++) {
+    customerInfoElements[i].style.fontSize = desiredFontSize;
+  }
+}
+
+function resetFont(page){
+  fontSmall = true;
+  changeFont(smallFontSize, page);
+}
+
+function toggleFontSize(page){
+  if(fontSmall){
+    changeFont(bigFontSize, page);
+  }else changeFont(smallFontSize, page);
+  fontSmall = !fontSmall;
+}
 
 function textToSpeech(productDescription, productPrice) {
   const textToRead = productDescription + " " + productPrice;

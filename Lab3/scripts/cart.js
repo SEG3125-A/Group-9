@@ -40,6 +40,8 @@ function goToSummary(){
 ////////////////// HANDLE TAB CHANGES ///////////////////
 // Changes the tabs in the checkout
 function changeCartTab(index) {
+  resetFont("cart");
+  
   // If the cart is empty don't let the tab change
   if (emptyCart) return;
 

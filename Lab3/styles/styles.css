@@ -125,6 +125,21 @@ input::placeholder {
   border: none;
   cursor: pointer;
 }
+
+.change-font-wrapper{
+  position: absolute;
+  right: 0;
+  padding-right: 5%;
+}
+.change-font-size{
+  background-image: url("../images/fontSize.png");
+  height: 50px;
+  background-size: cover;
+  width: 50px;
+  border-radius: 20%;
+  border: none;
+  cursor: pointer;
+}
 .quantity-bottom-div{
   position: absolute;
   display: flex;
