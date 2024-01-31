@@ -107,7 +107,7 @@ function displayPreference() {
     else if (dietaryPreferences[i] == "NonOrganic")
       result += `<li>Non-Organic Products</li>`;
     else if (dietaryPreferences[i] == "Vegan")
-      result += `<li>Non-Animal Products</li>`;
+      result += `<li>Vegan Products</li>`;
     else if (dietaryPreferences[i] == "Organic")
       result += `<li>Organic Products</li>`;
   }
@@ -132,10 +132,10 @@ function updateDietaryPreferences() {
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
   var checkedValues = [];
 
-  checkboxes.forEach(function(checkbox) {
-      if (checkbox.checked) {
-          checkedValues.push(checkbox.value);
-      }
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      checkedValues.push(checkbox.value);
+    }
   });
 
   dietaryPreferences = checkedValues;
