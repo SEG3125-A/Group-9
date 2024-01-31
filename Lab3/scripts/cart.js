@@ -176,7 +176,7 @@ function displayShipping() {
     displayFeedback(true, CartTabs.SHIPPING);
     
   } else {
-    displayFeedback(false);
+    displayFeedback(false, CartTabs.SHIPPING);
   }
   document
   .getElementById("billing-form")
@@ -227,7 +227,7 @@ function displayPayment() {
     displayFeedback(true, CartTabs.SUMMARY);
     displayCheckout();
   } else {
-    displayFeedback(false);
+    displayFeedback(false, CartTabs.SUMMARY);
   }
 }
 
