@@ -233,6 +233,7 @@ input::placeholder {
   cursor: pointer;
   padding: 15px;
   font-size: 16px;
+  transition: all 0.4s ease-in-out;
 }
 
 .checkout-btn:hover {
@@ -457,8 +458,8 @@ input::placeholder {
   width: 100%;
   box-sizing: border-box;
   transition: background-color 0.2s ease;
-  transition: all 0.2s ease-in-out;
 }
+
 
 .checkbox-label input[type="checkbox"] {
   width: 20px;
