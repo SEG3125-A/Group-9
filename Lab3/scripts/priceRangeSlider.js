@@ -1,4 +1,4 @@
-maxNumber = 10;
+maxNumber = 20;
 minNumber = 0;
 
 function listenPriceChange(){
