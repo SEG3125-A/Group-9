@@ -76,7 +76,7 @@ function displayProduct(product, index) {
 
   productDiv.innerHTML = `
         <div class="read-product">
-          <button class="read-product-button" onclick="textToSpeech('${product.description}', '${product.price}')"></button>
+          <button class="read-product-button" onclick="textToSpeech('${product.description}', '${product.price}', '${index}')"></button>
         </div>
         <h3>${product.name}</h3>
         <div class="product-img">
@@ -87,9 +87,9 @@ function displayProduct(product, index) {
           <p>${product.price}</p>
         </div>
         <div class="quantity-selector">
-            <button onclick="changeQuantity('minus', ${index})">-</button>
+            <button class='product-button' onclick="changeQuantity('minus', ${index})">-</button>
             <span id="quantity-${index}">${quantities[index]}</span>
-            <button onclick="changeQuantity('plus', ${index})">+</button>
+            <button class='product-button' onclick="changeQuantity('plus', ${index})">+</button>
         </div>
     `;
 

@@ -78,8 +78,8 @@ function toggleFontSize(page){
   fontSmall = !fontSmall;
 }
 
-function textToSpeech(productDescription, productPrice) {
-  const textToRead = productDescription + " " + productPrice;
+function textToSpeech(productDescription, productPrice, index) {
+  const textToRead = productDescription + " " + productPrice + " Chosen amount is " + quantities[index];
   const utterance = new SpeechSynthesisUtterance(textToRead);
   window.speechSynthesis.speak(utterance);
 }
