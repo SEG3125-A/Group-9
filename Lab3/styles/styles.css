@@ -141,6 +141,8 @@ input::placeholder {
   border-radius: 20%;
   border: none;
   cursor: pointer;
+  background-color: beige;
+  box-shadow: 0 0 5px rgba(245, 245, 220, 0.5);
 }
 
 .quantity-bottom-div {
