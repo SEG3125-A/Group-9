@@ -26,14 +26,14 @@ function goToPayment() {
   changeCartTab(CartTabs.PAYMENT);
 }
 
-function goToShipping(){
+function goToShipping() {
   // To prevent "Please fill out all fields in the form" message to appear after returning from other tabs
   closeFeedback();
 
   changeCartTab(CartTabs.SHIPPING);
 }
 
-function goToSummary(){
+function goToSummary() {
   changeCartTab(CartTabs.SUMMARY);
 }
 
@@ -41,7 +41,7 @@ function goToSummary(){
 // Changes the tabs in the checkout
 function changeCartTab(index) {
   resetFont("cart");
-  
+
   // If the cart is empty don't let the tab change
   if (emptyCart) return;
 
@@ -50,7 +50,7 @@ function changeCartTab(index) {
   let shipping = document.getElementById("shipping-container");
   let payment = document.getElementById("checkout-container");
 
-  let tabs = [cart,billing,shipping,payment];
+  let tabs = [cart, billing, shipping, payment];
   // all buttons
   buttonsNav = document.getElementsByClassName("btn-nav-cart");
 
@@ -183,24 +183,24 @@ function displayShipping() {
 
   if (cardHolderName && cardNumber && expirationDate && cvv && postalZip) {
     displayFeedback(true, CartTabs.SHIPPING);
-    
+
   } else {
     displayFeedback(false, CartTabs.SHIPPING);
   }
   document
-  .getElementById("billing-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    card = document.getElementById("card").value;
-  });
+    .getElementById("billing-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      card = document.getElementById("card").value;
+    });
 }
 
-function displayFeedback(succesful, nextPage){
+function displayFeedback(succesful, nextPage) {
   var feedbackContainer = document.querySelectorAll("#feedback");
-  
+
   var index = nextPage - 2;
 
-  if(succesful){
+  if (succesful) {
     feedbackContainer[index].style.color = "green";
     feedbackContainer[index].textContent = "Information saved successfully";
 
@@ -209,17 +209,16 @@ function displayFeedback(succesful, nextPage){
       changeCartTab(nextPage);
       closeFeedback();
     }, 500);
-  }else{
+  } else {
     feedbackContainer[index].style.color = "red";
     feedbackContainer[index].textContent = "Please fill out all fields in the form";
   }
   feedbackContainer[index].style.display = "block";
 }
 
-function closeFeedback(){
-  console.log("y")
+function closeFeedback() {
   var feedbackContainer = document.querySelectorAll("#feedback");
-  for(i = 0; i < feedbackContainer.length; i++){
+  for (i = 0; i < feedbackContainer.length; i++) {
     feedbackContainer[i].style.display = "none";
   }
 }

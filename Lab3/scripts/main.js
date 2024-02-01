@@ -37,27 +37,25 @@ function displayTab(event, tabName) {
 
   } else if (tabName == cartPage) {
     resetFont("cart");
-    
+
     customer.style.display = "none";
     products.style.display = "none";
     cart.style.display = "block";
     displayCart();
   }
   changeProgressBar(event)
-  console.log(products.style.display === "none");
 
   event.currentTarget.className += " active";
 }
 
-
-
-function changeFont(fontSize, page){
+function changeFont(fontSize, page) {
   var customerInfoElements;
-  if(page == "cart") {
+  if (page == "cart") {
     // dont change the progress bar, it's a hustle
-    customerInfoElements = document.body.querySelectorAll('.checkout-container-wrapper *');}
-  else if(page == "customer") customerInfoElements = document.body.querySelectorAll('#customer-info *');
-  else if(page == "products") customerInfoElements = document.body.querySelectorAll('.price-range-slider, .preference-container *');
+    customerInfoElements = document.body.querySelectorAll('.checkout-container-wrapper *');
+  }
+  else if (page == "customer") customerInfoElements = document.body.querySelectorAll('#customer-info *');
+  else if (page == "products") customerInfoElements = document.body.querySelectorAll('.price-range-slider, .preference-container, #preference *');
   else return;
 
   var desiredFontSize = fontSize;
@@ -66,15 +64,15 @@ function changeFont(fontSize, page){
   }
 }
 
-function resetFont(page){
+function resetFont(page) {
   fontSmall = true;
   changeFont(smallFontSize, page);
 }
 
-function toggleFontSize(page){
-  if(fontSmall){
+function toggleFontSize(page) {
+  if (fontSmall) {
     changeFont(bigFontSize, page);
-  }else changeFont(smallFontSize, page);
+  } else changeFont(smallFontSize, page);
   fontSmall = !fontSmall;
 }
 

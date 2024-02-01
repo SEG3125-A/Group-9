@@ -39,7 +39,7 @@
             </div>
 
             <div id="customer-info">
-                <div class ="change-font-wrapper">
+                <div class="change-font-wrapper">
                     <button class="change-font-size" onClick="toggleFontSize('customer')"></button>
                 </div>
 
@@ -102,7 +102,8 @@
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-label">
-                            <input type="checkbox" id="checkbox" value="GlutenFree" onchange="updateDietaryPreferences()">
+                            <input type="checkbox" id="checkbox" value="GlutenFree"
+                                onchange="updateDietaryPreferences()">
                             Gluten-Free Products
                             <span class="checkmark"></span>
                         </label>
@@ -112,7 +113,8 @@
                             <span class="checkmark"></span>
                         </label>
                         <label class="checkbox-label">
-                            <input type="checkbox" id="checkbox"value="NonOrganic" onchange="updateDietaryPreferences()">
+                            <input type="checkbox" id="checkbox" value="NonOrganic"
+                                onchange="updateDietaryPreferences()">
                             Non-Organic Products
                             <span class="checkmark"></span>
                         </label>
@@ -124,14 +126,30 @@
             </div>
 
             <div id="products-page">
-                <div class ="change-font-wrapper">
+                <div class="change-font-wrapper">
                     <button class="change-font-size" onClick="toggleFontSize('products')"></button>
                 </div>
                 <h2>Products</h2>
                 <hr>
 
-                <!-- Start of Price Range Slider -->
+                <div class="preference-container">
+                    <div class="search-and-filter-container">
+                        <input type="text" id="search-input" placeholder="Search products..." oninput="onSearchInput()">
 
+                        <div id="category-filter-container">
+                            <select id="category-select" onchange="onCategoryChange()">
+                                <option value="All">All</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Fruits">Fruits</option>
+                                <option value="Dairy">Dairy</option>
+                                <option value="Meats">Meats</option>
+                                <option value="Wheat">Wheat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start of Price Range Slider -->
                 <div class="price-range-slider">
                     <div class="price-range-values">
                         <div class="price-range-text">Price Range</div>
@@ -155,33 +173,15 @@
                     </div>
                 </div>
                 <br>
-
                 <!-- End of Price Range Slider -->
-                <div class = "preference-container">
-                    <div class="search-and-filter-container">
-                        <input type="text" id="search-input" placeholder="Search products..." oninput="onSearchInput()">
-    
-                        <div id="category-filter-container">
-                            <select id="category-select" onchange="onCategoryChange()">
-                                <option value="All">All</option>
-                                <option value="Vegetables">Vegetables</option>
-                                <option value="Fruits">Fruits</option>
-                                <option value="Dairy">Dairy</option>
-                                <option value="Meats">Meats</option>
-                                <option value="Wheat">Wheat</option>
-                            </select>
-                        </div>
-                    </div>
-    
-                    <p id="preference"></p>
-                </div>
+                <p id="preference"></p>
                 <div id="product-list">
                     <!-- is handled in products.js  -->
                 </div>
             </div>
 
             <div id="cart-page">
-                <div class ="change-font-wrapper">
+                <div class="change-font-wrapper">
                     <button class="change-font-size" onClick="toggleFontSize('cart')"></button>
                 </div>
                 <div class="stepper-wrapper">
@@ -231,7 +231,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="card-number">Card Number:</label>
-                                <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                                <input type="text" id="card-number" name="card-number"
+                                    placeholder="XXXX XXXX XXXX XXXX">
                             </div>
                             <div class="form-group">
                                 <label for="expiration-date">Expiration Date:</label>
@@ -253,38 +254,38 @@
                         <p id="feedback" class="feedback-message"></p>
                         <form class="shipping-form">
                             <h2 style="color: #333;">Ship To</h2>
-    
+
                             <div class="shipping-info-container">
                                 <label for="Firstname">First Name:</label>
                                 <input type="text" id="fname" name="fname" placeholder="John" required>
-    
+
                                 <label for="Last name">Last Name:</label>
                                 <input type="text" id="lname" name="lname" placeholder="Doe" required>
-    
+
                                 <label for="street">Street:</label>
                                 <input type="text" id="street" name="street" placeholder="Street Name" required>
-    
+
                                 <label for="city">City:</label>
                                 <input type="text" id="city" name="city" placeholder="City" required>
-    
+
                                 <label for="province">Province:</label>
                                 <input type="text" id="province" name="province" placeholder="Province" required>
-    
+
                                 <label for="zip">ZIP Code:</label>
                                 <input type="text" id="zip" name="zip" placeholder="XXX XXX" required>
                             </div>
-    
+
                             <div class="shipping-btn-container">
                                 <button type="button" class="shipping-btn" onclick="displayPayment()">Next Page</button>
                             </div>
-    
+
                         </form>
                     </div>
                     <div id="checkout-container" style="display: none;">
                         <button type="button" class="back-btn" onclick="goToShipping()">Go Back</button>
                         <!-- is handled in cart.js -->
                     </div>
-                
+
                 </div>
             </div>
 

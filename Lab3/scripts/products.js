@@ -24,7 +24,6 @@ function displayProducts(searchQuery = "") {
   let maxPriceText = document.querySelector(".input-max");
   var minPrice = parseInt(minPriceText.textContent);
   var maxPrice = parseInt(maxPriceText.textContent);
-  console.log(minPriceText);
 
   products.forEach((product, index) => {
     //Check price range
@@ -43,9 +42,10 @@ function displayProducts(searchQuery = "") {
       }
     }
 
-    const matchesSearch = product.name
+    const matchesSearch = product.description
       .toLowerCase()
-      .startsWith(searchQuery.toLowerCase());
+      .includes(searchQuery.toLowerCase());
+
     const matchesCategory =
       selectedCategory === "All" || product.category === selectedCategory;
     // If dietary restrictions hold display the product
@@ -78,7 +78,7 @@ function displayProduct(product, index) {
         <div class="read-product">
           <button class="read-product-button" onclick="textToSpeech('${product.description}', '${product.price}', '${index}')"></button>
         </div>
-        <h3>${product.name}</h3>
+        <h3 style="padding-top: 8px">${product.name}</h3>
         <div class="product-img">
           <img src=${product.image} alt=${product.name}>
         </div>
@@ -105,9 +105,6 @@ function displayPreference() {
   if (dietaryPreferences.length == 0) return;
 
   for (i = 0; i < dietaryPreferences.length; i++) {
-    // if (dietaryPreferences[i] == "None") {
-    //   return;
-    // }
     if (dietaryPreferences[i] == "GlutenFree") result += `<li>Gluten-Free Products</li>`;
     else if (dietaryPreferences[i] == "NonOrganic")
       result += `<li>Non-Organic Products</li>`;
@@ -118,20 +115,6 @@ function displayPreference() {
   }
   preferenceDiv.innerHTML = `<p>Here are our products based on your preselection: <ul>${result}</ul></p>`;
 }
-
-// function setDietaryPreferences(event) {
-//   var selectedOptions = [];
-//   var options = event.target.options;
-
-//   for (i = 0; i < options.length; i++) {
-//     if (options[i].selected) {
-//       selectedOptions.push(options[i].value);
-//     }
-//   }
-//   dietaryPreferences = selectedOptions;
-
-//   //document.getElementById('output').textContent = "Chosen Products: " + dietaryPreferences.join(", ");
-// }
 
 function updateDietaryPreferences() {
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -144,15 +127,6 @@ function updateDietaryPreferences() {
   });
 
   dietaryPreferences = checkedValues;
-
-  //document.getElementById('output').textContent = "Chosen Products: " + checkedValues.join(", ");
-}
-
-
-function displayShoppingCart() {
-  for (i = 0; i < products.length; i++) {
-    console.log(products[i].name + " " + quantities[i]);
-  }
 }
 
 function onSearchInput() {
