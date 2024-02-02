@@ -1,18 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/bicycle-icon.png">
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/bicycle-icon.png" />
     <title>Bicycool</title>
-    <!-- TO ADD BOOTSTRAP -->
-</head>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/custom.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Bicycool Repairs</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-<body>
-    <h1>Bicycool</h1>
+    <!-- Hero Section -->
+    <div
+      class="jumbotron jumbotron-fluid"
+      style="
+        background-image: url('images/bike-shop.jpg');
+        background-size: cover;
+        color: white;
+      "
+    >
+      <div class="container text-center">
+        <h1 class="display-4">Welcome to Bicycool Repairs</h1>
+        <p class="lead">
+          Expert repair services for your bike, anytime, anywhere.
+        </p>
+        <a href="#booking-section" class="btn btn-primary btn-lg" role="button"
+          >Book a Service</a
+        >
+      </div>
+    </div>
 
-</body>
+    <!-- Services Section -->
+    <div class="container mt-5" id="services-section">
+      <h2 class="mb-3">Our Services</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/brake-repair.jpg"
+              class="card-img-top"
+              alt="Brake Repair"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Brake Repair</h5>
+              <p class="card-text">
+                Ensure your safety with our comprehensive brake repair service.
+              </p>
+              <p class="card-text"><strong>$20</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/puncture-repair.jpg"
+              class="card-img-top"
+              alt="Puncture Repair"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Puncture Repair</h5>
+              <p class="card-text">
+                Quick and reliable puncture repairs to get you back on the road.
+              </p>
+              <p class="card-text"><strong>$15</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/maintenance.jpg"
+              class="card-img-top"
+              alt="Maintenance Package"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Maintenance Package</h5>
+              <p class="card-text">
+                Comprehensive maintenance package for optimal performance.
+              </p>
+              <p class="card-text"><strong>$50</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Booking Section -->
+    <div class="container mt-5" id="booking-section">
+      <h2>Book a Service</h2>
+      <form>
+        <!-- Service Selection -->
+        <div class="form-group">
+          <label for="serviceSelection">Select Service</label>
+          <select class="form-control" id="serviceSelection">
+            <option>Brake Repair</option>
+            <option>Puncture Repair</option>
+            <option>Maintenance Package</option>
+          </select>
+        </div>
+        <!-- Date and Time Selection -->
+        <div class="form-row">
+          <div class="col">
+            <label for="bookingDate">Date</label>
+            <input type="date" class="form-control" id="bookingDate" />
+          </div>
+          <div class="col">
+            <label for="bookingTime">Time</label>
+            <input type="time" class="form-control" id="bookingTime" />
+          </div>
+        </div>
+        <!-- Contact Information -->
+        <h3 class="mt-4">Contact Information</h3>
+        <div class="form-group">
+          <label for="customerName">Name</label>
+          <input type="text" class="form-control" id="customerName" />
+        </div>
+        <div class="form-group">
+          <label for="customerEmail">Email</label>
+          <input type="email" class="form-control" id="customerEmail" />
+        </div>
+        <div class="form-group">
+          <label for="customerPhone">Phone</label>
+          <input type="tel" class="form-control" id="customerPhone" />
+        </div>
+        <button type="submit" class="btn btn-success">Submit Booking</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 p-4 text-center">
+      Bicycool Repairs © 2024. All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
