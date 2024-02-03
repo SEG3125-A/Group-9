@@ -57,3 +57,8 @@
 .card-text {
   color: #333; /* Change this color to your preferred font color */
 }
+
+.team-description{
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+}
