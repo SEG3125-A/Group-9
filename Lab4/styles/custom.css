@@ -51,3 +51,9 @@
     background-color: rgb(126, 126, 126);
     color:#ffffff ;
 }
+
+
+.card-title,
+.card-text {
+  color: #333; /* Change this color to your preferred font color */
+}
