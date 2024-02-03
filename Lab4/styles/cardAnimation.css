@@ -107,3 +107,7 @@
 .backside .card-body p {
     color: inherit; /* Inherit the color from the parent */
 }
+
+.lead-text-center{
+    font-size: 18px;
+}
