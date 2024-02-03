@@ -41,10 +41,16 @@
             <a class="nav-link" href="#services-section">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#booking-section">Booking</a>
+            <a class="nav-link" href="#staff-section">Meet our team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact-section">Contact</a>
+            <a class="nav-link" href="#location-section">Location</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-section">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#booking-section">Booking</a>
           </li>
         </ul>
       </div>
@@ -125,6 +131,19 @@
       </div>
     </div>
 
+    <!-- Staff section TODO-->
+
+    <div class="container mt-5" id="staff-section">
+      <h2 class="mb-3">Meet our skilled team!</h2>
+      <p>Our skilled team of 5 mechanics blabla</p>
+    </div>  
+
+    <!-- Location Section TODO-->
+    <div class="container mt-5" id="booking-section">
+      <h2>Come pay us a visit</h2>
+      <p>We are located at blabla address + email + phone num</p>
+    </div>
+
     <!-- Booking Section -->
     <div class="container mt-5" id="booking-section">
       <h2>Book a Service</h2>
@@ -163,7 +182,7 @@
           <label for="customerPhone">Phone</label>
           <input type="tel" value="123-456-7890" class="form-control" id="customerPhone" required placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
         </div>
-        <button type="submit" class="btn btn-success " onclick="$('#success-modal').modal('show');">Submit Booking</button>
+        <button type="submit" class="btn btn-success custom-btn-2" onclick="$('#success-modal').modal('show');">Submit Booking</button>
       </form>
     </div>
 
@@ -172,17 +191,17 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Booking success!</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" style="color: #F5B301;">Booking success!</h5>
+            <button type="button" class="close custom-btn-2" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="mt-4 ml-4" class="modal-body">
+          <div class="mt-4 ml-4" class="modal-body" style="color: black;">
             <p>Thank you for booking a service with Bicycool!</p>
             <p>You should receive an booking confirmation shortly by email.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary custom-btn-2" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

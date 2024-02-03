@@ -37,6 +37,16 @@
     border: none;
 }
 
+.custom-btn-2{
+    color: white;
+    background-color: #FF7F00;
+    border:none;
+}
+
+.custom-btn-2:hover{
+    background-color: rgb(126, 126, 126);
+}
+
 .btn-custom:hover{
     background-color: rgb(126, 126, 126);
     color:#ffffff ;
