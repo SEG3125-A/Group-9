@@ -15,9 +15,9 @@
     />
     <link rel="stylesheet" href="styles/custom.css" />
   </head>
-  <body>
+  <body class="custom-color">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
       <a class="navbar-brand" href="#">Bicycool Repairs</a>
       <button
         class="navbar-toggler"
@@ -33,18 +33,18 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="#home-section"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="#services-section">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Booking</a>
+            <a class="nav-link" href="#booking-section">Booking</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#contact-section">Contact</a>
           </li>
         </ul>
       </div>
@@ -52,7 +52,7 @@
 
     <!-- Hero Section -->
     <div
-      class="jumbotron jumbotron-fluid"
+      class="jumbotron jumbotron-fluid jumbotron-custom"
       style="
         background-image: url('images/bike-shop.jpg');
         background-size: cover;
@@ -64,7 +64,7 @@
         <p class="lead">
           Expert repair services for your bike, anytime, anywhere.
         </p>
-        <a href="#booking-section" class="btn btn-primary btn-lg" role="button"
+        <a href="#booking-section" class="btn btn-primary btn-lg btn-custom" role="button"
           >Book a Service</a
         >
       </div>
@@ -74,11 +74,11 @@
     <div class="container mt-5" id="services-section">
       <h2 class="mb-3">Our Services</h2>
       <div class="row">
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-4 mt-4 mb-4">
+          <div class="card custom-card">
             <img
               src="images/brake-repair.jpg"
-              class="card-img-top"
+              class="card-image"
               alt="Brake Repair"
             />
             <div class="card-body">
@@ -90,11 +90,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-4 mt-4 mb-4">
+          <div class="card custom-card">
             <img
               src="images/puncture-repair.jpg"
-              class="card-img-top"
+              class="card-image"
               alt="Puncture Repair"
             />
             <div class="card-body">
@@ -106,11 +106,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-4 mt-4 mb-4">
+          <div class="card custom-card">
             <img
               src="images/maintenance.jpg"
-              class="card-img-top"
+              class="card-image"
               alt="Maintenance Package"
             />
             <div class="card-body">
@@ -128,7 +128,7 @@
     <!-- Booking Section -->
     <div class="container mt-5" id="booking-section">
       <h2>Book a Service</h2>
-      <form>
+      <form id="booking-form">
         <!-- Service Selection -->
         <div class="form-group">
           <label for="serviceSelection">Select Service</label>
@@ -150,24 +150,45 @@
           </div>
         </div>
         <!-- Contact Information -->
-        <h3 class="mt-4">Contact Information</h3>
+        <h3 id="contact-section" class="mt-4">Contact Information</h3>
         <div class="form-group">
           <label for="customerName">Name</label>
-          <input type="text" class="form-control" id="customerName" />
+          <input type="text" value="removeaftertesting" class="form-control" id="customerName" required placeholder="John Lee"/>
         </div>
         <div class="form-group">
           <label for="customerEmail">Email</label>
-          <input type="email" class="form-control" id="customerEmail" />
+          <input type="email" value="remove@aftertesting" class="form-control" id="customerEmail" required placeholder="bikeiscool@gmail.com"/>
         </div>
         <div class="form-group">
           <label for="customerPhone">Phone</label>
-          <input type="tel" class="form-control" id="customerPhone" />
+          <input type="tel" value="123-456-7890" class="form-control" id="customerPhone" required placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
         </div>
-        <button type="submit" class="btn btn-success">Submit Booking</button>
+        <button type="submit" class="btn btn-success " onclick="$('#success-modal').modal('show');">Submit Booking</button>
       </form>
     </div>
 
-    <footer class="bg-dark text-white mt-5 p-4 text-center">
+    <!-- Bootstrap modal -->
+    <div id="success-modal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Booking success!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="mt-4 ml-4" class="modal-body">
+            <p>Thank you for booking a service with Bicycool!</p>
+            <p>You should receive an booking confirmation shortly by email.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="custom-navbar text-white mt-5 p-4 text-center">
       Bicycool Repairs © 2024. All Rights Reserved.
     </footer>
 
@@ -175,5 +196,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="scripts/script.js"></script>
   </body>
 </html>
