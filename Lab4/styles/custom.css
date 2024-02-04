@@ -43,6 +43,7 @@ label {
 .custom-card {
     background-color: #F5B301;
     border: none;
+    height: 500px;
 }
 
 .btn-custom {
