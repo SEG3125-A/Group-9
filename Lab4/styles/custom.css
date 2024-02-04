@@ -1,101 +1,107 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .btn:focus,
 .btn:active {
-    outline: none !important;
-    box-shadow: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .custom-location-info,
 .nav-link,
 #booking-form input,
 label {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .home-header-bg {
-    background-image: url('images/bike-shop.jpg');
-    background-size: cover;
-    color: white;
+  background-image: url("images/bike-shop.jpg");
+  background-size: cover;
+  color: white;
 }
 
 .custom-color {
-    background-color: #3B3F46;
-    color: white;
+  background-color: #3b3f46;
+  color: white;
 }
 
 .card-image {
-    flex-shrink: 0;
-    width: 100%;
-    height: 240px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 240px;
 }
 
 .custom-navbar {
-    background-color: #1E2328;
+  background-color: #1e2328;
 }
 
 .jumbotron-custom {
-    background-color: #F5B301;
+  background-color: #f5b301;
 }
 
 .custom-card {
-    background-color: #F5B301;
-    border: none;
-    height: 500px;
+  background-color: #f5b301;
+  border: none;
+  height: 500px;
 }
 
 .btn-custom {
-    color: #ff7f00;
-    background-color: #ffffff;
-    border: none;
+  color: #ff7f00;
+  background-color: #ffffff;
+  border: none;
 }
 
 .custom-btn-2 {
-    color: white;
-    background-color: #F5B301;
-    border: none;
-    font-size: 18px;
+  color: white;
+  background-color: #f5b301;
+  border: none;
+  font-size: 18px;
 }
 
 .custom-btn-2:hover {
-    background-color: rgb(126, 126, 126);
+  background-color: rgb(126, 126, 126);
 }
 
 .btn-custom:hover {
-    background-color: rgb(126, 126, 126);
-    color: #ffffff;
+  background-color: rgb(126, 126, 126);
+  color: #ffffff;
 }
 
 .card-title,
 .card-text {
-    color: #333;
-    /* Change this color to your preferred font color */
+  color: #333;
+  /* Change this color to your preferred font color */
 }
 
 .team-description {
-    padding-top: 2.5em;
-    padding-bottom: 0.5em;
+  padding-top: 2.5em;
+  padding-bottom: 0.5em;
 }
 
 .jumbotron {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative; 
-  }
-  
-.container.text-center {
-    flex-grow: 1;
-}
-.section-end {
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
 }
 
-.bg{
-    padding-top: 1.5em;
+.container.text-center {
+  flex-grow: 1;
+}
+.section-end {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.bg {
+  padding-top: 1.5em;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
