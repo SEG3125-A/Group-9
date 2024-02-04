@@ -1,259 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/bicycle-icon.png" />
-    <title>Bicycool</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css"
-    />
-    <link rel="stylesheet" href="styles/custom.css" />
-    <link rel="stylesheet" href="styles/cardAnimation.css" />
-  </head>
-  <body class="custom-color">
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-      <a class="navbar-brand" href="#">Bicycool Repairs</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#home-section"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services-section">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#staff-section">Meet our team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#location-section">Location</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact-section">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#booking-section">Booking</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <div
-      class="jumbotron jumbotron-fluid jumbotron-custom"
-      style="
-        background-image: url('images/bike-shop.jpg');
-        background-size: cover;
-        color: white;
-      "
-    >
-      <div class="container text-center">
-        <h1 class="display-4">Welcome to Bicycool Repairs</h1>
-        <p class="lead">
-          Expert repair services for your bike, anytime, anywhere.
-        </p>
-        <a href="#booking-section" class="btn btn-primary btn-lg btn-custom" role="button"
-          >Book a Service</a
-        >
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/bicycle-icon.png" />
+  <title>Bicycool Repairs</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="styles/custom.css" />
+  <link rel="stylesheet" href="styles/cardAnimation.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body class="custom-color" id="home-section">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img class="mr-2" src="images/bicycle-icon.png" alt="Bicycool Repairs" height="30" width="30">
+      Bicycool Repairs
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services-section">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#staff-section">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#location-section">Location</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#booking-section">Booking</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Services Section -->
-    <div class="container mt-5" id="services-section">
-      <h2 class="mb-3">Our Services</h2>
-      <div class="row services">
-        <div class="col-md-4 mt-4 mb-4">
-          <div class="card custom-card">
-            <img
-              src="images/brake-repair.jpg"
-              class="card-image"
-              alt="Brake Repair"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Brake Repair</h5>
-              <p class="card-text">
-                Ensure your safety with our comprehensive brake repair service.
-              </p>
-              <p class="card-text"><strong>$20</strong></p>
-            </div>
+  <!-- Hero Section -->
+  <div class="jumbotron jumbotron-fluid jumbotron-custom mt-5 home-header-bg">
+    <div class="container text-center">
+      <h1 class="display-4">Welcome to Bicycool Repairs</h1>
+      <p class="lead">
+        Expert repair services for your bike, anytime, anywhere.
+      </p>
+      <a href="#booking-section" class="btn btn-primary btn-lg btn-custom" role="button">Book a Service</a>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="container mt-5" id="services-section">
+    <h2 class="mb-3 text-center">Our Services</h2>
+    <div class="row services">
+      <div class="col-md-4 mt-4 mb-4">
+        <div class="card custom-card">
+          <img src="images/brake-repair.png" class="card-image" alt="Brake Repair" />
+          <div class="card-body">
+            <h5 class="card-title">Brake Repair</h5>
+            <p class="card-text">
+              Ensure your safety with our comprehensive brake repair service.
+            </p>
+            <p class="card-text"><strong>$20</strong></p>
           </div>
         </div>
-        <div class="col-md-4 mt-4 mb-4">
-          <div class="card custom-card">
-            <img
-              src="images/puncture-repair.jpg"
-              class="card-image"
-              alt="Puncture Repair"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Puncture Repair</h5>
-              <p class="card-text">
-                Quick and reliable puncture repairs to get you back on the road.
-              </p>
-              <p class="card-text"><strong>$15</strong></p>
-            </div>
+      </div>
+      <div class="col-md-4 mt-4 mb-4">
+        <div class="card custom-card">
+          <img src="images/puncture-repair.png" class="card-image" alt="Puncture Repair" />
+          <div class="card-body">
+            <h5 class="card-title">Puncture Repair</h5>
+            <p class="card-text">
+              Quick and reliable puncture repairs to get you back on the road.
+            </p>
+            <p class="card-text"><strong>$15</strong></p>
           </div>
         </div>
-        <div class="col-md-4 mt-4 mb-4">
-          <div class="card custom-card">
-            <img
-              src="images/maintenance.jpg"
-              class="card-image"
-              alt="Maintenance Package"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Maintenance Package</h5>
-              <p class="card-text">
-                Comprehensive maintenance package for optimal performance.
-              </p>
-              <p class="card-text"><strong>$50</strong></p>
-            </div>
+      </div>
+      <div class="col-md-4 mt-4 mb-4">
+        <div class="card custom-card">
+          <img src="images/maintenance.png" class="card-image" alt="Maintenance Package" />
+          <div class="card-body">
+            <h5 class="card-title">Maintenance Package</h5>
+            <p class="card-text">
+              Comprehensive maintenance package for optimal performance.
+            </p>
+            <p class="card-text"><strong>$50</strong></p>
           </div>
         </div>
       </div>
     </div>
+    <hr class="bg-white">
+  </div>
 
-    <!-- Staff section-->
+  <!-- Staff section-->
+  <div class="container mt-5" id="staff-section">
+    <h2 class="text-center">Meet Our Team</h2>
+    <div class="team-description">
+      <p class="lead text-center">Welcome to Bicycool, our team of passionate and highly skilled individuals, each
+        dedicated to providing top-notch bike repair services. With a deep love for all things cycling, we take pride in
+        delivering exceptional craftsmanship and unparalleled expertise to every bike that comes through our workshop
+        doors.</p>
+      <p class="lead text-center">Whether it's optimizing brakes, repairing puncrues, or delivering a full maintenance,
+        we deliver each service with meticulous attention to detail, ensuring that every bike leaving our workshop is
+        elevated to peak performance.</p>
+      <p class="lead text-center">Meet the faces behind the expertise:</p>
+    </div>
 
-    <div class="container mt-5" id="staff-section">
-      <h1 class="text-center display-4">Meet Our Team</h1>
-      <div class="team-description">
-        <p class="lead text-center">Welcome to Bicycool, our team of passionate and highly skilled individuals, each dedicated to providing top-notch bike repair services. With a deep love for all things cycling, we take pride in delivering exceptional craftsmanship and unparalleled expertise to every bike that comes through our workshop doors.</p>
-        <p class="lead text-center">Whether it's optimizing brakes, repairing puncrues, or delivering a full maintenance, we deliver each service with meticulous attention to detail, ensuring that every bike leaving our workshop is elevated to peak performance.</p>
-        <p class="lead text-center">Meet the faces behind the expertise:</p>
-              </div>
-
-      <div class="row mt-4">
-        <!-- Team Member 1 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-                <div class="frontside">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <p><img class=" img-fluid" src="images/repairer1.jpg" alt="card image"></p>
-                            <h4 class="card-title">Leo Cole</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="backside">
-                    <div class="card">
-                        <div class="card-body text-center mt-4">
-                            <h4 class="card-title">Leo Cole</h4>
-                            <p class="card-text">With over 15 years of experience, Leo is our go-to expert for diagnosing and fixing complex bike issues. His passion for cycling and meticulous approach ensures every repair meets the highest standards.</p>
-                        </div>
-                    </div>
+    <div class="row mt-4">
+      <!-- Team Member 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="images/repairer1.jpg" alt="card image"></p>
+                  <h4 class="card-title">Leo Cole</h4>
                 </div>
               </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-2">
+                  <h4 class="card-title">Leo Cole</h4>
+                  <p class="card-text">With over 15 years of experience, Leo is our go-to expert for diagnosing and
+                    fixing complex bike issues. His passion for cycling and meticulous approach ensures every repair
+                    meets the highest standards.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Team Member 2 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-                <div class="frontside">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <p><img class=" img-fluid" src="images/repairer2.jpg" alt="card image"></p>
-                            <h4 class="card-title">Kate Phillips</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="backside">
-                    <div class="card">
-                        <div class="card-body text-center mt-4">
-                            <h4 class="card-title">Kate Phillips</h4>
-                            <p class="card-text">Kate ensures a seamless customer experience from drop-off to pick-up. Her friendly demeanor and knowledge of bike repairs make her the perfect point of contact for all customer inquiries and service updates.</p>
-                        </div>
-                    </div>
+      <!-- Team Member 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="images/repairer2.jpg" alt="card image"></p>
+                  <h4 class="card-title">Kate Phillips</h4>
                 </div>
               </div>
-          </div>
-        </div>
-
-        <!-- Team Member 3 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-                <div class="frontside">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <p><img class=" img-fluid" src="images/repairer3.jpg" alt="card image"></p>
-                            <h4 class="card-title">Lynn Myers</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="backside">
-                    <div class="card">
-                        <div class="card-body text-center mt-4">
-                            <h4 class="card-title">Lynn Myers</h4>
-                            <p class="card-text">Lynn's expertise lies in fine-tuning and optimizing bike performance. With a keen eye for detail, she ensures that every bike leaving our workshop rides as smoothly as the day it rolled off the assembly line.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-2">
+                  <h4 class="card-title">Kate Phillips</h4>
+                  <p class="card-text">Kate ensures a seamless customer experience from drop-off to pick-up. Her
+                    friendly demeanor and knowledge of bike repairs make her the perfect point of contact for all
+                    customer inquiries and service updates.</p>
                 </div>
               </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Team Member 4 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-                <div class="frontside">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <p><img class=" img-fluid" src="images/repairer4.jpg" alt="card image"></p>
-                            <h4 class="card-title">Philip Meadows</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="backside">
-                    <div class="card">
-                        <div class="card-body text-center mt-4">
-                            <h4 class="card-title">Philip Meadows</h4>
-                            <p class="card-text">Philip's expertise extends to wheel building and truing. With a deep understanding of wheel dynamics, he ensures that every bike's wheels are not only true but also optimized for performance and durability.</p>
-                        </div>
-                    </div>
+      <!-- Team Member 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="images/repairer3.jpg" alt="card image"></p>
+                  <h4 class="card-title">Lynn Myers</h4>
                 </div>
               </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-2">
+                  <h4 class="card-title">Lynn Myers</h4>
+                  <p class="card-text">Lynn's expertise lies in fine-tuning and optimizing bike performance. With a keen
+                    eye for detail, she ensures that every bike leaving our workshop rides as smoothly as the day it
+                    rolled off the assembly line.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-    </div>  
+      </div>
 
-    <!-- Location Section TODO-->
-    <div class="container mt-5" id="booking-section">
-      <h2>Come pay us a visit</h2>
-      <p>We are located at blabla address + email + phone num</p>
+      <!-- Team Member 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p><img class=" img-fluid" src="images/repairer4.jpg" alt="card image"></p>
+                  <h4 class="card-title">Philip Meadows</h4>
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-2">
+                  <h4 class="card-title">Philip Meadows</h4>
+                  <p class="card-text">Philip's expertise extends to wheel building and truing. With a deep
+                    understanding of wheel dynamics, he ensures that every bike's wheels are not only true but also
+                    optimized for performance and durability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="bg-white">
+
+    <!-- Location Section-->
+    <div class="container mt-5" id="location-section">
+      <h2 class="text-center">Come pay us a visit</h2>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d694.3087155145888!2d-75.68313131946708!3d45.42302836578754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce050a6db98d73%3A0x188a59c3622fdbae!2sUniversity%20of%20Ottawa!5e0!3m2!1sen!2sca!4v1707015833181!5m2!1sen!2sca"
+            width="530" height="410" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-md-6 custom-location-info">
+          <div class="mb-4">
+            <p>Bicycool Repairs is located on the campus of the University of Ottawa.</p>
+            <p class="mb-0">75 Laurier Ave E</p>
+            <p class="mb-0">Ottawa, ON</p>
+            <p>K1N 6N5</p>
+          </div>
+          <div class="mt-2">
+            <p>Our opening hours:</p>
+            <p class="mb-0">Monday 9:00am - 5:00pm</p>
+            <p class="mb-0">Tuesday 9:00am - 5:00pm</p>
+            <p class="mb-0">Wednesday 9:00am - 5:00pm</p>
+            <p class="mb-0">Thursday 9:00am - 5:00pm</p>
+            <p class="mb-0">Friday 9:00am - 5:00pm</p>
+            <p class="mb-0">Saturday 9:00am - 4:00pm</p>
+            <p>Sunday Closed</p>
+          </div>
+        </div>
+      </div>
+      <hr class="bg-white">
     </div>
 
     <!-- Booking Section -->
     <div class="container mt-5" id="booking-section">
-      <h2>Book a Service</h2>
+      <h2 class="text-center">Book a Service</h2>
       <form id="booking-form">
         <!-- Service Selection -->
         <div class="form-group">
           <label for="serviceSelection">Select Service</label>
-          <select class="form-control" id="serviceSelection">
+          <select style="font-size: 18px;" class="form-control" id="serviceSelection">
             <option>Brake Repair</option>
             <option>Puncture Repair</option>
             <option>Maintenance Package</option>
@@ -270,21 +278,28 @@
             <input type="time" class="form-control" id="bookingTime" />
           </div>
         </div>
-        <!-- Contact Information -->
-        <h3 id="contact-section" class="mt-4">Contact Information</h3>
-        <div class="form-group">
+        <!-- Contact Info -->
+        <div class="form-group mt-3">
           <label for="customerName">Name</label>
-          <input type="text" value="removeaftertesting" class="form-control" id="customerName" required placeholder="John Lee"/>
+          <input type="text" value="removeaftertesting" class="form-control" id="customerName" required
+            placeholder="John Lee" />
         </div>
         <div class="form-group">
           <label for="customerEmail">Email</label>
-          <input type="email" value="remove@aftertesting" class="form-control" id="customerEmail" required placeholder="bikeiscool@gmail.com"/>
+          <input type="email" value="remove@aftertesting" class="form-control" id="customerEmail" required
+            placeholder="bikeiscool@gmail.com" />
         </div>
         <div class="form-group">
           <label for="customerPhone">Phone</label>
-          <input type="tel" value="123-456-7890" class="form-control" id="customerPhone" required placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+          <input type="tel" value="123-456-7890" class="form-control" id="customerPhone" required
+            placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
         </div>
-        <button type="submit" class="btn btn-success custom-btn-2" onclick="$('#success-modal').modal('show');">Submit Booking</button>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success custom-btn-2 mx-auto"
+            onclick="$('#success-modal').modal('show');">
+            Submit Booking
+          </button>
+        </div>
       </form>
     </div>
 
@@ -308,16 +323,44 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <footer class="custom-navbar text-white mt-5 p-4 text-center">
+  <footer class="text-center text-dark mt-5" style="background-color: #F5B301;">
+    <div class="container pt-3">
+      <p class="text-dark" style="font-size: 18px;">Contact us</p>
+      <section class="mb-3">
+        <!-- Instagram -->
+        <a class="btn btn-lg m-1" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <!-- TikTok -->
+        <a class="btn btn-lg m-1" target="_blank" href="https://www.tiktok.com/" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-tiktok"></i></a>
+        <!-- Facebook -->
+        <a class="btn btn-lg m-1" target="_blank" href="https://www.facebook.com/" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-lg m-1" target="_blank" href="http://linkedin.com/" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+        <!-- Email -->
+        <a class="btn btn-lg m-1" target="_blank" href="mailto:info@bicycool-repairs.ca" role="button"
+          data-mdb-ripple-color="dark"><i class="fas fa-envelope"></i></a>
+      </section>
+    </div>
+    <div class="custom-navbar text-white d-flex align-items-center justify-content-center p-3">
+      <img class="mr-2" src="images/bicycle-icon.png" width="30" height="30" alt="">
       Bicycool Repairs © 2024. All Rights Reserved.
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Bootstrap and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <script src="scripts/script.js"></script>
-  </body>
+  <!-- <footer class="custom-navbar text-white mt-5 p-4 text-center">
+    Bicycool Repairs © 2024. All Rights Reserved.
+  </footer> -->
+
+  <!-- Bootstrap and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="scripts/script.js"></script>
+</body>
+
 </html>
