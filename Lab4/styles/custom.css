@@ -74,6 +74,27 @@ label {
 }
 
 .team-description {
-    padding-top: 2em;
+    padding-top: 2.5em;
     padding-bottom: 0.5em;
+}
+
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; 
+  }
+  
+.container.text-center {
+    flex-grow: 1;
+}
+.section-end {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.bg{
+    padding-top: 1.5em;
 }
