@@ -22,11 +22,11 @@ label {
 }
 
 .custom-card .card-image {
-    transition: transform 0.5s ease-in; 
+    transition: transform 0.4s ease-in; 
 }
   
 .custom-card:hover .card-image {
-    transform: scale(1.13); 
+    transform: scale(1.1); 
 }
 
 .custom-color {
@@ -52,11 +52,11 @@ label {
   border: none;
   height: 500px;
   cursor: pointer;
-  transition: transform 0.4s ease-in; 
+  transition: transform 0.3s ease-in; 
 }
 
 .custom-card:hover{
-    transform: scale(1.05); 
+    transform: scale(1.02); 
 }
 
 .btn-custom {
