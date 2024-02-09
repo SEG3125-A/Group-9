@@ -1,0 +1,121 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.custom-location-info,
+.nav-link,
+#booking-form input,
+label {
+  font-size: 18px;
+}
+
+.home-header-bg {
+  background-image: url("images/bike-shop.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.custom-card .card-image {
+  transition: transform 0.4s ease-in;
+}
+
+.custom-card:hover img {
+  transform: scale(1.1);
+}
+
+.custom-color {
+  background-color: #3b3f46;
+  color: white;
+}
+
+.zoom-in-image {
+  overflow: hidden;
+  height: 50%;
+}
+
+.custom-navbar {
+  background-color: #1e2328;
+}
+
+.jumbotron-custom {
+  background-color: #f5b301;
+}
+
+.custom-card {
+  background-color: #f5b301;
+  border: none;
+  height: 500px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+
+.custom-card:hover {
+  transform: scale(1.02);
+}
+
+.btn-custom {
+  color: #ff7f00;
+  background-color: #ffffff;
+  border: none;
+}
+
+.custom-btn-2 {
+  color: white;
+  background-color: #f5b301;
+  border: none;
+  font-size: 18px;
+}
+
+.custom-btn-2:hover {
+  background-color: rgb(126, 126, 126);
+  color: white;
+}
+
+.btn-custom:hover {
+  background-color: rgb(126, 126, 126);
+  color: #ffffff;
+}
+
+.card-title,
+.card-text {
+  color: #333;
+}
+
+.team-description {
+  padding-top: 2.5em;
+  padding-bottom: 0.5em;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container.text-center {
+  flex-grow: 1;
+}
+
+.section-end {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.bg {
+  padding-top: 1.5em;
+}
+
+.error-msg {
+  color: red;
+  display: none
+}

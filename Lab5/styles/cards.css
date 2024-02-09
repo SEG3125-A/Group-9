@@ -1,0 +1,61 @@
+.team4 h1,
+.team4 h2,
+.team4 h3,
+.team4 h4,
+.team4 h5,
+.team4 h6 {
+    color: white;
+}
+
+.team4 .font-weight-medium {
+    font-weight: 500;
+}
+
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .subtitle {
+    color: #ff7f00;
+    line-height: 24px;
+    font-size: 13px;
+}
+
+.team4 a:hover {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+    transform: translate3d(0px, -5px, 0px);
+    color: #f5b301;
+}
+
+
+.rounded-circle {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    /* Ensure it's a circle by setting border-radius to 50% */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.worker {
+    padding-top: 4%;
+    background-color: #1e2328;
+    ;
+    margin-left: 5px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 2%;
+    padding-bottom: 8%;
+}
+
+.team-description {
+    margin-bottom: 30px;
+}
