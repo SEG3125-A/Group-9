@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // forces the user to write correct format for phone number
-    $('customerPhone').on('input', function () {
+    $('#customerPhone').on('input', function () {
         var phoneNumber = $(this).val().replace(/\s/g, ''); // Removes the spaces
         phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-digit characters
         $(this).val(phoneNumber);
