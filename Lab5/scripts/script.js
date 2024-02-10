@@ -25,3 +25,8 @@ function selectService(serviceName) {
     .getElementById("booking-section")
     .scrollIntoView({ behavior: "smooth" });
 }
+
+// enables tooltips everywhere
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
