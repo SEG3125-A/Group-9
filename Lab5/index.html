@@ -308,7 +308,7 @@
       <div class="form-row">
         <div class="col">
           <label for="bookingDate">Date</label>
-          <input type="text" class="form-control" id="bookingDate" required placeholder="MM/DD/YYYY" />
+          <input type="text" class="form-control" id="bookingDate" readonly placeholder="MM/DD/YYYY" />
         </div>
         <div class="col">
           <label for="bookingTime">Time</label>
@@ -450,16 +450,6 @@
 
   <script src="scripts/script.js"></script>
   <script src="scripts/inputValidation.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#bookingDate').datepicker({
-        beforeShowDay: function(date) {
-          var day = date.getDay();
-          return [(day !== 0 && day !== 6)];
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>
