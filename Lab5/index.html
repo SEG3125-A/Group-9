@@ -308,7 +308,7 @@
       <div class="form-row">
         <div class="col">
           <label for="bookingDate">Date</label>
-          <input type="date" class="form-control" id="bookingDate" required />
+          <input type="text" class="form-control" id="bookingDate" required placeholder="MM/DD/YYYY" />
         </div>
         <div class="col">
           <label for="bookingTime">Time</label>
@@ -444,9 +444,22 @@
   
   <!-- icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <script src="scripts/script.js"></script>
   <script src="scripts/inputValidation.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#bookingDate').datepicker({
+        beforeShowDay: function(date) {
+          var day = date.getDay();
+          return [(day !== 0 && day !== 6)];
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
