@@ -10,7 +10,7 @@ $(document).ready(function () {
     $('#bookingDate').datepicker({
         beforeShowDay: function(date) {
           var day = date.getDay();
-          return [(day !== 0 && day !== 6)];
+          return day;
         },
         changeYear: true,
         changeMonth: true,
@@ -78,6 +78,21 @@ $(document).ready(function () {
             isValid = false;
         } else {
             $('#cvv').next('.error-msg').hide();
+        }
+
+        var selectedDate = $('#bookingDate').val();
+        var selectedTime = $('#bookingTime').val();
+
+        // checks if the time entered has already passed
+        var selectedTimestamp = new Date(selectedDate + ' ' + selectedTime);
+
+        var currentTimestamp = new Date();
+        if (selectedTimestamp <= currentTimestamp) {
+            console.log("nope")
+            $('#bookingTime').next('.error-msg').show();
+            isValid = false;
+        } else {
+            $('#bookingTime').next('.error-msg').hide();
         }
 
         // display confirmation modal if successful
