@@ -34,6 +34,9 @@ $(function () {
 var offday;
 document.getElementById('professionalSelection').addEventListener('click', function () {
   var selectedProfessional = document.getElementById('professionalSelection').value;
+
+  var bookingdate = document.getElementById("bookingDate");
+  bookingdate.value = "";
   switch (selectedProfessional) {
     case "Leo Paul":
         offday = 1;
@@ -48,7 +51,7 @@ document.getElementById('professionalSelection').addEventListener('click', funct
         offday = 4;
         break;
     default:
-        offday = 2; 
+        offday = 1; 
         break;
   }
 });
