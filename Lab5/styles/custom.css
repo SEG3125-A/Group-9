@@ -51,11 +51,15 @@ label {
 }
 
 .custom-card {
-  background-color: #f5b301;
+  background-color: #333;
   border: none;
   height: 500px;
   cursor: pointer;
   transition: transform 0.3s ease-in;
+}
+
+.card-body{
+  background-color: #f5b301;
 }
 
 .custom-card:hover {
@@ -140,7 +144,7 @@ label {
   padding: 10px;
   color: white;
   display: none;
-  width: 100%;
+  width: 100.4%;
   height: 20%;
   font-size: 18px;
 }
