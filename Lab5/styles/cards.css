@@ -35,7 +35,6 @@
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    /* Ensure it's a circle by setting border-radius to 50% */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -56,6 +55,3 @@
     padding-bottom: 8%;
 }
 
-.team-description {
-    margin-bottom: 30px;
-}

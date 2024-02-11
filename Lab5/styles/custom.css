@@ -135,14 +135,13 @@ label {
 }
 
 .custom-card:hover .hover-message {
+  padding-top:1.21em;
   display: flex;
   align-items: center; 
   justify-content: center; 
   transform: translateX(-50%) translateY(0);
 }
-
-.form-control:focus{
-  outline: 4px solid #dfa300;
-  border:none !important;
+.form-control:focus {
+  outline: 4px solid #dfa400c6;
+  border: none !important;
 }
-

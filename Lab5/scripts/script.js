@@ -35,20 +35,20 @@ var offday;
 document.getElementById('professionalSelection').addEventListener('click', function () {
   var selectedProfessional = document.getElementById('professionalSelection').value;
   switch (selectedProfessional) {
-      case "Leo Paul":
-          offday = 1;
-          break;
-      case "Kate Phillips":
-          offday = 2;
-          break;
-      case "Lynn Myers":
-          offday = 3;
-          break;
-      case "Philip Meadows":
-          offday = 4;
-          break;
-      default:
-          offday = 2; 
-          break;
+    case "Leo Paul":
+        offday = 1;
+        break;
+    case "Kate Phillips":
+        offday = 2;
+        break;
+    case "Lynn Myers":
+        offday = 3;
+        break;
+    case "Philip Meadows":
+        offday = 4;
+        break;
+    default:
+        offday = 2; 
+        break;
   }
 });
