@@ -10,23 +10,28 @@ $(document).ready(function () {
         $(this).val(phoneNumber);
     });
 
+    $('#cardholderName').on('input', function (event) {
+        var input = $(this).val();
+    
+        var sanitizedInput = input.replace(/[^a-zA-Z]/g, '');
+    
+        $(this).val(sanitizedInput);
+    });
+    
+
     $('#expirationDate').on('input', function () {
         var input = $(this).val();
-        
-        // Remove non-digit characters
+
         var sanitizedInput = input.replace(/\D/g, '');
-    
-        // Ensure the length is not more than 4 characters
+
         if (sanitizedInput.length > 4) {
             sanitizedInput = sanitizedInput.substr(0, 4);
         }
-    
-        // Add '/' after the first two characters
+
         if (sanitizedInput.length >= 2) {
             sanitizedInput = sanitizedInput.substr(0, 2) + '/' + sanitizedInput.substr(2);
         }
-    
-        // Update the input field value
+
         $(this).val(sanitizedInput);
     });
     
