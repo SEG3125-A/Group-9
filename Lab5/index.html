@@ -57,7 +57,7 @@
       </p>
       <a href="#booking-section" class="btn btn-lg btn-custom" role="button">Book a Service</a>
     </div>
-    <div class="section-end" id="home-section-end"></div>
+    <br class="section-end" id="home-section-end">
   </div>
 
   <!-- Services Section -->
@@ -118,13 +118,13 @@
         </div>
       </div>
     </div>
-    <br id="services-section-end" />
+    <br class="section-end" id="services-section-end" />
     <hr class="bg-white" />
   </div>
   <!-- Staff section-->
   <div class="container mt-5" id="staff-section">
 
-    <h2 class="text-center"> <i class="fa fa-group"></i> Meet Our Team</h2>
+    <h2 class="text-center" id="section-title"> <i class="fa fa-group"></i> Meet Our Team</h2>
     <div class="team-description">
       <p class="lead text-center">
         Welcome to Bicycool, our team of passionate and highly skilled
@@ -206,7 +206,7 @@
           </div>
         </div>
       </div>
-      <br id="staff-section-end" />
+      <br class="section-end" id="staff-section-end">
       <hr class="bg-white" />
     </div>
   </div>
@@ -215,9 +215,9 @@
 
   <!-- Location Section-->
   <div class="container mt-5" id="location-section">
-    <h2 class="text-center"><i class="fa fa-handshake-o"></i> Come pay us a visit</h2>
+    <h2 class="text-center" id="section-title"><i class="fa fa-group"></i> Come pay us a visit</h2>
     <br />
-    <div class="row">
+    <div class="row section">
       <div class="col-md-6">
         <div class="loading-icon">
           <div class="loading-container">
@@ -281,13 +281,13 @@
         </div>
       </div>
     </div>
-    <br id="location-section-end" />
+    <br class="section-end" id="location-section-end" />
     <hr class="bg-white" />
   </div>
 
   <!-- Booking Section -->
   <div class="container mt-5" id="booking-section">
-    <h2 class="text-center"><i class="fa fa-calendar-o"></i> Book a Service</h2>
+    <h2 class="text-center" id="section-title"><i class="fa fa-calendar-o"></i> Book a Service</h2>
     <form id="booking-form">
       <!-- Service Selection -->
       <div class="form-group">
@@ -333,39 +333,42 @@
         <input type="tel" class="form-control" id="customerPhone" maxlength="10" required placeholder="613 456 7890" />
         <span class="error-msg">Please provide a valid phone number</span>
       </div>
-      <p style="font-size: 18px;">Please provide your card information to guarantee your reservation  <i class="bi bi-question-circle" data-toggle="tooltip" style="cursor: pointer;" 
-        title="A hold will be put on your credit card so as to guarantee your reservation. 
-        Please note that this hold will be released when payment has been processed at your appointment. 
-        If you cancel your appointment, there will be a penalty fee."></i> </p>
-    
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="cardholderName">Cardholder name</label>
-            <input type="text" class="form-control" id="cardholderName" required placeholder="Jane Doe" />
+
+      <div class="card-information">
+        <p style="font-size: 18px;">Please provide your card information to guarantee your reservation  <i class="bi bi-question-circle" data-toggle="tooltip" style="cursor: pointer;" 
+          title="A hold will be put on your credit card so as to guarantee your reservation. 
+          Please note that this hold will be released when payment has been processed at your appointment. 
+          If you cancel your appointment, there will be a penalty fee."></i> </p>
+      
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cardholderName">Cardholder name</label>
+              <input type="text" class="form-control" id="cardholderName" required placeholder="Jane Doe" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="expirationDate">Expiration Date</label>
+              <input type="text" class="form-control" id="expirationDate" placeholder="11/25"/>
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="expirationDate">Expiration Date</label>
-            <input type="text" class="form-control" id="expirationDate" placeholder="11/25"/>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" class="form-control" id="cardNumber" maxlength="19" required
+                placeholder="XXXX XXXX XXXX XXXX" />
+              <span class="error-msg">Please provide a valid card number</span>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="cardNumber">Card Number</label>
-            <input type="text" class="form-control" id="cardNumber" maxlength="19" required
-              placeholder="XXXX XXXX XXXX XXXX" />
-            <span class="error-msg">Please provide a valid card number</span>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="cvv">CVV</label>
-            <input type="text" class="form-control" id="cvv" maxlength="3" minlength="3" placeholder="XXX" />
-            <span class="error-msg">Please provide a valid CVV</span>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="text" class="form-control" id="cvv" maxlength="3" minlength="3" placeholder="XXX" />
+              <span class="error-msg">Please provide a valid CVV</span>
+            </div>
           </div>
         </div>
       </div>

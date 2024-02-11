@@ -21,6 +21,13 @@ label {
   color: white;
 }
 
+.section{
+  margin-bottom: 2em;
+}
+.card-information{
+  margin-top: 2.5em;
+  margin-bottom: 3em;
+}
 .custom-card .card-image {
   transition: transform 0.4s ease-in;
 }
@@ -84,8 +91,12 @@ label {
 }
 
 .team-description {
-  padding-top: 2.5em;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
+  padding-top: 0.6em;
+}
+
+#section-title{
+  margin-bottom: 0.7em;
 }
 
 .jumbotron {
