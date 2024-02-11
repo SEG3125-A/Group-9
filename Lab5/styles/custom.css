@@ -142,8 +142,7 @@ label {
 }
 
 .form-control:focus{
-  outline: 3px solid #dfa300;
-  background-color: #fff198;
+  outline: 4px solid #dfa300;
   border:none !important;
 }
 
