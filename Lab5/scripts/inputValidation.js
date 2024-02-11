@@ -2,10 +2,34 @@ $(document).ready(function () {
 
     // forces the user to write correct format for phone number
     $('#customerPhone').on('input', function () {
-        var phoneNumber = $(this).val().replace(/\s/g, ''); // Removes the spaces
-        phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-digit characters
+        var phoneNumber = $(this).val().replace(/\s/g, ''); 
+        phoneNumber = phoneNumber.replace(/\D/g, ''); 
+        
+        phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
+    
         $(this).val(phoneNumber);
     });
+
+    $('#expirationDate').on('input', function () {
+        var input = $(this).val();
+        
+        // Remove non-digit characters
+        var sanitizedInput = input.replace(/\D/g, '');
+    
+        // Ensure the length is not more than 4 characters
+        if (sanitizedInput.length > 4) {
+            sanitizedInput = sanitizedInput.substr(0, 4);
+        }
+    
+        // Add '/' after the first two characters
+        if (sanitizedInput.length >= 2) {
+            sanitizedInput = sanitizedInput.substr(0, 2) + '/' + sanitizedInput.substr(2);
+        }
+    
+        // Update the input field value
+        $(this).val(sanitizedInput);
+    });
+    
 
     $('#bookingDate').datepicker({
         beforeShowDay: function(date) {
@@ -52,14 +76,16 @@ $(document).ready(function () {
         }
 
         // phone number validation
-        var phoneNumberRegex = /^\d{10}$/;
-        var numerInput = $('#customerPhone').val();
+        var phoneNumberRegex = /^\d{3}\s?\d{3}\s?\d{4}$/;
+        var numerInput = $('#customerPhone').val().replace(/\s/g, ''); // remoces the spaces in phone number
+
         if (!phoneNumberRegex.test(numerInput)) {
             $('#customerPhone').next('.error-msg').show();
             isValid = false;
         } else {
             $('#customerPhone').next('.error-msg').hide();
         }
+
 
         // card number validation
         var cardNumberRegex = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;

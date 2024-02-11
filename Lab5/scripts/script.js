@@ -6,14 +6,14 @@ function mapLoaded() {
 function showModal(event) {
   let form = $("#booking-form")[0];
 
-  //check required fields
+  // Check required fields
   let isFormValid = form.checkValidity();
   if (!isFormValid) {
-    form.reportValidity();
+      form.reportValidity();
   } else {
-    //if all filled correctly, then show modal
-    event.preventDefault();
-    $("#success-modal").modal("show");
+      // If all filled correctly, then show modal using Bootstrap modal method
+      event.preventDefault();
+      $("#success-modal").modal("show");
   }
 }
 
@@ -31,7 +31,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-var offday;
+var offday = 1
 document.getElementById('professionalSelection').addEventListener('click', function () {
   var selectedProfessional = document.getElementById('professionalSelection').value;
 
@@ -51,7 +51,7 @@ document.getElementById('professionalSelection').addEventListener('click', funct
         offday = 4;
         break;
     default:
-        offday = 1; 
+        offday = 0; 
         break;
   }
 });
