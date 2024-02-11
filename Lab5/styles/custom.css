@@ -119,3 +119,25 @@ label {
 .subtitle{
   margin-top: 25px;
 }
+
+.hover-message {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-align: center;
+  background-color: #1e232892;
+  padding: 10px;
+  color: white;
+  display: none;
+  width: 100%;
+  height: 20%;
+  font-size: 18px;
+}
+
+.custom-card:hover .hover-message {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  transform: translateX(-50%) translateY(0);
+}
+
