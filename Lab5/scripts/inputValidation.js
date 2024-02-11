@@ -9,14 +9,15 @@ $(document).ready(function () {
 
     $('#bookingDate').datepicker({
         beforeShowDay: function(date) {
-          var day = date.getDay();
-          return day;
+        var day = date.getDay();
+        return [(day !== 0 && day !== 6 && day!==offday)];
         },
         changeYear: true,
         changeMonth: true,
         yearRange: '2024:+1',
         minDate: 0, 
-      });
+    });
+
     // forces the user to write correct format for card number
     $('#cardNumber').on('input', function () {
         var cardNumber = $(this).val().replace(/\s/g, '');
