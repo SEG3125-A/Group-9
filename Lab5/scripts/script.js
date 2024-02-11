@@ -24,6 +24,8 @@ function selectService(serviceName) {
   document
     .getElementById("booking-section")
     .scrollIntoView({ behavior: "smooth" });
+  document.getElementById("serviceSelection").focus();
+    
 }
 
 // enables tooltips everywhere
