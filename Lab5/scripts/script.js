@@ -39,7 +39,7 @@ document.getElementById('professionalSelection').addEventListener('click', funct
   var selectedProfessional = document.getElementById('professionalSelection').value;
 
   var bookingdate = document.getElementById("bookingDate");
-  bookingdate.value = "";
+  //bookingdate.value = ""; moved this down to "on change" so that it is consistent with time
 
   switch (selectedProfessional) {
     case "Leo Paul":
@@ -95,6 +95,7 @@ $(document).ready(function () {
     $('#bookingTime option').prop('disabled', false);// enable all options first
     $('#bookingTime').val('');// resets time to nothing if u choose another professional
     $('#bookingTime option').css('color', ''); // set color back to default
+    $('#bookingDate').val('');// resets date to nothing if u choose another professional
 
     // disable options based on selected professional
     switch (selectedProfessional) {
