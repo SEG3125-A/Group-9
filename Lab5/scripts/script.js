@@ -9,11 +9,11 @@ function showModal(event) {
   // Check required fields
   let isFormValid = form.checkValidity();
   if (!isFormValid) {
-      form.reportValidity();
+    form.reportValidity();
   } else {
-      // If all filled correctly, then show modal using Bootstrap modal method
-      event.preventDefault();
-      $("#success-modal").modal("show");
+    // If all filled correctly, then show modal using Bootstrap modal method
+    event.preventDefault();
+    $("#success-modal").modal("show");
   }
 }
 
@@ -25,7 +25,7 @@ function selectService(serviceName) {
     .getElementById("booking-section")
     .scrollIntoView({ behavior: "smooth" });
   document.getElementById("serviceSelection").focus();
-    
+
 }
 
 // enables tooltips everywhere
@@ -41,19 +41,19 @@ document.getElementById('professionalSelection').addEventListener('click', funct
   bookingdate.value = "";
   switch (selectedProfessional) {
     case "Leo Paul":
-        offday = 1;
-        break;
+      offday = 1;
+      break;
     case "Kate Phillips":
-        offday = 2;
-        break;
+      offday = 2;
+      break;
     case "Lynn Myers":
-        offday = 3;
-        break;
+      offday = 3;
+      break;
     case "Philip Meadows":
-        offday = 4;
-        break;
+      offday = 4;
+      break;
     default:
-        offday = 0; 
-        break;
+      offday = 0;
+      break;
   }
 });

@@ -2,49 +2,39 @@ $(document).ready(function () {
 
     // forces the user to write correct format for phone number
     $('#customerPhone').on('input', function () {
-        var phoneNumber = $(this).val().replace(/\s/g, ''); 
-        phoneNumber = phoneNumber.replace(/\D/g, ''); 
-        
-        phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
-    
+        var phoneNumber = $(this).val().replace(/\s/g, '');
+        phoneNumber = phoneNumber.replace(/\D/g, '');
+
+        phoneNumber = phoneNumber.replace(/(\d{3})-?(\d{3})-?(\d{4})/, '$1-$2-$3');
+
         $(this).val(phoneNumber);
     });
 
-    $('#cardholderName').on('input', function (event) {
+    // forces the user to write names properly (without numbers)
+    $('#customerName').on('input', function () {
         var input = $(this).val();
-    
-        var sanitizedInput = input.replace(/[^a-zA-Z]/g, '');
-    
+
+        var sanitizedInput = input.replace(/[^a-zA-Z\u00C0-\u024F\s]/g, '');
+
         $(this).val(sanitizedInput);
     });
-    
 
+    $('#cardholderName').on('input', function () {
+        var input = $(this).val();
+
+        var sanitizedInput = input.replace(/[^a-zA-Z\u00C0-\u024F\s]/g, '');
+
+        $(this).val(sanitizedInput);
+    });
+
+    // format date expiration
     $('#expirationDate').on('input', function () {
         var input = $(this).val();
-
         var sanitizedInput = input.replace(/\D/g, '');
 
-        if (sanitizedInput.length > 4) {
-            sanitizedInput = sanitizedInput.substr(0, 4);
-        }
+        var formattedDate = sanitizedInput.replace(/^(\d{2})(\d{2})$/, '$1/$2');
 
-        if (sanitizedInput.length >= 2) {
-            sanitizedInput = sanitizedInput.substr(0, 2) + '/' + sanitizedInput.substr(2);
-        }
-
-        $(this).val(sanitizedInput);
-    });
-    
-
-    $('#bookingDate').datepicker({
-        beforeShowDay: function(date) {
-        var day = date.getDay();
-        return [(day !== 0 && day !== 6 && day!==offday)];
-        },
-        changeYear: true,
-        changeMonth: true,
-        yearRange: '2024:+1',
-        minDate: 0, 
+        $(this).val(formattedDate);
     });
 
     // forces the user to write correct format for card number
@@ -65,6 +55,17 @@ $(document).ready(function () {
         $(this).val(cvv);
     });
 
+    $('#bookingDate').datepicker({
+        beforeShowDay: function (date) {
+            var day = date.getDay();
+            return [(day !== 0 && day !== 6 && day !== offday)];
+        },
+        changeYear: true,
+        changeMonth: true,
+        yearRange: '2024:+1',
+        minDate: 0,
+    });
+
     // validate the input fields when user submits form
     $('#booking-form').submit(function (event) {
         event.preventDefault();
@@ -81,10 +82,10 @@ $(document).ready(function () {
         }
 
         // phone number validation
-        var phoneNumberRegex = /^\d{3}\s?\d{3}\s?\d{4}$/;
-        var numerInput = $('#customerPhone').val().replace(/\s/g, ''); // remoces the spaces in phone number
+        var phoneNumberRegex = /^\d{3}-?\d{3}-?\d{4}$/;
+        var numberInput = $('#customerPhone').val().replace(/-/g, '');
 
-        if (!phoneNumberRegex.test(numerInput)) {
+        if (!phoneNumberRegex.test(numberInput)) {
             $('#customerPhone').next('.error-msg').show();
             isValid = false;
         } else {
@@ -102,6 +103,16 @@ $(document).ready(function () {
             $('#cardNumber').next('.error-msg').hide();
         }
 
+        // expiration validation
+        var expirationRegex = /^(\d{2})\/(\d{2})$/;
+        var expirationInput = $('#expirationDate').val();
+        if (!expirationRegex.test(expirationInput)) {
+            $('#expirationDate').next('.error-msg').show();
+            isValid = false;
+        } else {
+            $('#expirationDate').next('.error-msg').hide();
+        }
+
         // cvv number validation
         var cvvRegex = /^\d{3}$/;
         var cvvInput = $('#cvv').val();
@@ -116,12 +127,12 @@ $(document).ready(function () {
         var selectedTime = $('#bookingTime').val();
 
         //console.log(selectedTime);
-        if (selectedTime == null){
+        if (selectedTime == null) {
             $('#bookingTime').next('.error-msg').show();
             isValid = false;
         }
 
-        if (selectedDate == ""){
+        if (selectedDate == "") {
             $('#bookingDate').next('.error-msg').show();
             isValid = false;
         }
@@ -152,6 +163,10 @@ $(document).ready(function () {
 
     $('#customerPhone').on('input', function () {
         $('#customerPhone').next('.error-msg').hide();
+    });
+
+    $('#expirationDate').on('input', function () {
+        $('#expirationDate').next('.error-msg').hide();
     });
 
     $('#cardNumber').on('input', function () {
