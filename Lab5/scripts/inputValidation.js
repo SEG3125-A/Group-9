@@ -55,16 +55,6 @@ $(document).ready(function () {
         $(this).val(cvv);
     });
 
-    $('#bookingDate').datepicker({
-        beforeShowDay: function (date) {
-            var day = date.getDay();
-            return [(day !== 0 && day !== 6 && day !== offday)];
-        },
-        changeYear: true,
-        changeMonth: true,
-        yearRange: '2024:+1',
-        minDate: 0,
-    });
 
     // validate the input fields when user submits form
     $('#booking-form').submit(function (event) {
@@ -123,32 +113,28 @@ $(document).ready(function () {
             $('#cvv').next('.error-msg').hide();
         }
 
+        // date validation
         var selectedDate = $('#bookingDate').val();
-        var selectedTime = $('#bookingTime').val();
-
-        //console.log(selectedTime);
-        if (selectedTime == null) {
-            $('#bookingTime').next('.error-msg').show();
-            isValid = false;
-        }
-
         if (selectedDate == "") {
             $('#bookingDate').next('.error-msg').show();
             isValid = false;
         }
 
+        // time validation normally we don't need this because form validation required does it for us
+        var selectedTime = $('#bookingTime').val();
+        console.log(selectedTime);
+        if (selectedTime == "") {
+            $('#bookingTime').next('.error-msg').show();
+            isValid = false;
+        }
 
-        // checks if the time entered has already passed
-        // var selectedTimestamp = new Date(selectedDate + ' ' + selectedTime);
-
-        // var currentTimestamp = new Date();
-        // if (selectedTimestamp <= currentTimestamp) {
-        //     console.log("nope")
-        //     $('#bookingTime').next('.error-msg').show();
-        //     isValid = false;
-        // } else {
-        //     $('#bookingTime').next('.error-msg').hide();
-        // }
+        // professional validation normally we don't need this because form validation required does it for us
+        var selectedProfessional = $('#professionalSelection').val();
+        console.log(selectedProfessional);
+        if (selectedProfessional == "") {
+            $('#professionalSelection').next('.error-msg').show();
+            isValid = false;
+        }
 
         // display confirmation modal if successful
         if (isValid) {
@@ -183,5 +169,9 @@ $(document).ready(function () {
 
     $('#bookingTime').on('input', function () {
         $('#bookingTime').next('.error-msg').hide();
+    });
+
+    $('#professionalSelection').on('input', function () {
+        $('#professionalSelection').next('.error-msg').hide();
     });
 });

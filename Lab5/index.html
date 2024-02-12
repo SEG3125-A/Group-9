@@ -298,27 +298,32 @@
           <option>Maintenance Package</option>
         </select>
 
-        <label for="professionalSelection">Choose a Professional <span class="text-danger"> *</span></label>
-        <select style="font-size: 18px; margin-bottom: 20px;" class="form-control" id="professionalSelection">
+        <label for="professionalSelection">Choose a Professional <span class="text-danger"> *</span>
+        </label>
+        <select style="font-size: 18px; margin-bottom: 20px;" class="form-control" id="professionalSelection" required>
+          <option value="" disabled selected>Select a professional for your appointment</option>
           <option value="Leo Paul">Leo Paul</option>
           <option value="Kate Phillips">Kate Phillips</option>
           <option value="Lynn Myers">Lynn Myers</option>
           <option value="Philip Meadows">Philip Meadows</option>
+          <span class="error-msg">Please choose a professional for your appointment</span>
         </select>
+        
       </div>
       <!-- Date and Time Selection -->
       <div class="form-row">
         <div class="col">
-          <label for="bookingDate">Date <span class="text-danger"> *</span></label>
-          <input type="text" class="form-control custom-date" id="bookingDate" readonly placeholder="MM/DD/YYYY" />
+          <label for="bookingDate">Date <span class="text-danger"> *</span>
+            <i class="bi bi-question-circle" data-toggle="tooltip" style="cursor: pointer;" title="Please choose a professional to see their available dates."></i>
+          </label>
+          <input type="text" class="form-control custom-date" id="bookingDate" readonly placeholder="MM/DD/YYYY" required />
           <span class="error-msg">Please provide a date for your appointment</span>
         </div>
         <div class="col">
-          <label for="bookingTime">Time <span class="text-danger"> *</span></label>
-          <!-- <input type="time" class="form-control" id="bookingTime" required />
-          <span class="error-msg">The time you selected already passed</span> -->
-
-          <select class="form-control" id="bookingTime">
+          <label for="bookingTime">Time <span class="text-danger"> *</span> 
+            <i class="bi bi-question-circle" data-toggle="tooltip" style="cursor: pointer;" title="Please choose a professional to see their available times."></i>
+          </label>
+          <select class="form-control" id="bookingTime" required>
             <option value="" disabled selected>Select a time for your appointment</option>
             <option value="9:00">9:00</option>
             <option value="9:30">9:30</option>

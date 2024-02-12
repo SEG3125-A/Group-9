@@ -33,12 +33,14 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-var offday = 1
+//initially no off days
+var offday = 0
 document.getElementById('professionalSelection').addEventListener('click', function () {
   var selectedProfessional = document.getElementById('professionalSelection').value;
 
   var bookingdate = document.getElementById("bookingDate");
   bookingdate.value = "";
+
   switch (selectedProfessional) {
     case "Leo Paul":
       offday = 1;
@@ -56,4 +58,70 @@ document.getElementById('professionalSelection').addEventListener('click', funct
       offday = 0;
       break;
   }
+});
+
+// this section deals with graying out off times for professional chosen
+$(document).ready(function () {
+  if ($('#professionalSelection').val() == null) {
+    $('#bookingTime').prop('disabled', true);
+    $('#bookingDate').prop('disabled', true);
+  }
+
+  // grays out off days for specific professionals
+  $('#bookingDate').datepicker({
+    beforeShowDay: function (date) {
+        var day = date.getDay();
+        return [(day !== 0 && day !== 6 && day !== offday)];
+    },
+    changeYear: true,
+    changeMonth: true,
+    yearRange: '2024:+1',
+    minDate: 0,
+  });
+
+  // grays out off time for specific professionals whenever we choose a professional
+  $('#professionalSelection').on('change',function(){
+    var selectedProfessional = $(this).val();
+
+    if ($('#professionalSelection').val() == null) {
+      $('#bookingTime').prop('disabled', true);
+      $('#bookingDate').prop('disabled', true);
+    }else{
+      $('#bookingTime').prop('disabled', false);
+      $('#bookingDate').prop('disabled', false);
+    }
+
+    //initialization
+    $('#bookingTime option').prop('disabled', false);// enable all options first
+    $('#bookingTime').val('');// resets time to nothing if u choose another professional
+    $('#bookingTime option').css('color', ''); // set color back to default
+
+    // disable options based on selected professional
+    switch (selectedProfessional) {
+    case "Leo Paul":
+        setoffTime(['9:00', '10:00', '16:30']);
+      break;
+    case "Kate Phillips":
+        setoffTime(['10:30', '11:30', '12:30']);
+      break;
+    case "Lynn Myers":
+        setoffTime(['9:30','13:00', '14:00', '15:00']);
+      break;
+    case "Philip Meadows":
+        setoffTime(['15:30', '16:00', '12:00', '14:30']);
+      break;
+    default:
+        
+      break;
+  }
+  });
+
+  // disable time off function
+  function setoffTime(unavailableTimes) {
+    unavailableTimes.forEach(function (time) {
+    $('#bookingTime option[value="' + time + '"]').prop('disabled', true);
+    $('#bookingTime option[value="' + time + '"]').css('color', 'lightgray'); //make the disabled more noticeable
+    });
+  }
+
 });
