@@ -160,3 +160,7 @@ label {
   outline: 4px solid #dfa400c6;
   border: none !important;
 }
+
+.custom-date{
+  background-color: #ffffff !important;
+}

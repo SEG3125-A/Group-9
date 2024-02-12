@@ -310,27 +310,37 @@
       <div class="form-row">
         <div class="col">
           <label for="bookingDate">Date</label>
-          <input type="text" class="form-control" id="bookingDate" readonly placeholder="MM/DD/YYYY" />
+          <input type="text" class="form-control custom-date" id="bookingDate" readonly placeholder="MM/DD/YYYY"/>
+          <span class="error-msg">Please provide a date for your appointment</span>
         </div>
         <div class="col">
           <label for="bookingTime">Time</label>
-          <input type="time" class="form-control" id="bookingTime" required />
-          <span class="error-msg">The time you selected already passed</span>
+          <!-- <input type="time" class="form-control" id="bookingTime" required />
+          <span class="error-msg">The time you selected already passed</span> -->
+
+          <select class="form-control" id="bookingTime">
+            <option value="" disabled selected>Select a time for your appointment</option>
+            <option value="9:00">9:00</option>
+            <option value="11:00">11:00</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+          </select>
+          <span class="error-msg">Please provide a time for your appointment</span>
         </div>
       </div>
       <!-- Contact Info -->
       <div class="form-group mt-3">
         <label for="customerName">Name</label>
-        <input type="text" class="form-control" id="customerName" required placeholder="John Doe" />
+        <input type="text" value="name" class="form-control" id="customerName" required placeholder="John Doe" />
       </div>
       <div class="form-group">
         <label for="customerEmail">Email</label>
-        <input type="email" class="form-control" id="customerEmail" required placeholder="bikeiscool@gmail.com" />
+        <input type="email" value="email@email.com"  class="form-control" id="customerEmail" required placeholder="bikeiscool@gmail.com" />
         <span class="error-msg">Please provide a valid email</span>
       </div>
       <div class="form-group">
         <label for="customerPhone">Phone</label>
-        <input type="tel" class="form-control" id="customerPhone" maxlength="10" required placeholder="613 456 7890" />
+        <input type="tel" value="11111111" class="form-control" id="customerPhone" maxlength="10" required placeholder="613 456 7890" />
         <span class="error-msg">Please provide a valid phone number</span>
       </div>
 
@@ -344,13 +354,13 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="cardholderName">Cardholder name</label>
-              <input type="text" class="form-control" id="cardholderName" required placeholder="Jane Doe" />
+              <input type="text" value="name" class="form-control" id="cardholderName" required placeholder="Jane Doe" />
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="expirationDate">Expiration Date</label>
-              <input type="text" class="form-control" id="expirationDate" placeholder="11/25"/>
+              <input type="text" value="11/11" class="form-control" id="expirationDate" placeholder="11/25" required/>
             </div>
           </div>
         </div>
@@ -358,7 +368,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="cardNumber">Card Number</label>
-              <input type="text" class="form-control" id="cardNumber" maxlength="19" required
+              <input type="text" value="1111111111111111" class="form-control" id="cardNumber" maxlength="19" required
                 placeholder="XXXX XXXX XXXX XXXX" />
               <span class="error-msg">Please provide a valid card number</span>
             </div>
@@ -366,7 +376,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="cvv">CVV</label>
-              <input type="text" class="form-control" id="cvv" maxlength="3" minlength="3" placeholder="XXX" />
+              <input type="text" value="111" class="form-control" id="cvv" maxlength="3" minlength="3" placeholder="XXX" required />
               <span class="error-msg">Please provide a valid CVV</span>
             </div>
           </div>

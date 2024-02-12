@@ -115,17 +115,29 @@ $(document).ready(function () {
         var selectedDate = $('#bookingDate').val();
         var selectedTime = $('#bookingTime').val();
 
-        // checks if the time entered has already passed
-        var selectedTimestamp = new Date(selectedDate + ' ' + selectedTime);
-
-        var currentTimestamp = new Date();
-        if (selectedTimestamp <= currentTimestamp) {
-            console.log("nope")
+        //console.log(selectedTime);
+        if (selectedTime == null){
             $('#bookingTime').next('.error-msg').show();
             isValid = false;
-        } else {
-            $('#bookingTime').next('.error-msg').hide();
         }
+
+        if (selectedDate == ""){
+            $('#bookingDate').next('.error-msg').show();
+            isValid = false;
+        }
+
+
+        // checks if the time entered has already passed
+        // var selectedTimestamp = new Date(selectedDate + ' ' + selectedTime);
+
+        // var currentTimestamp = new Date();
+        // if (selectedTimestamp <= currentTimestamp) {
+        //     console.log("nope")
+        //     $('#bookingTime').next('.error-msg').show();
+        //     isValid = false;
+        // } else {
+        //     $('#bookingTime').next('.error-msg').hide();
+        // }
 
         // display confirmation modal if successful
         if (isValid) {
@@ -148,5 +160,13 @@ $(document).ready(function () {
 
     $('#cvv').on('input', function () {
         $('#cvv').next('.error-msg').hide();
+    });
+
+    $('#bookingDate').on('focus', function () {
+        $('#bookingDate').next('.error-msg').hide();
+    });
+
+    $('#bookingTime').on('input', function () {
+        $('#bookingTime').next('.error-msg').hide();
     });
 });
