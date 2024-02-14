@@ -21,11 +21,7 @@ function selectService(serviceName) {
   // Update the dropdown
   document.getElementById("serviceSelection").value = serviceName;
   // Scroll to the booking section
-  document
-    .getElementById("booking-section")
-    .scrollIntoView({ behavior: "smooth" });
-  document.getElementById("serviceSelection").focus();
-
+  document.getElementById("location-section-end").scrollIntoView({ behavior: "smooth" });
 }
 
 // enables tooltips everywhere
@@ -70,8 +66,8 @@ $(document).ready(function () {
   // grays out off days for specific professionals
   $('#bookingDate').datepicker({
     beforeShowDay: function (date) {
-        var day = date.getDay();
-        return [(day !== 0 && day !== 6 && day !== offday)];
+      var day = date.getDay();
+      return [(day !== 0 && day !== 6 && day !== offday)];
     },
     changeYear: true,
     changeMonth: true,
@@ -80,13 +76,13 @@ $(document).ready(function () {
   });
 
   // grays out off time for specific professionals whenever we choose a professional
-  $('#professionalSelection').on('change',function(){
+  $('#professionalSelection').on('change', function () {
     var selectedProfessional = $(this).val();
 
     if ($('#professionalSelection').val() == null) {
       $('#bookingTime').prop('disabled', true);
       $('#bookingDate').prop('disabled', true);
-    }else{
+    } else {
       $('#bookingTime').prop('disabled', false);
       $('#bookingDate').prop('disabled', false);
     }
@@ -99,29 +95,29 @@ $(document).ready(function () {
 
     // disable options based on selected professional
     switch (selectedProfessional) {
-    case "Leo Paul":
+      case "Leo Paul":
         setoffTime(['9:00', '10:00', '16:30']);
-      break;
-    case "Kate Phillips":
+        break;
+      case "Kate Phillips":
         setoffTime(['10:30', '11:30', '12:30']);
-      break;
-    case "Lynn Myers":
-        setoffTime(['9:30','13:00', '14:00', '15:00']);
-      break;
-    case "Philip Meadows":
+        break;
+      case "Lynn Myers":
+        setoffTime(['9:30', '13:00', '14:00', '15:00']);
+        break;
+      case "Philip Meadows":
         setoffTime(['15:30', '16:00', '12:00', '14:30']);
-      break;
-    default:
-        
-      break;
-  }
+        break;
+      default:
+
+        break;
+    }
   });
 
   // disable time off function
   function setoffTime(unavailableTimes) {
     unavailableTimes.forEach(function (time) {
-    $('#bookingTime option[value="' + time + '"]').prop('disabled', true);
-    $('#bookingTime option[value="' + time + '"]').css('color', 'lightgray'); //make the disabled more noticeable
+      $('#bookingTime option[value="' + time + '"]').prop('disabled', true);
+      $('#bookingTime option[value="' + time + '"]').css('color', 'lightgray'); //make the disabled more noticeable
     });
   }
 
