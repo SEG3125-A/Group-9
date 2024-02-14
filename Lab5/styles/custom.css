@@ -164,5 +164,8 @@ label {
 }
 
 #bookingDate:disabled {
-  background-color: #e9ecef !important;
+  background-color: #c5c7c9 !important;
+}
+#bookingTime:disabled {
+  background-color: #c5c7c9!important;
 }
