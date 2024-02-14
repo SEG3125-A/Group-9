@@ -35,13 +35,18 @@ $(function () {
 })
 
 //initially no off days
-var offday = 0
-document.getElementById('professionalSelection').addEventListener('click', function () {
+var offday;
+function setOffDay(){
   var selectedProfessional = document.getElementById('professionalSelection').value;
+  offday = selectedProfessional;
+  updateOffday();
+}
 
-  var bookingdate = document.getElementById("bookingDate");
-  //bookingdate.value = ""; moved this down to "on change" so that it is consistent with time
+setOffDay();
 
+function updateOffday(){
+  var selectedProfessional = document.getElementById('professionalSelection').value;
+  console.log(selectedProfessional)
   switch (selectedProfessional) {
     case "Leo Paul":
       offday = 1;
@@ -59,7 +64,8 @@ document.getElementById('professionalSelection').addEventListener('click', funct
       offday = 0;
       break;
   }
-});
+}
+
 
 // this section deals with graying out off times for professional chosen
 $(document).ready(function () {
