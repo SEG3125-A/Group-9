@@ -19,9 +19,14 @@ function showModal(event) {
 
 function selectService(serviceName) {
   // Update the dropdown
-  document.getElementById("serviceSelection").value = serviceName;
+  const serviceSelection = document.getElementById("serviceSelection");
+  serviceSelection.value = serviceName;
   // Scroll to the booking section
-  document.getElementById("location-section-end").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("booking-section-start").scrollIntoView({ behavior: "smooth" });
+  
+  serviceSelection.focus({
+    preventScroll: true
+  });
 }
 
 // enables tooltips everywhere

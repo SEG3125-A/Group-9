@@ -114,12 +114,11 @@ label {
   flex-grow: 1;
 }
 
-.section-end {
+
+.section-start{
   height: 50px;
-  bottom: 0;
   width: 100%;
 }
-
 
 .bg {
   padding-top: 1.5em;
