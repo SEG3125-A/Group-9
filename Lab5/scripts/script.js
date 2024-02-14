@@ -34,18 +34,28 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
-//initially no off days
+//for firefox, when you refresh, make sure the change is reflected
 var offday;
-function setOffDay(){
+updateDateAndTime();
+
+// updates the date and time when the professional is changed
+function updateDateAndTime(){
   var selectedProfessional = document.getElementById('professionalSelection').value;
-  offday = selectedProfessional;
-  updateOffday();
+  updateOffTime(selectedProfessional);
+  updateOffday(selectedProfessional);
 }
 
-setOffDay();
+// disable time off function
+function setoffTime(unavailableTimes) {
+  unavailableTimes.forEach(function (time) {
+    $('#bookingTime option[value="' + time + '"]').prop('disabled', true);
+    $('#bookingTime option[value="' + time + '"]').css('color', 'lightgray'); //make the disabled more noticeable
+  });
+}
 
-function updateOffday(){
-  var selectedProfessional = document.getElementById('professionalSelection').value;
+// date update function
+function updateOffday(selectedProfessional){
+  offday = selectedProfessional;
   console.log(selectedProfessional)
   switch (selectedProfessional) {
     case "Leo Paul":
@@ -67,6 +77,43 @@ function updateOffday(){
 }
 
 
+// time update function
+function updateOffTime(selectedProfessional){
+
+  if ($('#professionalSelection').val() == null) {
+    $('#bookingTime').prop('disabled', true);
+    $('#bookingDate').prop('disabled', true);
+  } else {
+    $('#bookingTime').prop('disabled', false);
+    $('#bookingDate').prop('disabled', false);
+  }
+
+  //initialization
+  $('#bookingTime option').prop('disabled', false);// enable all options first
+  $('#bookingTime').val('');// resets time to nothing if u choose another professional
+  $('#bookingTime option').css('color', ''); // set color back to default
+  $('#bookingDate').val('');// resets date to nothing if u choose another professional
+
+  // disable options based on selected professional
+  switch (selectedProfessional) {
+    case "Leo Paul":
+      setoffTime(['9:00', '10:00', '16:30']);
+      break;
+    case "Kate Phillips":
+      setoffTime(['10:30', '11:30', '12:30']);
+      break;
+    case "Lynn Myers":
+      setoffTime(['9:30', '13:00', '14:00', '15:00']);
+      break;
+    case "Philip Meadows":
+      setoffTime(['15:30', '16:00', '12:00', '14:30']);
+      break;
+    default:
+
+      break;
+  }
+}
+
 // this section deals with graying out off times for professional chosen
 $(document).ready(function () {
   if ($('#professionalSelection').val() == null) {
@@ -85,51 +132,5 @@ $(document).ready(function () {
     yearRange: '2024:+1',
     minDate: 0,
   });
-
-  // grays out off time for specific professionals whenever we choose a professional
-  $('#professionalSelection').on('change', function () {
-    var selectedProfessional = $(this).val();
-
-    if ($('#professionalSelection').val() == null) {
-      $('#bookingTime').prop('disabled', true);
-      $('#bookingDate').prop('disabled', true);
-    } else {
-      $('#bookingTime').prop('disabled', false);
-      $('#bookingDate').prop('disabled', false);
-    }
-
-    //initialization
-    $('#bookingTime option').prop('disabled', false);// enable all options first
-    $('#bookingTime').val('');// resets time to nothing if u choose another professional
-    $('#bookingTime option').css('color', ''); // set color back to default
-    $('#bookingDate').val('');// resets date to nothing if u choose another professional
-
-    // disable options based on selected professional
-    switch (selectedProfessional) {
-      case "Leo Paul":
-        setoffTime(['9:00', '10:00', '16:30']);
-        break;
-      case "Kate Phillips":
-        setoffTime(['10:30', '11:30', '12:30']);
-        break;
-      case "Lynn Myers":
-        setoffTime(['9:30', '13:00', '14:00', '15:00']);
-        break;
-      case "Philip Meadows":
-        setoffTime(['15:30', '16:00', '12:00', '14:30']);
-        break;
-      default:
-
-        break;
-    }
-  });
-
-  // disable time off function
-  function setoffTime(unavailableTimes) {
-    unavailableTimes.forEach(function (time) {
-      $('#bookingTime option[value="' + time + '"]').prop('disabled', true);
-      $('#bookingTime option[value="' + time + '"]').css('color', 'lightgray'); //make the disabled more noticeable
-    });
-  }
 
 });

@@ -300,7 +300,7 @@
 
         <label for="professionalSelection">Choose a Professional <span class="text-danger"> *</span>
         </label>
-        <select style="font-size: 18px; margin-bottom: 20px;" class="form-control" id="professionalSelection" required onchange="updateOffday()">
+        <select style="font-size: 18px; margin-bottom: 20px;" class="form-control" id="professionalSelection" required onchange="updateDateAndTime()">
           <option value="" disabled selected>Select a professional for your appointment</option>
           <option value="Leo Paul">Leo Paul</option>
           <option value="Kate Phillips">Kate Phillips</option>
@@ -326,7 +326,7 @@
             <i class="bi bi-question-circle" data-toggle="tooltip" style="cursor: pointer;"
               title="Please choose a professional to see their available times."></i>
           </label>
-          <select class="form-control" style="height: 54%;" id="bookingTime" required  onchange="updateTime()">
+          <select class="form-control" style="height: 54%;" id="bookingTime" required>
             <option value="" disabled selected>Select a time for your appointment</option>
             <option value="9:00">9:00</option>
             <option value="9:30">9:30</option>
