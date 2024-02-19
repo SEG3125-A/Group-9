@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <link href="survey.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="scripts/submit.js"></script>
+
   <title>Walmart Survey</title>
 </head>
 
@@ -40,7 +42,7 @@
   <br>
   <hr>
 
-  <form action="/submit" method="POST" id="surveyForm">
+  <form action="" id="surveyForm">
     <div class="info-question">
     <h2>A. Personal information </h2>
     <div class="text-container">
@@ -48,7 +50,7 @@
         <label for="fname">1. First name: </label>
       </div>
       <div class="box-container">
-        <input style="width:100%; font-size: 18px;" type="text" id="fname" name="fname"><br><br>
+        <input required style="width:100%; font-size: 18px;" type="text" id="fname" name="fname"><br><br>
       </div>
     </div>
     <div class="text-container">
@@ -56,7 +58,7 @@
         <label for="lname">2. Last name: </label>
       </div>
       <div class="box-container">
-        <input style="width:100%; font-size: 18px;" type="text" id="lname" name="lname"><br><br>
+        <input required style="width:100%; font-size: 18px;" type="text" id="lname" name="lname"><br><br>
       </div>
     </div>
     <div class="text-container">
@@ -64,7 +66,7 @@
         <p style="margin: 0px">3. In which Canadian province do you live in:</p>
       </div>
       <div class="province-container" style="align-content: center;">
-        <select name="province" id="province" style="font-size: 18px;">
+        <select required name="province" id="province" style="font-size: 18px;">
           <option disabled selected>Select province</option>
           <option value="AB">Alberta</option>
           <option value="BC">British Columbia</option>
