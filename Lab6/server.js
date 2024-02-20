@@ -22,6 +22,7 @@ app.get("/survey", (req, res) => {
 // If we haven't submitted yet, this will contain previous saved data
 // To access go on: localhost:3000/submit
 app.post("/submit", (req, res) => {
+  console.log(req.body);
   const formData = req.body;
 
   console.log("Form data at server:", formData);

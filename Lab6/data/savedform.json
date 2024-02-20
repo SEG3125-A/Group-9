@@ -1,10 +1,19 @@
 {
-  "fname": "Amar",
-  "lname": "Ghazi",
-  "province": "ON",
+  "fname": "John",
+  "lname": "Doe",
+  "province": "BC",
   "rating": "4",
-  "features": "Store Finder",
-  "shopmost": "Dairy and Eggs",
-  "shoppingpref": "In person",
-  "imp": ""
+  "features[]": [
+    "Store Finder",
+    "Digital Services"
+  ],
+  "shopmost[]": [
+    "Meat and Seafood",
+    "Chips and Snacks"
+  ],
+  "shoppingpref[]": [
+    "Online pickup",
+    "Online delivery"
+  ],
+  "imp": "good"
 }

@@ -6,37 +6,59 @@ document.addEventListener("DOMContentLoaded", function () {
     popupContainer.style.display = "flex";
   });
 
-  const form = document.getElementById('surveyForm');
+  const form = document.getElementById("surveyForm");
 
-  //when form is submitted, redirect to server endpoint
-  form.addEventListener('submit', function(event){
+  // When form is submitted, redirect to server endpoint
+  form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const formData = new FormData(this);
-
-    //debug
-    // for (const pair of formData.entries()) {
-    //   console.log(pair[0] + ': ' + pair[1]);
-    // }
-
-     // Convert form data to JSON format
     const jsonData = {};
+
+    // Iterate over all form entries
     formData.forEach((value, key) => {
-      jsonData[key] = value;
+      // Check if the key already exists
+      if (jsonData.hasOwnProperty(key)) {
+        // If the key's value is not an array, convert it to an array
+        if (!Array.isArray(jsonData[key])) {
+          jsonData[key] = [jsonData[key]];
+        }
+        // Append the new value to the existing array
+        jsonData[key].push(value);
+      } else {
+        // If the key doesn't exist, simply add it
+        jsonData[key] = value;
+      }
     });
 
-    //console.log(jsonData);
+    // Debug: log the JSON object to ensure it's formatted correctly
+    console.log(jsonData);
 
-    //send post request to /submit endpoint
-    fetch('/submit', {
-      method: 'POST',
+    // Send post request to /submit endpoint
+    fetch("/submit", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(jsonData)
-    });
+      body: JSON.stringify(jsonData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then((data) => {
+        console.log(data);
+        // You can redirect or show a success message here
+      })
+      .catch((error) => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
+        );
+      });
   });
-
 });
 
 function closePopup() {
