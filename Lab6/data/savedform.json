@@ -1,1 +1,10 @@
-{"fname":"aaaaa","lname":"bbb","province":"BC","rating":"1","features":"Sort and filter","shopmost":"Meat and Seafood","shoppingpref":"Other","imp":"testlast"}
+{
+  "fname": "Amar",
+  "lname": "Ghazi",
+  "province": "ON",
+  "rating": "4",
+  "features": "Store Finder",
+  "shopmost": "Dairy and Eggs",
+  "shoppingpref": "In person",
+  "imp": ""
+}

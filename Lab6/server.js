@@ -1,61 +1,63 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-var fs = require('fs');
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+var fs = require("fs");
 
 const app = express();
 const PORT = 3000;
 
-app.use(bodyParser.urlencoded({ extended: false })); //parse urls
-app.use(express.static(path.join(__dirname, 'public'))); //parse the css and scripts, without this we can't use these from the backend
+app.use(bodyParser.urlencoded({ extended: true })); //parse urls
+app.use(express.static(path.join(__dirname, "public"))); //parse the css and scripts, without this we can't use these from the backend
 app.use(bodyParser.json());
 
 /// API ENDPOINTS ///
 
 // Endpoint: to view the survey when accessing from the server
 // To access go on: localhost:3000/survey
-app.get('/survey', (req,res) =>{
-    res.sendFile(__dirname+'/public/index.html');
+app.get("/survey", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 // Endpoint: After user submits the survey, save the form data to data/savedform.txt
 // If we haven't submitted yet, this will contain previous saved data
-// To access go on: localhost:3000/submit 
-app.post( '/submit', (req,res) => {
-    const formData = req.body;
+// To access go on: localhost:3000/submit
+app.post("/submit", (req, res) => {
+  const formData = req.body;
 
-    console.log('Form data at server:', formData);
+  console.log("Form data at server:", formData);
 
-    const formDataString = JSON.stringify(formData);
+  const formDataString = JSON.stringify(formData, null, 2); // Pretty print JSON
 
-    // TODO probably some processing here to make sure that all form data is saved
-    
-    // Write the form data to txt file
-    fs.writeFileSync('data/savedform.json', formDataString);
+  // Save the form data to a file
+  const filePath = path.join(__dirname, "data", "savedform.json");
+  fs.writeFileSync(filePath, formDataString);
 
-    console.log('Form data saved to file successfully.');
+  console.log("Form data saved to file successfully.");
+
+  // Redirect to the analysis page after saving the data
+  res.redirect("/analysis");
 });
 
 // Endpoint: read the data from savedform.json and display it
-// To access go on: localhost:3000/analysis 
-app.get('/analysis', async (req,res) =>{
+// To access go on: localhost:3000/analysis
+app.get("/analysis", async (req, res) => {
+  const filePath = path.join(__dirname, "data", "savedform.json");
+  fs.readFile(filePath, "utf-8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      res.status(500).send("Error reading file");
+      return;
+    }
 
-    const filePath = path.join(__dirname, 'data', 'savedform.json');
-    fs.readFile(filePath, 'utf-8', (err, data) => {
-        if (err) {
-        console.error('Error reading file:', err);
-        res.status(500).send('Error reading file');
-        return;
-        }
+    //display json as string on endpoint
+    console.log("displaying form data on analysis");
 
-        //display json as string on endpoint
-        console.log("displaying form data on analysis")
+    // TODO instead of just raw data string, send a templated html instead here to display data from saved json neatly
 
-        // TODO instead of just raw data string, send a templated html instead here to display data from saved json neatly
-
-        res.send(data);
-    });
-
+    res.send(data);
+  });
 });
 
-app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server is running on http://localhost:${PORT}`)
+);
