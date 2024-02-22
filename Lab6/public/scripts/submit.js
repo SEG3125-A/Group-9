@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   var submitButton = document.getElementById("submitButton");
+  var clientForm = document.getElementById("surveyForm");
+  var popupContainer = document.getElementById("popupContainer");
 
   submitButton.addEventListener("click", function () {
-    var popupContainer = document.getElementById("popupContainer");
-    popupContainer.style.display = "flex";
+
+    // if all required fields are completed in the form
+    if (clientForm.checkValidity()) {
+      popupContainer.style.display = "flex";
+    }
   });
 
   const form = document.getElementById("surveyForm");
