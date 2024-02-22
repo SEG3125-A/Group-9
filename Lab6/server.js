@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-var fs = require("fs");
+const fs = require("fs/promises"); // Use fs.promises for async/await support
 
 const app = express();
 const PORT = 3000;
@@ -31,32 +31,53 @@ app.post("/submit", (req, res) => {
 
   // Save the form data to a file
   const filePath = path.join(__dirname, "data", "savedform.json");
-  fs.writeFileSync(filePath, formDataString);
-
-  console.log("Form data saved to file successfully.");
-
-  // Redirect to the analysis page after saving the data
-  res.redirect("/analysis");
+  fs.writeFile(filePath, formDataString)
+    .then(() => {
+      console.log("Form data saved to file successfully.");
+      // Redirect to the analysis page after saving the data
+      res.redirect("/analysis");
+    })
+    .catch((err) => {
+      console.error("Error writing file:", err);
+      res.status(500).send("Error writing file");
+    });
 });
 
 // Endpoint: read the data from savedform.json and display it
 // To access go on: localhost:3000/analysis
 app.get("/analysis", async (req, res) => {
   const filePath = path.join(__dirname, "data", "savedform.json");
-  fs.readFile(filePath, "utf-8", (err, data) => {
-    if (err) {
-      console.error("Error reading file:", err);
-      res.status(500).send("Error reading file");
-      return;
-    }
+  try {
+    // Read file asynchronously using fs.promises.readFile
+    const data = await fs.readFile(filePath, "utf-8");
 
     //display json as string on endpoint
     console.log("displaying form data on analysis");
 
     // TODO instead of just raw data string, send a templated html instead here to display data from saved json neatly
+    // Load HTML template from file
+    const templatePath = path.join(__dirname, "backend", "analysis.html");
+    const htmlTemplate = await fs.readFile(templatePath, "utf-8");
+    // Replace placeholders in the template with actual data
+    const filledTemplate = htmlTemplate
+      .replace(/{{fname}}/g, JSON.parse(data).fname)
+      .replace(/{{lname}}/g, JSON.parse(data).lname)
+      .replace(/{{province}}/g, JSON.parse(data).province)
+      .replace(/{{rating}}/g, JSON.parse(data).rating)
+      .replace(/{{features\[\]}}/g, JSON.parse(data)['features[]'])
+      .replace(/{{#each shopmost\[\]}}([\s\S]*?){{\/each}}/g, (match, p1) => {
+        const shopmost = JSON.parse(data)['shopmost[]'];
+        return shopmost.map((item) => p1.replace(/{{this}}/g, item)).join('');
+      })
+      .replace(/{{shoppingpref\[\]}}/g, JSON.parse(data)['shoppingpref[]'])
+      .replace(/{{imp}}/g, JSON.parse(data).imp);
 
-    res.send(data);
-  });
+    // Send the filled HTML template
+    res.send(filledTemplate);
+  } catch (err) {
+    console.error("Error reading file:", err);
+    res.status(500).send("Error reading file");
+  }
 });
 
 app.listen(PORT, () =>

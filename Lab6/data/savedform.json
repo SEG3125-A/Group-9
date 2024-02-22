@@ -1,19 +1,10 @@
 {
-  "fname": "John",
-  "lname": "Doe",
-  "province": "BC",
-  "rating": "4",
-  "features[]": [
-    "Store Finder",
-    "Digital Services"
-  ],
-  "shopmost[]": [
-    "Meat and Seafood",
-    "Chips and Snacks"
-  ],
-  "shoppingpref[]": [
-    "Online pickup",
-    "Online delivery"
-  ],
-  "imp": "good"
+  "fname": "fdfgd",
+  "lname": "dfgdfgd",
+  "province": "MB",
+  "rating": "5",
+  "features[]": "Digital Services",
+  "shopmost[]": "Chips and Snacks",
+  "shoppingpref[]": "Online pickup",
+  "imp": "fdgdgdfgd"
 }

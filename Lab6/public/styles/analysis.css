@@ -1,0 +1,12 @@
+.text-container {
+    display: flex;
+    width: auto;
+}
+.label-container {
+    padding-top: 1%;
+    width: 20%;
+}
+  
+.box-container {
+    width: 20%;
+}

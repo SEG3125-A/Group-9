@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/survey.css" rel="stylesheet" type="text/css" />
+    <link href="styles/analysis.css" rel="stylesheet" type="text/css" />
+
+    <title>Form Data Analysis</title>
+</head>
+<body>
+    <h1>Form Data Analysis</h1>
+    <hr>
+    <div class="info-question">
+        <h2>A. Client information </h2>
+        <div class="text-container">
+            <div class="label-container">
+                <label for="fname">1. First name: </label>
+            </div>
+            <div class="box-container">
+                <p>{{fname}}</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="label-container">
+                <label for="lname">2. Last name: </label>
+            </div>
+            <div class="box-container">
+                <p>{{lname}}</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="label-container">
+                <p style="margin: 0px">3. Location:</p>
+            </div>
+            <div class="province-container" style="align-content: center;">
+                <p>{{province}}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="info-question">
+        <h2>B. Client opinion</h2>
+        <div class="text-container">
+            <div class="label-container">
+                <label for="fname">1. Rating: </label>
+            </div>
+            <div class="box-container">
+                <p>{{rating}}</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="label-container">
+                <label for="lname">2. Most liked features: </label>
+            </div>
+            <div class="box-container">
+                <p>{{features[]}}</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="label-container">
+                <p style="margin: 0px">3. Shopping Preferences:</p>
+            </div>
+            <div class="province-container" style="align-content: center;">
+                <p>{{shoppingpref[]}}</p>
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="label-container">
+                <p style="margin: 0px">4. Message left:</p>
+            </div>
+            <div class="province-container" style="align-content: center;">
+                <p>{{imp}}</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>
