@@ -1,19 +1,14 @@
 {
-  "fname": "sdf",
-  "lname": "fhfgh",
-  "province": "AB",
-  "rating": "5",
-  "features[]": [
-    "Flyers",
-    "Digital Services"
-  ],
+  "fname": "sfdsfsf",
+  "lname": "fghfh",
+  "province": "NB",
+  "rating": "3",
+  "features[]": "Flyers",
   "shopmost[]": [
     "Fruits and Vegetables",
-    "Bread and Bakery"
+    "Bread and Bakery",
+    "Chips and Snacks"
   ],
-  "shoppingpref[]": [
-    "In person",
-    "Online delivery"
-  ],
-  "imp": "xcxvxcv"
+  "shoppingpref[]": "In person",
+  "imp": "sdfsfs"
 }

@@ -77,9 +77,12 @@ app.get("/analysis", async (req, res) => {
   }
 });
 
-// The array to create list
 function createListItems(arr) {
-  return `<ol>${arr.map(item => `<li>${item}</li>`).join('')}</ol>`;
+  if (Array.isArray(arr)) {
+    return `<ol>${arr.map(item => `<li>${item}</li>`).join('')}</ol>`;
+  } else {
+    return arr;
+  }
 }
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)

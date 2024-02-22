@@ -78,12 +78,16 @@ function closePopup() {
 function validateCheckboxes(name){
   const checkboxes = document.querySelectorAll(name);
   const atLeastOneChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-  const firstCheckbox =  checkboxes[0]
+  var index = Math.floor(checkboxes.length/3);
+  console.log(index)
+  const firstCheckbox = checkboxes[index]
   checkboxNotChecked = !atLeastOneChecked
   console.log(atLeastOneChecked)
   if (atLeastOneChecked) {
     firstCheckbox.required = false;
+    firstCheckbox.setCustomValidity('');
   } else{
     firstCheckbox.required = true;
+    firstCheckbox.setCustomValidity('Please choose one of the options');
   }
 }
