@@ -1,21 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var submitButton = document.getElementById("submitButton");
-  var clientForm = document.getElementById("surveyForm");
+
   var popupContainer = document.getElementById("popupContainer");
-
-  submitButton.addEventListener("click", function () {
-
-    // if all required fields are completed in the form
-    if (clientForm.checkValidity()) {
-      popupContainer.style.display = "flex";
-    }
-  });
-
+  var submitButton = document.getElementById("submitButton");
   const form = document.getElementById("surveyForm");
+  var checkboxNotChecked = false;
+
+  submitButton.addEventListener("click", function(){
+    validateCheckboxes('input[name="features[]"]');
+    validateCheckboxes('input[name="shopmost[]"]');
+    validateCheckboxes('input[name="shoppingpref[]"]');
+  })
 
   // When form is submitted, redirect to server endpoint
   form.addEventListener("submit", function (event) {
+    if(checkboxNotChecked) return;
+
     event.preventDefault();
+
+    if (form.checkValidity()) {
+      popupContainer.style.display = "flex";
+    }
 
     const formData = new FormData(this);
     const jsonData = {};
@@ -69,4 +73,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function closePopup() {
   document.getElementById("popupContainer").style.display = "none";
+}
+
+function validateCheckboxes(name){
+  const checkboxes = document.querySelectorAll(name);
+  const atLeastOneChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+  const firstCheckbox =  checkboxes[0]
+  checkboxNotChecked = !atLeastOneChecked
+  console.log(atLeastOneChecked)
+  if (atLeastOneChecked) {
+    firstCheckbox.required = false;
+  } else{
+    firstCheckbox.required = true;
+  }
 }

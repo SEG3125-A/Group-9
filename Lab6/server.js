@@ -64,12 +64,9 @@ app.get("/analysis", async (req, res) => {
       .replace(/{{lname}}/g, JSON.parse(data).lname)
       .replace(/{{province}}/g, JSON.parse(data).province)
       .replace(/{{rating}}/g, JSON.parse(data).rating)
-      .replace(/{{features\[\]}}/g, JSON.parse(data)['features[]'])
-      .replace(/{{#each shopmost\[\]}}([\s\S]*?){{\/each}}/g, (match, p1) => {
-        const shopmost = JSON.parse(data)['shopmost[]'];
-        return shopmost.map((item) => p1.replace(/{{this}}/g, item)).join('');
-      })
-      .replace(/{{shoppingpref\[\]}}/g, JSON.parse(data)['shoppingpref[]'])
+      .replace(/{{features\[\]}}/g, createListItems(JSON.parse(data)['features[]']))
+      .replace(/{{shopmost\[\]}}/g, createListItems(JSON.parse(data)['shopmost[]']))
+      .replace(/{{shoppingpref\[\]}}/g, createListItems(JSON.parse(data)['shoppingpref[]']))
       .replace(/{{imp}}/g, JSON.parse(data).imp);
 
     // Send the filled HTML template
@@ -80,6 +77,10 @@ app.get("/analysis", async (req, res) => {
   }
 });
 
+// The array to create list
+function createListItems(arr) {
+  return `<ol>${arr.map(item => `<li>${item}</li>`).join('')}</ol>`;
+}
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)
 );

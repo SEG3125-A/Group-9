@@ -1,6 +1,19 @@
 {
-  "fname": "dsd",
-  "lname": "dsffsfdfsf",
-  "province": "NB",
-  "imp": ""
+  "fname": "sdf",
+  "lname": "fhfgh",
+  "province": "AB",
+  "rating": "5",
+  "features[]": [
+    "Flyers",
+    "Digital Services"
+  ],
+  "shopmost[]": [
+    "Fruits and Vegetables",
+    "Bread and Bakery"
+  ],
+  "shoppingpref[]": [
+    "In person",
+    "Online delivery"
+  ],
+  "imp": "xcxvxcv"
 }
