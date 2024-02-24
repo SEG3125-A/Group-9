@@ -1,13 +1,10 @@
 {
-  "fname": "Céline",
+  "fname": "        ",
   "lname": "Wan Min Kee",
   "province": "ON",
   "rating": "4",
-  "features[]": [
-    "Flyers",
-    "Store Finder"
-  ],
-  "shopmost[]": "Dairy and Eggs",
-  "shoppingpref[]": "In person",
-  "imp": "N/A"
+  "features[]": "Store Finder",
+  "shopmost[]": "Chips and Snacks",
+  "shoppingpref[]": "Online pickup",
+  "imp": ""
 }

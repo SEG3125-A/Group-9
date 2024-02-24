@@ -1,3 +1,24 @@
+$(document).ready(function () {
+
+  // forces the user to write names properly (without numbers)
+  $('#fname').on('input', function () {
+    var input = $(this).val();
+
+    var sanitizedInput = input.replace(/[^a-zA-Z\u00C0-\u024F\s]/g, '');
+
+    $(this).val(sanitizedInput);
+  });
+
+  $('#lname').on('input', function () {
+    var input = $(this).val();
+
+    var sanitizedInput = input.replace(/[^a-zA-Z\u00C0-\u024F\s]/g, '');
+
+    $(this).val(sanitizedInput);
+  });
+
+});
+
 document.addEventListener("DOMContentLoaded", function () {
 
   var popupContainer = document.getElementById("popupContainer");
@@ -5,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("surveyForm");
   var checkboxNotChecked = false;
 
-  submitButton.addEventListener("click", function(){
+  submitButton.addEventListener("click", function () {
+    validateProvinceDropdown();
     validateCheckboxes('input[name="features[]"]');
     validateCheckboxes('input[name="shopmost[]"]');
     validateCheckboxes('input[name="shoppingpref[]"]');
@@ -13,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // When form is submitted, redirect to server endpoint
   form.addEventListener("submit", function (event) {
-    if(checkboxNotChecked) return;
+    if (checkboxNotChecked) return;
 
     event.preventDefault();
 
@@ -22,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const formData = new FormData(this);
+
     const jsonData = {};
 
     // Iterate over all form entries
@@ -75,19 +98,37 @@ function closePopup() {
   document.getElementById("popupContainer").style.display = "none";
 }
 
-function validateCheckboxes(name){
+function validateCheckboxes(name) {
   const checkboxes = document.querySelectorAll(name);
   const atLeastOneChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-  var index = Math.floor(checkboxes.length/3);
-  console.log(index)
+  var index = Math.floor(checkboxes.length / 3);
+
   const firstCheckbox = checkboxes[index]
   checkboxNotChecked = !atLeastOneChecked
-  console.log(atLeastOneChecked)
+
   if (atLeastOneChecked) {
     firstCheckbox.required = false;
     firstCheckbox.setCustomValidity('');
-  } else{
+  } else {
     firstCheckbox.required = true;
     firstCheckbox.setCustomValidity('Please choose one of the options');
   }
 }
+
+function validateProvinceDropdown() {
+  const provinceDropdown = document.getElementById("province");
+  const selectedOption = provinceDropdown.value;
+
+  const invalidOptionValue = 'Select province';
+
+  // Check if a valid option is selected
+  const isValid = selectedOption !== invalidOptionValue;
+
+  // Set custom validation message
+  if (isValid) {
+    provinceDropdown.setCustomValidity('');
+  } else {
+    provinceDropdown.setCustomValidity('Please select an option');
+  }
+}
+

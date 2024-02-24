@@ -52,7 +52,7 @@ app.get("/analysis", async (req, res) => {
     const data = await fs.readFile(filePath, "utf-8");
 
     //display json as string on endpoint
-    console.log("displaying form data on analysis");
+    console.log("Displaying form data on analysis");
 
     // TODO instead of just raw data string, send a templated html instead here to display data from saved json neatly
     // Load HTML template from file

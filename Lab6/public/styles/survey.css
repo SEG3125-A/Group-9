@@ -232,3 +232,7 @@ input[type="radio"] {
 .option-container {
   margin: 0px 0px 10px 15px;
 }
+
+.text-danger {
+  color: red;
+}
