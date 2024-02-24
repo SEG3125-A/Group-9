@@ -1,12 +1,21 @@
-.text-container {
-    display: flex;
-    width: auto;
+body {
+    background-color: #282c34 !important;
+    color: #fff !important;
 }
-.label-container {
-    padding-top: 1.4%;
-    width: 20%;
+
+hr {
+    color: white
 }
-  
-.box-container {
-    width: 20%;
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-left: 15px;
+}
+
+label {
+    font-weight: bold;
 }

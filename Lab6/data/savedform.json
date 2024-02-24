@@ -1,14 +1,13 @@
 {
-  "fname": "sfdsfsf",
-  "lname": "fghfh",
-  "province": "NB",
-  "rating": "3",
-  "features[]": "Flyers",
-  "shopmost[]": [
-    "Fruits and Vegetables",
-    "Bread and Bakery",
-    "Chips and Snacks"
+  "fname": "Céline",
+  "lname": "Wan Min Kee",
+  "province": "ON",
+  "rating": "4",
+  "features[]": [
+    "Flyers",
+    "Store Finder"
   ],
+  "shopmost[]": "Dairy and Eggs",
   "shoppingpref[]": "In person",
-  "imp": "sdfsfs"
+  "imp": "N/A"
 }

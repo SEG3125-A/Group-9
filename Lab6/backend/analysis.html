@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/survey.css" rel="stylesheet" type="text/css" />
     <link href="styles/analysis.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css">
     <title>Form Data Analysis</title>
 </head>
+
 <body>
     <h1>Form Data Analysis</h1>
     <hr>
     <div class="info-question">
         <h2>A. Client information </h2>
-        <div class="text-container">
-            <div class="label-container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
                 <label for="fname">1. First name: </label>
             </div>
-            <div class="box-container">
+            <div class="col-md-9">
                 <p>{{fname}}</p>
             </div>
         </div>
-        <div class="text-container">
-            <div class="label-container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
                 <label for="lname">2. Last name: </label>
             </div>
-            <div class="box-container">
+            <div class="col-md-9">
                 <p>{{lname}}</p>
             </div>
         </div>
-        <div class="text-container">
-            <div class="label-container">
-                <p style="margin: 0px">3. Location:</p>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <label>3. Location (Province): </label>
             </div>
-            <div class="province-container" style="align-content: center;">
+            <div class="col-md-9">
                 <p>{{province}}</p>
             </div>
         </div>
@@ -41,47 +43,48 @@
     <hr>
     <div class="info-question">
         <h2>B. Client opinion</h2>
-        <div class="text-container">
-            <div class="label-container">
-                <label for="fname">1. Rating: </label>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <label>1. Rating of usability: </label>
             </div>
-            <div class="box-container">
-                <p>{{rating}}</p>
+            <div class="col-md-9">
+                <p>{{rating}} / 5</p>
             </div>
         </div>
-        <div class="text-container">
-            <div class="label-container">
-                <label for="lname">2. Most liked features: </label>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <label>2. Most used features: </label>
             </div>
-            <div class="box-container">
+            <div class="col-md-9">
                 <p>{{features[]}}</p>
             </div>
         </div>
-        <div class="text-container">
-            <div class="label-container">
-                <label for="lname">3. Most shopped items: </label>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <label>3. Most shopped items: </label>
             </div>
-            <div class="box-container">
+            <div class="col-md-9">
                 <p>{{shopmost[]}}</p>
             </div>
         </div>
-        <div class="text-container">
-            <div class="label-container">
-                <p style="margin: 0px">4. Shopping Preferences:</p>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <label>4. Shopping Preferences: </label>
             </div>
-            <div class="province-container" style="align-content: center;">
+            <div class="col-md-9">
                 <p>{{shoppingpref[]}}</p>
             </div>
         </div>
-        <div class="text-container">
-            <div class="label-container">
-                <p style="margin: 0px">5. Message left:</p>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+                <label>5. Comments from the user: </label>
             </div>
-            <div class="province-container" style="align-content: center;">
+            <div class="col-md-9">
                 <p>{{imp}}</p>
             </div>
         </div>
     </div>
     <hr>
 </body>
+
 </html>

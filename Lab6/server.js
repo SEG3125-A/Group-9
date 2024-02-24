@@ -79,7 +79,7 @@ app.get("/analysis", async (req, res) => {
 
 function createListItems(arr) {
   if (Array.isArray(arr)) {
-    return `<ol>${arr.map(item => `<li>${item}</li>`).join('')}</ol>`;
+    return `<ul>${arr.map(item => `<li style="padding-left: 0;">${item}</li>`).join('')}</ul>`;
   } else {
     return arr;
   }
