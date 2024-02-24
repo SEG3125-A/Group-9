@@ -1,14 +1,14 @@
 {
   "rating": {
-    "1": 4,
-    "2": 0,
-    "3": 0,
-    "4": 8,
-    "5": 33
+    "one": 4,
+    "two": 0,
+    "three": 0,
+    "four": 8,
+    "five": 34
   },
   "province": {
     "AB": 0,
-    "BC": 0,
+    "BC": 1,
     "MB": 2,
     "NB": 19,
     "NL": 0,
@@ -22,7 +22,7 @@
     "YT": 0
   },
   "features": {
-    "Sort and filter": 19,
+    "Sort and filter": 20,
     "Flyers": 28,
     "Store Finder": 19,
     "Digital Services": 28,
@@ -34,14 +34,14 @@
     "Bread and Bakery": 8,
     "Meat and Seafood": 1,
     "Chips and Snacks": 0,
-    "Medicine and Drugs": 3,
+    "Medicine and Drugs": 4,
     "Other": 26
   },
   "shoppingpref": {
     "In person": 6,
     "Online pickup": 2,
     "Online delivery": 9,
-    "Other shop": 32
+    "Other shop": 33
   },
   "imp": [
     "huehuehue",
@@ -66,6 +66,7 @@
     "another test",
     "another test",
     "another test",
-    "another test"
+    "another test",
+    "dddd"
   ]
 }

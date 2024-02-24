@@ -103,7 +103,7 @@ app.get("/analysis", async (req, res) => {
 function replaceCategoryInTemplate(template, categoryData) {
   for (const category of Object.keys(categoryData)) {
     template = template.replace(new RegExp(`{{${category}}}`, 'g'), categoryData[category]);
-    console.log(`{{${category}}}`);
+    console.log(categoryData[category]);
   }
   return template;
 }
