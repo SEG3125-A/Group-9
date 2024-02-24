@@ -22,25 +22,53 @@ app.get("/survey", (req, res) => {
 // If we haven't submitted yet, this will contain previous saved data
 // To access go on: localhost:3000/submit
 app.post("/submit", (req, res) => {
-  console.log(req.body);
   const formData = req.body;
-
-  console.log("Form data at server:", formData);
-
-  const formDataString = JSON.stringify(formData, null, 2); // Pretty print JSON
-
-  // Save the form data to a file
   const filePath = path.join(__dirname, "data", "savedform.json");
-  fs.writeFile(filePath, formDataString)
-    .then(() => {
-      console.log("Form data saved to file successfully.");
-      // Redirect to the analysis page after saving the data
-      res.redirect("/analysis");
-    })
-    .catch((err) => {
-      console.error("Error writing file:", err);
-      res.status(500).send("Error writing file");
-    });
+  fs.readFile(filePath, 'utf-8')
+  .then(existingData => {
+    let combinedData;
+
+    try {
+      // Parse the existing data
+      combinedData = JSON.parse(existingData);
+    } catch (error) {
+      // If parsing fails or the file is empty, initialize with an empty object
+      combinedData = {};
+    }
+
+    for (const entry of Object.entries(formData).slice(2, )) {
+      const [key, value] = entry;
+      if(key === "imp"){
+        combinedData[key].push(value);
+      }else{
+        console.log("bbb " + key + " " + value)
+        if(typeof value === "string") combinedData[key][value] = ++combinedData[key][value];
+        else{
+          console.log("aaa " + key)
+          for(const i of value){
+            console.log(value)
+            combinedData[key][i] = ++combinedData[key][i];
+          }
+        }
+    
+      }
+    }
+
+    // Convert combinedData to a string
+    const formDataString = JSON.stringify(combinedData, null, 2);
+
+    // Write the updated data back to the file
+    return fs.writeFile(filePath, formDataString);
+  })
+  .then(() => {
+    console.log("Form data appended to file successfully.");
+    // Redirect to the analysis page after saving the data
+    res.redirect("/analysis");
+  })
+  .catch((err) => {
+    console.error("Error writing file:", err);
+    res.status(500).send("Error writing file");
+  });
 });
 
 // Endpoint: read the data from savedform.json and display it
@@ -52,22 +80,62 @@ app.get("/analysis", async (req, res) => {
     const data = await fs.readFile(filePath, "utf-8");
 
     //display json as string on endpoint
-    console.log("Displaying form data on analysis");
+    console.log("displaying form data on analysis");
 
     // TODO instead of just raw data string, send a templated html instead here to display data from saved json neatly
     // Load HTML template from file
     const templatePath = path.join(__dirname, "backend", "analysis.html");
     const htmlTemplate = await fs.readFile(templatePath, "utf-8");
     // Replace placeholders in the template with actual data
+    const rating = JSON.parse(data)["rating"];
+    const province = JSON.parse(data)["province"];
+    const features = JSON.parse(data)["features"];
+    const groceryItems = JSON.parse(data)["shopmost"];
+    const shoppingPreferences = JSON.parse(data)["shoppingpref"];
+    const imp = JSON.parse(data)["imp"];
     const filledTemplate = htmlTemplate
-      .replace(/{{fname}}/g, JSON.parse(data).fname)
-      .replace(/{{lname}}/g, JSON.parse(data).lname)
-      .replace(/{{province}}/g, JSON.parse(data).province)
-      .replace(/{{rating}}/g, JSON.parse(data).rating)
-      .replace(/{{features\[\]}}/g, createListItems(JSON.parse(data)['features[]']))
-      .replace(/{{shopmost\[\]}}/g, createListItems(JSON.parse(data)['shopmost[]']))
-      .replace(/{{shoppingpref\[\]}}/g, createListItems(JSON.parse(data)['shoppingpref[]']))
-      .replace(/{{imp}}/g, JSON.parse(data).imp);
+      .replace(/{{five}}/g, rating["5"])
+      .replace(/{{four}}/g, rating["4"])
+      .replace(/{{three}}/g, rating["3"])
+      .replace(/{{two}}/g, rating["2"])
+      .replace(/{{one}}/g, rating["1"])
+
+      .replace(/{{Sort_and_filter}}/g, features["Sort and filter"])
+      .replace(/{{Flyers}}/g, features["Flyers"])
+      .replace(/{{Store_Finder}}/g, features["Store Finder"])
+      .replace(/{{Digital_Services}}/g, features["Digital Services"])
+      .replace(/{{Trending_in_your_area}}/g, features["Trending in your area"])
+
+      .replace(/{{Fruits_and_vegetables}}/g, groceryItems["Fruits and vegetables"])
+      .replace(/{{Dairy_and_Eggs}}/g, groceryItems["Dairy and Eggs"])
+      .replace(/{{Bread_and_Bakery}}/g, groceryItems["Bread and Bakery"])
+      .replace(/{{Meat_and_Seafood}}/g, groceryItems["Meat and Seafood"])
+      .replace(/{{Chips_and_Snacks}}/g, groceryItems["Chips and Snacks"])
+      .replace(/{{Medicine_and_Drugs}}/g, groceryItems["Medicine and Drugs"])
+      .replace(/{{Other}}/g, groceryItems["Other"])
+
+      .replace(/{{shoppingpref\[\]}}/g, createListItems(JSON.parse(data)['shoppingpref']))
+      
+      .replace(/{{imp}}/g, imp.join('</p><p>'))
+      
+      .replace(/{{AB}}/g, province["AB"])
+      .replace(/{{BC}}/g, province["BC"])
+      .replace(/{{MB}}/g, province["MB"])
+      .replace(/{{NB}}/g, province["NB"])
+      .replace(/{{NL}}/g, province["NL"])
+      .replace(/{{NS}}/g, province["NS"])
+      .replace(/{{NT}}/g, province["NT"])
+      .replace(/{{NU}}/g, province["NU"])
+      .replace(/{{ON}}/g, province["ON"])
+      .replace(/{{PE}}/g, province["PE"])
+      .replace(/{{QC}}/g, province["QC"])
+      .replace(/{{SK}}/g, province["SK"])
+      .replace(/{{YT}}/g, province["YT"])
+
+      .replace(/{{In_person}}/g, shoppingPreferences["In person"])
+      .replace(/{{Online_pickup}}/g, shoppingPreferences["Online pickup"])
+      .replace(/{{Online_delivery}}/g, shoppingPreferences["Online delivery"])
+      .replace(/{{Other shop}}/g, shoppingPreferences["Other shop"]);
 
     // Send the filled HTML template
     res.send(filledTemplate);
@@ -79,7 +147,7 @@ app.get("/analysis", async (req, res) => {
 
 function createListItems(arr) {
   if (Array.isArray(arr)) {
-    return `<ul>${arr.map(item => `<li style="padding-left: 0;">${item}</li>`).join('')}</ul>`;
+    return `<ol>${arr.map(item => `<li>${item}</li>`).join('')}</ol>`;
   } else {
     return arr;
   }
