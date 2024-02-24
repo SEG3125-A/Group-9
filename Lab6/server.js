@@ -71,73 +71,28 @@ app.post("/submit", (req, res) => {
   });
 });
 
-// Endpoint: read the data from savedform.json and display it
-// To access go on: localhost:3000/analysis
 app.get("/analysis", async (req, res) => {
   const filePath = path.join(__dirname, "data", "savedform.json");
   try {
-    // Read file asynchronously using fs.promises.readFile
     const data = await fs.readFile(filePath, "utf-8");
 
-    //display json as string on endpoint
     console.log("displaying form data on analysis");
 
-    // TODO instead of just raw data string, send a templated html instead here to display data from saved json neatly
-    // Load HTML template from file
     const templatePath = path.join(__dirname, "backend", "analysis.html");
-    const htmlTemplate = await fs.readFile(templatePath, "utf-8");
-    // Replace placeholders in the template with actual data
-    const rating = JSON.parse(data)["rating"];
-    const province = JSON.parse(data)["province"];
-    const features = JSON.parse(data)["features"];
-    const groceryItems = JSON.parse(data)["shopmost"];
-    const shoppingPreferences = JSON.parse(data)["shoppingpref"];
-    const imp = JSON.parse(data)["imp"];
-    const filledTemplate = htmlTemplate
-      .replace(/{{five}}/g, rating["5"])
-      .replace(/{{four}}/g, rating["4"])
-      .replace(/{{three}}/g, rating["3"])
-      .replace(/{{two}}/g, rating["2"])
-      .replace(/{{one}}/g, rating["1"])
+    let htmlTemplate = await fs.readFile(templatePath, "utf-8");
 
-      .replace(/{{Sort_and_filter}}/g, features["Sort and filter"])
-      .replace(/{{Flyers}}/g, features["Flyers"])
-      .replace(/{{Store_Finder}}/g, features["Store Finder"])
-      .replace(/{{Digital_Services}}/g, features["Digital Services"])
-      .replace(/{{Trending_in_your_area}}/g, features["Trending in your area"])
+    const jsonData = JSON.parse(data);
+    const imp = jsonData["imp"];
 
-      .replace(/{{Fruits_and_vegetables}}/g, groceryItems["Fruits and vegetables"])
-      .replace(/{{Dairy_and_Eggs}}/g, groceryItems["Dairy and Eggs"])
-      .replace(/{{Bread_and_Bakery}}/g, groceryItems["Bread and Bakery"])
-      .replace(/{{Meat_and_Seafood}}/g, groceryItems["Meat and Seafood"])
-      .replace(/{{Chips_and_Snacks}}/g, groceryItems["Chips and Snacks"])
-      .replace(/{{Medicine_and_Drugs}}/g, groceryItems["Medicine and Drugs"])
-      .replace(/{{Other}}/g, groceryItems["Other"])
+    // call separate functions for everything
+    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["rating"]);
+    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["province"]);
+    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["features"]);
+    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["shopmost"]);
+    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["shoppingpref"]);
 
-      .replace(/{{shoppingpref\[\]}}/g, createListItems(JSON.parse(data)['shoppingpref']))
-      
-      .replace(/{{imp}}/g, imp.join('</p><p>'))
-      
-      .replace(/{{AB}}/g, province["AB"])
-      .replace(/{{BC}}/g, province["BC"])
-      .replace(/{{MB}}/g, province["MB"])
-      .replace(/{{NB}}/g, province["NB"])
-      .replace(/{{NL}}/g, province["NL"])
-      .replace(/{{NS}}/g, province["NS"])
-      .replace(/{{NT}}/g, province["NT"])
-      .replace(/{{NU}}/g, province["NU"])
-      .replace(/{{ON}}/g, province["ON"])
-      .replace(/{{PE}}/g, province["PE"])
-      .replace(/{{QC}}/g, province["QC"])
-      .replace(/{{SK}}/g, province["SK"])
-      .replace(/{{YT}}/g, province["YT"])
+    const filledTemplate = htmlTemplate.replace(/{{imp}}/g, imp.join('</p><p>'));
 
-      .replace(/{{In_person}}/g, shoppingPreferences["In person"])
-      .replace(/{{Online_pickup}}/g, shoppingPreferences["Online pickup"])
-      .replace(/{{Online_delivery}}/g, shoppingPreferences["Online delivery"])
-      .replace(/{{Other shop}}/g, shoppingPreferences["Other shop"]);
-
-    // Send the filled HTML template
     res.send(filledTemplate);
   } catch (err) {
     console.error("Error reading file:", err);
@@ -145,13 +100,14 @@ app.get("/analysis", async (req, res) => {
   }
 });
 
-function createListItems(arr) {
-  if (Array.isArray(arr)) {
-    return `<ol>${arr.map(item => `<li>${item}</li>`).join('')}</ol>`;
-  } else {
-    return arr;
+function replaceCategoryInTemplate(template, categoryData) {
+  for (const category of Object.keys(categoryData)) {
+    template = template.replace(new RegExp(`{{${category}}}`, 'g'), categoryData[category]);
+    console.log(`{{${category}}}`);
   }
+  return template;
 }
+
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)
 );

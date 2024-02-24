@@ -4,13 +4,13 @@
     "2": 0,
     "3": 0,
     "4": 8,
-    "5": 14
+    "5": 33
   },
   "province": {
     "AB": 0,
     "BC": 0,
     "MB": 2,
-    "NB": 0,
+    "NB": 19,
     "NL": 0,
     "NS": 1,
     "NT": 0,
@@ -22,11 +22,11 @@
     "YT": 0
   },
   "features": {
-    "Sort and filter": 0,
-    "Flyers": 9,
-    "Store Finder": 0,
-    "Digital Services": 9,
-    "Trending in your area": 6
+    "Sort and filter": 19,
+    "Flyers": 28,
+    "Store Finder": 19,
+    "Digital Services": 28,
+    "Trending in your area": 25
   },
   "shopmost": {
     "Fruits and vegetables": 0,
@@ -35,18 +35,37 @@
     "Meat and Seafood": 1,
     "Chips and Snacks": 0,
     "Medicine and Drugs": 3,
-    "Other": 7
+    "Other": 26
   },
   "shoppingpref": {
     "In person": 6,
     "Online pickup": 2,
     "Online delivery": 9,
-    "Other shop": 13
+    "Other shop": 32
   },
   "imp": [
     "huehuehue",
     "this is a test",
     "sfdsfdsdf",
-    "halloo"
+    "halloo",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "HII",
+    "another test",
+    "another test",
+    "another test",
+    "another test",
+    "another test",
+    "another test",
+    "another test"
   ]
 }
