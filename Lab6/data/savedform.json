@@ -4,18 +4,18 @@
     "two": 0,
     "three": 0,
     "four": 8,
-    "five": 42
+    "five": 45
   },
   "province": {
     "AB": 8,
     "BC": 1,
-    "MB": 2,
+    "MB": 4,
     "NB": 19,
     "NL": 0,
     "NS": 1,
     "NT": 0,
     "NU": 0,
-    "ON": 9,
+    "ON": 10,
     "PE": 0,
     "QC": 0,
     "SK": 0,
@@ -25,22 +25,22 @@
     "Sort and filter": 23,
     "Flyers": 28,
     "Store Finder": 19,
-    "Digital Services": 33,
-    "Trending in your area": 25
+    "Digital Services": 35,
+    "Trending in your area": 26
   },
   "shopmost": {
     "Fruits and vegetables": 0,
     "Dairy and Eggs": 8,
     "Bread and Bakery": 11,
     "Meat and Seafood": 1,
-    "Chips and Snacks": 5,
+    "Chips and Snacks": 8,
     "Medicine and Drugs": 4,
     "Other": 26
   },
   "shoppingpref": {
-    "In person": 6,
+    "In person": 7,
     "Online pickup": 2,
-    "Online delivery": 14,
+    "Online delivery": 16,
     "Other": 36
   },
   "imp": [
@@ -67,6 +67,26 @@
     {
       "fullname": "new user",
       "value": "cool website love it"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    },
+    {
+      "fullname": "sfdfsd sdfsf",
+      "value": "sdfsfsdfsdfsdf"
+    },
+    {
+      "fullname": "sdfsfs sfdsf",
+      "value": "dssfsdf"
+    },
+    {
+      "fullname": "dsfsfsdfsf sfsdfsdfsdf",
+      "value": "fsfdsfsfsdfsfsd"
     }
   ]
 }

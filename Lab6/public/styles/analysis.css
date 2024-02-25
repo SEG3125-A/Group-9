@@ -20,11 +20,6 @@ label {
     font-weight: bold;
 }
 
-
-.comments-display{
-    height: 400px;
-    overflow-y: scroll;
-}
   
 
 .dialogbox .body {
@@ -49,6 +44,6 @@ label {
 .comments-display{
     overflow-x: hidden;
     overflow-y: scroll;
-
     width: 100%;
+    height: 400px;
 }
