@@ -19,3 +19,36 @@ li {
 label {
     font-weight: bold;
 }
+
+
+.comments-display{
+    height: 400px;
+    overflow-y: scroll;
+}
+  
+
+.dialogbox .body {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 20px 10px;
+    padding: 5px;
+    background-color: #4682b4;
+    border: 2px solid rgb(185, 185, 185);
+}
+  
+.body .message {
+    min-height: 25px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    color: black;
+}
+
+.comments-display{
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    width: 100%;
+}

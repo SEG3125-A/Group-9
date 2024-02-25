@@ -258,12 +258,31 @@ fetch('/api/data')
         /// COMMENTS SECTION ///
         var comments = data.imp;
         var commentsList = document.getElementById("comments-list");
-        comments.forEach(function (comment) {
-            var item = document.createElement("li");
-            item.textContent = comment;
-            commentsList.appendChild(item);
-        })
+        
 
+        comments.forEach(function(comment) {
+            var dialogBox = document.createElement("div");
+            dialogBox.className = "dialogbox";
+          
+            var body = document.createElement("div");
+            body.className = "body";
+          
+            var userName = document.createElement("div");
+            userName.className = "username";
+            userName.textContent = comment.fullname;  
+            body.appendChild(userName);
+          
+            var message = document.createElement("div");
+            message.className = "message";
+            message.textContent = comment.value;
+            body.appendChild(message);
+          
+            dialogBox.appendChild(body);
+          
+            commentsList.appendChild(dialogBox);
+        });
+          
+        
     })
     .catch(error => {
         console.error('Error fetching data:', error);

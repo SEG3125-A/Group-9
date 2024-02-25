@@ -41,7 +41,10 @@ app.post("/submit", (req, res) => {
       for (const entry of Object.entries(formData).slice(2,)) {
         const [key, value] = entry;
         if (key === "imp") {
-          combinedData[key].push(value);
+          var name = Object.entries(formData)[0][1];
+          var surname = Object.entries(formData)[1][1];
+          var fullname = name + " " + surname;
+          combinedData[key].push({fullname, value});
         } else {
           if (typeof value === "string") combinedData[key][value] = ++combinedData[key][value];
           else {
@@ -80,18 +83,9 @@ app.get("/analysis", async (req, res) => {
     let htmlTemplate = await fs.readFile(templatePath, "utf-8");
 
     const jsonData = JSON.parse(data);
-    const imp = jsonData["imp"];
-
     formData = jsonData;
 
-    // call separate functions for everything
-    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["rating"]);
-    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["province"]);
-    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["features"]);
-    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["shopmost"]);
-    htmlTemplate = replaceCategoryInTemplate(htmlTemplate, jsonData["shoppingpref"]);
-
-    const filledTemplate = htmlTemplate.replace(/{{imp}}/g, imp.join('</p><p>'));
+    const filledTemplate = htmlTemplate;
 
     res.send(filledTemplate);
   } catch (err) {

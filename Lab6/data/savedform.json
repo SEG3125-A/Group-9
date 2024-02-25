@@ -4,10 +4,10 @@
     "two": 0,
     "three": 0,
     "four": 8,
-    "five": 34
+    "five": 42
   },
   "province": {
-    "AB": 0,
+    "AB": 8,
     "BC": 1,
     "MB": 2,
     "NB": 19,
@@ -22,51 +22,51 @@
     "YT": 0
   },
   "features": {
-    "Sort and filter": 20,
+    "Sort and filter": 23,
     "Flyers": 28,
     "Store Finder": 19,
-    "Digital Services": 28,
+    "Digital Services": 33,
     "Trending in your area": 25
   },
   "shopmost": {
     "Fruits and vegetables": 0,
     "Dairy and Eggs": 8,
-    "Bread and Bakery": 8,
+    "Bread and Bakery": 11,
     "Meat and Seafood": 1,
-    "Chips and Snacks": 0,
+    "Chips and Snacks": 5,
     "Medicine and Drugs": 4,
     "Other": 26
   },
   "shoppingpref": {
     "In person": 6,
     "Online pickup": 2,
-    "Online delivery": 9,
-    "Other": 33
+    "Online delivery": 14,
+    "Other": 36
   },
   "imp": [
-    "huehuehue",
-    "this is a test",
-    "sfdsfdsdf",
-    "halloo",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "HII",
-    "another test",
-    "another test",
-    "another test",
-    "another test",
-    "another test",
-    "another test",
-    "another test",
-    "dddd"
+    {
+      "fullname": "selin kararmaz",
+      "value": "Amazing survey"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    },
+    {
+      "fullname": "new user",
+      "value": "cool website love it"
+    }
   ]
 }

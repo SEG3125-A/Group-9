@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   submitButton.addEventListener("click", function () {
     validateProvinceDropdown();
-    validateCheckboxes('input[name="features[]"]');
-    validateCheckboxes('input[name="shopmost[]"]');
-    validateCheckboxes('input[name="shoppingpref[]"]');
+    validateCheckboxes('input[name="features"]');
+    validateCheckboxes('input[name="shopmost"]');
+    validateCheckboxes('input[name="shoppingpref"]');
   })
 
   // When form is submitted, redirect to server endpoint
@@ -63,9 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Debug: log the JSON object to ensure it's formatted correctly
-    console.log(jsonData);
-
     // Send post request to /submit endpoint
     fetch("/submit", {
       method: "POST",
@@ -82,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new Error("Network response was not ok.");
       })
       .then((data) => {
-        console.log(data);
+       // console.log(data);
         // You can redirect or show a success message here
       })
       .catch((error) => {
