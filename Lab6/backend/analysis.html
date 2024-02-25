@@ -7,112 +7,49 @@
     <link href="styles/survey.css" rel="stylesheet" type="text/css" />
     <link href="styles/analysis.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Form Data Analysis</title>
 </head>
 
 <body>
     <h1>Form Data Analysis</h1>
+    <br>
+    <p class="pl-3" id="introduction"></p>
     <hr>
     <div class="info-question">
-        <h2>A. Client information </h2>
+        <h2>A. Clients information </h2>
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-12 text-center mb-3">
-                <label>Location (Province): </label>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-10">
-                <p>AB: {{AB}}</p>
-                <p>BC: {{BC}}</p>
-                <p>MB: {{MB}}</p>
-                <p>NB: {{NB}}</p>
-                <p>NL: {{NL}}</p>
-                <p>NS: {{NS}}</p>
-                <p>NT: {{NT}}</p>
-                <p>NU: {{NU}}</p>
-                <p>ON: {{ON}}</p>
-                <p>PE: {{PE}}</p>
-                <p>QC: {{QC}}</p>
-                <p>SK: {{SK}}</p>
-                <p>YT: {{YT}}</p>
-            </div>
+            <div id="province-chart" style="width:100%;max-width:700px"></div>
         </div>
     </div>
     <hr>
     <div class="info-question">
-        <h2>B. Client opinion</h2>
+        <h2>B. Clients opinions</h2>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-6" id="ratings-chart" style="width:100%;max-width:650px"></div>
+            <div class="col-md-6" id="features-chart" style="width:100%;max-width:650px"> </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-6" id="shop-most-chart" style="width:100%;max-width:650px"></div>
+            <div class="col-md-6" id="preferences-chart" style="width:100%;max-width:650px"></div>
+        </div>
+        <br>
+        <br>
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-12 text-center mb-3">
-                <label for="fname">1.Ratings: </label>
+                <label>Here are comments made by the people who replied to the survey:</label>
             </div>
         </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-11">
-                <p>Five: {{five}}</p>
-                <p>Four: {{four}}</p>
-                <p>Three: {{three}}</p>
-                <p>Two: {{two}}</p>
-                <p>One: {{one}}</p>
-            </div>
+        <div>
+            <ul id="comments-list" class="pl-2 pr-2"></ul>
         </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-12 text-center mb-3">
-                <label>2. Most used features:</label>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-11">
-                <p>Sort and filter: {{Sort and filter}}</p>
-                <p>Flyers: {{Flyers}}</p>
-                <p>Store Finder: {{Store Finder}}</p>
-                <p>Digital Services: {{Digital Services}}</p>
-                <p>Trending in your area: {{Trending in your area}}</p>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-12 text-center mb-3">
-                <label>3. Most shopped items:</label>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-11">
-                <p>Fruits and vegetables: {{Fruits and vegetables}}</p>
-                <p>Dairy and Eggs: {{Dairy and Eggs}}</p>
-                <p>Bread and Bakery: {{Bread and Bakery}}</p>
-                <p>Meat and Seafood: {{Meat and Seafood}}</p>
-                <p>Chips and Snacks: {{Chips and Snacks}}</p>
-                <p>Medicine and Drugs: {{Medicine and Drugs}}</p>
-                <p>Other: {{Other}}</p>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-12 text-center mb-3">
-                <label>4. Shopping Preferences: </label>
-            </div>
-        </div>
-        
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-11">
-                <p>In person: {{In person}}</p>
-                <p>Online pickup: {{Online pickup}}</p>
-                <p>Online delivery: {{Online delivery}}</p>
-                <p>Other shop: {{Other shop}}</p>
-            </div>
-        </div>
-
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-12 text-center mb-3">
-                <label>5. Comments from the user:</label>
-            </div>
-        </div>
-        
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-11" style="max-height: 200px; overflow-y: auto;">
-                <p>{{imp}}</p>
-            </div>
-        </div>
+        <hr>
+        <p id="signature">Website designed by Amar Ghazi, Celine Wan Min Kee, Kanjanokphat Kitisunawakul & Selin
+            Kararmaz
+        </p>
     </div>
-    <hr>
+    <script src="scripts/charts.js" type="text/javascript"></script>
 </body>
 
 </html>
