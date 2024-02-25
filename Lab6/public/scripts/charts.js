@@ -6,7 +6,6 @@ fetch('/api/data')
         }
 
         /// PIE CHART FOR PROVINCE ////
-        console.log(data)
         const provinceData = data.province;
         const provinceCodes = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT'];
         const provinceLabels = ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Northwest Territories', 'Nunavut', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Yukon'];
@@ -19,7 +18,6 @@ fetch('/api/data')
         for (let i = 0; i < provinceValues.length; i++) {
             totalNumberOfReplies += provinceValues[i];
         }
-        console.log("total ", totalNumberOfReplies)
         var introduction = document.getElementById("introduction");
         if (totalNumberOfReplies == 0) {
             introduction.innerHTML = `<p>No one has replied to the survey yet.Please wait to get some responses before doing an analysis</p>`;
@@ -74,7 +72,7 @@ fetch('/api/data')
             plot_bgcolor: "#282c34",
             paper_bgcolor: "#282c34",
             xaxis: {
-                title: "Features",
+                title: "Ratings",
                 titlefont: {
                     color: 'white'
                 },
