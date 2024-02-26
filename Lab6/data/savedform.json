@@ -1,48 +1,47 @@
 {
   "rating": {
     "one": 4,
-    "two": 0,
-    "three": 0,
-    "four": 8,
-    "five": 46
+    "two": 2,
+    "three": 10,
+    "four": 9,
+    "five": 25
   },
   "province": {
-    "AB": 8,
-    "BC": 1,
+    "AB": 7,
+    "BC": 9,
     "MB": 4,
-    "NB": 19,
-    "NL": 0,
+    "NB": 1,
+    "NL": 1,
     "NS": 1,
     "NT": 1,
-    "NU": 0,
-    "ON": 10,
-    "PE": 0,
-    "QC": 0,
-    "SK": 0,
-    "YT": 0
+    "NU": 1,
+    "ON": 15,
+    "PE": 1,
+    "QC": 7,
+    "SK": 1,
+    "YT": 1
   },
   "features": {
     "Sort and filter": 23,
     "Flyers": 28,
     "Store Finder": 19,
-    "Digital Services": 36,
-    "Trending in your area": 26
+    "Digital Services": 37,
+    "Trending in your area": 10
   },
   "shopmost": {
-    "Fruits and vegetables": 0,
+    "Fruits and vegetables": 10,
     "Dairy and Eggs": 9,
-    "Bread and Bakery": 11,
-    "Meat and Seafood": 1,
-    "Chips and Snacks": 8,
+    "Bread and Bakery": 12,
+    "Meat and Seafood": 8,
+    "Chips and Snacks": 9,
     "Medicine and Drugs": 4,
     "Other": 26
   },
   "shoppingpref": {
-    "In person": 7,
-    "Online pickup": 2,
-    "Online delivery": 16,
-    "Other": 36,
-    "Other shop": null
+    "In person": 10,
+    "Online pickup": 13,
+    "Online delivery": 21,
+    "Other": 10
   },
   "imp": [
     {
@@ -50,32 +49,32 @@
       "value": "Amazing survey"
     },
     {
-      "fullname": "new user",
+      "fullname": "céline wan min kee",
       "value": "cool website love it"
     },
     {
-      "fullname": "new user",
-      "value": "cool website love it"
+      "fullname": "amy kkiti",
+      "value": "bad website hate it"
     },
     {
-      "fullname": "new user",
-      "value": "cool website love it"
+      "fullname": "amaz ghazi",
+      "value": "website is meh"
     },
     {
-      "fullname": "new user",
-      "value": "cool website love it"
+      "fullname": "john doe",
+      "value": "so easy to use. great!"
     },
     {
-      "fullname": "new user",
-      "value": "cool website love it"
+      "fullname": "jane doe",
+      "value": "bla bla bla bla great!"
     },
     {
-      "fullname": "new user",
-      "value": "cool website love it"
+      "fullname": "david lee",
+      "value": "walmart could be better in terms of services"
     },
     {
-      "fullname": "new user",
-      "value": "cool website love it"
+      "fullname": "monica brown",
+      "value": "cool"
     },
     {
       "fullname": "sfdfsd sdfsf",
@@ -92,6 +91,7 @@
     {
       "fullname": "new  aaa",
       "value": "saadad"
-    }
+    },
+    ""
   ]
 }

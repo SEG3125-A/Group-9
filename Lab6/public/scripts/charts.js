@@ -4,6 +4,7 @@ fetch('/api/data')
         const config = {
             displayModeBar: false
         }
+        console.log(data)
 
         /// PIE CHART FOR PROVINCE ////
         const provinceData = data.province;
@@ -205,9 +206,10 @@ fetch('/api/data')
         Plotly.newPlot("shop-most-chart", shopMostChart, shopMostLayout, config);
 
         /// BAR CHART FOR SHOPPING PREFERENCES ////
-        const preferencesData = data.shopmost;
+        const preferencesData = data.shoppingpref;
         const preferencesLabels = ["In person", "Online pickup", "Online delivery", "Other"];
         var preferencesValues = [];
+        console.log(preferencesData)
         preferencesLabels.map((category) => {
             preferencesValues.push(preferencesData[category])
         })
@@ -258,31 +260,31 @@ fetch('/api/data')
         /// COMMENTS SECTION ///
         var comments = data.imp;
         var commentsList = document.getElementById("comments-list");
-        
 
-        comments.forEach(function(comment) {
+
+        comments.forEach(function (comment) {
             var dialogBox = document.createElement("div");
             dialogBox.className = "dialogbox";
-          
+
             var body = document.createElement("div");
             body.className = "body";
-          
+
             var userName = document.createElement("div");
             userName.className = "username";
-            userName.textContent = comment.fullname;  
+            userName.textContent = comment.fullname;
             body.appendChild(userName);
-          
+
             var message = document.createElement("div");
             message.className = "message";
             message.textContent = comment.value;
             body.appendChild(message);
-          
+
             dialogBox.appendChild(body);
-          
+
             commentsList.appendChild(dialogBox);
         });
-          
-        
+
+
     })
     .catch(error => {
         console.error('Error fetching data:', error);
