@@ -59,13 +59,20 @@ fetch('/api/data')
         const ratingData = data.rating;
         const ratingLabels = ["one", "two", "three", "four", "five"];
         var ratingValues = [];
+        var average = 0;
+        var sum = 0;
+        var count = 1;
         ratingLabels.map((rating) => {
-            ratingValues.push(ratingData[rating])
+            average += ratingData[rating]*count;
+            sum += ratingData[rating];
+            ratingValues.push(ratingData[rating]);
+            count++;
         })
+        average = average/sum;
 
         const ratingLayout = {
             title: {
-                text: "UI Usability Rating (Out of 5)",
+                text: "UI Usability Rating (" + average + " of 5)",
                 font: {
                     color: "white"
                 }

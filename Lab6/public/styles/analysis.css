@@ -31,14 +31,15 @@ label {
     background-color: #4682b4;
     border: 2px solid rgb(185, 185, 185);
 }
-  
+.username{
+    padding-bottom: 5px;
+}
 .body .message {
     min-height: 25px;
     border-radius: 3px;
-    font-family: Arial;
     font-size: 14px;
     line-height: 1.5;
-    color: black;
+    color:  #0b0d0f;
 }
 
 .comments-display{
