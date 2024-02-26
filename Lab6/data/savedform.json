@@ -4,10 +4,10 @@
     "two": 2,
     "three": 10,
     "four": 9,
-    "five": 26
+    "five": 27
   },
   "province": {
-    "AB": 8,
+    "AB": 9,
     "BC": 9,
     "MB": 4,
     "NB": 1,
@@ -23,7 +23,7 @@
   },
   "features": {
     "Sort and filter": 23,
-    "Flyers": 29,
+    "Flyers": 30,
     "Store Finder": 19,
     "Digital Services": 37,
     "Trending in your area": 10
@@ -34,11 +34,11 @@
     "Bread and Bakery": 12,
     "Meat and Seafood": 8,
     "Chips and Snacks": 9,
-    "Medicine and Drugs": 5,
+    "Medicine and Drugs": 6,
     "Other": 26
   },
   "shoppingpref": {
-    "In person": 11,
+    "In person": 12,
     "Online pickup": 13,
     "Online delivery": 21,
     "Other": 10
@@ -95,6 +95,10 @@
     {
       "fullname": "Old  user",
       "value": "What an amazing website!"
+    },
+    {
+      "fullname": "Dragon Dragon",
+      "value": "meh website"
     }
   ]
 }

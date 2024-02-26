@@ -68,15 +68,28 @@ fetch('/api/data')
             ratingValues.push(ratingData[rating]);
             count++;
         })
-        average = average/sum;
+        average = Math.round(average/sum* 1000) / 1000;
 
         const ratingLayout = {
             title: {
-                text: "UI Usability Rating (" + average + " out of 5)",
+                text: "UI Usability Rating (Out of 5)",
                 font: {
                     color: "white"
                 }
             },
+            annotations: [{
+                text: "Average score: " + average ,
+                  font: {
+                  size: 13,
+                  color: 'rgb(116, 101, 130)',
+                },
+                showarrow: false,
+                align: 'center',
+                x: 0.5,
+                y: 1,
+                xref: 'paper',
+                yref: 'paper',
+              }],
             plot_bgcolor: "#282c34",
             paper_bgcolor: "#282c34",
             xaxis: {
