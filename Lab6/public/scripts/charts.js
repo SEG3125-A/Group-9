@@ -72,7 +72,7 @@ fetch('/api/data')
 
         const ratingLayout = {
             title: {
-                text: "UI Usability Rating (" + average + " of 5)",
+                text: "UI Usability Rating (" + average + " out of 5)",
                 font: {
                     color: "white"
                 }
