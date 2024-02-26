@@ -78,10 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         throw new Error("Network response was not ok.");
       })
-      .then((data) => {
-       // console.log(data);
-        // You can redirect or show a success message here
-      })
       .catch((error) => {
         console.error(
           "There has been a problem with your fetch operation:",

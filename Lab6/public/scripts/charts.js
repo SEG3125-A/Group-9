@@ -4,7 +4,6 @@ fetch('/api/data')
         const config = {
             displayModeBar: false
         }
-        console.log(data)
 
         /// PIE CHART FOR PROVINCE ////
         const provinceData = data.province;

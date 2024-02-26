@@ -14,18 +14,13 @@ var formData;
 
 /// API ENDPOINTS ///
 
-// Endpoint: to view the survey when accessing from the server
-// To access go on: localhost:3000/survey
-app.get("/survey", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
-
 // Endpoint: After user submits the survey, save the form data to data/savedform.txt
 // If we haven't submitted yet, this will contain previous saved data
 // To access go on: localhost:3000/submit
 app.post("/submit", (req, res) => {
   const formData = req.body;
   const filePath = path.join(__dirname, "data", "savedform.json");
+  
   fs.readFile(filePath, 'utf-8')
     .then(existingData => {
       let combinedData;
@@ -94,23 +89,13 @@ app.get("/analysis", async (req, res) => {
   }
 });
 
-// Endpoint to get the json data of the response given by user
+// Endpoint to handle the get request to /api/data
+// responds with form data and is called by charts.js to display the charts
 app.get('/api/data', (req, res) => {
   res.json(formData);
 });
-
-function replaceCategoryInTemplate(template, categoryData) {
-  for (const category of Object.keys(categoryData)) {
-    template = template.replace(new RegExp(`{{${category}}}`, 'g'), categoryData[category]);
-  }
-  return template;
-}
 
 
 app.listen(PORT, () =>
   console.log(`Server is running on http://localhost:${PORT}`)
 );
-
-module.exports = {
-  formData
-};
