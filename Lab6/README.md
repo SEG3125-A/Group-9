@@ -1,4 +1,9 @@
-# SEG3125_Group9_Lab1
+## Lab 6: Survey Analysis (Continuation of Lab 1)
+
+Amar Ghazi (300202841)
+Selin Kararmaz (300163876)
+Céline Wan Min Kee (300193369)
+Kanjanokphat Kitisuwanakul (300170040)
 
 ## Instructions
 - npm install express
