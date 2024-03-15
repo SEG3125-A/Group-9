@@ -1,0 +1,45 @@
+.app {
+    background-color: #EAE7E2;
+    height: 100%;
+}
+
+.activity {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    text-align: justify;
+    height: 100%;
+}
+
+.left {
+    flex-direction: row;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.content {
+    flex: 1;
+    padding: 20px
+}
+
+.image {
+    margin: 0 20px;
+}
+
+.image img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #c2c2c2;
+}
+
+@media (max-width: 768px) {
+    .activity {
+        flex-direction: column;
+    }
+
+    .image {
+        margin: 20px 0;
+    }
+}
