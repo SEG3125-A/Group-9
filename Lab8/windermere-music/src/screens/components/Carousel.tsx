@@ -11,7 +11,7 @@ export default function CarouselImage({ images }: CarouselImageProps) {
             {images.map((image: string, index: number) => (
                 <Carousel.Item key={index}>
                     <img
-                        className="d-block w-100"
+                        className="d-block w-100 rounded"
                         src={image}
                         alt={`Slide ${index + 1}`}
                         style={{ width: '100%', height: '400px', objectFit: 'cover'}}

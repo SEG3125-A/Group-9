@@ -46,7 +46,7 @@ const HomePage = () => {
                         </Col>
                     </Row>
                 </div>
-                <div className="zigzag">
+                <div className="mt-5 zigzag">
                     <Row className="align-items-center">
                         <Col md={6} className="text-center order-md-2">
                             <CarouselImage images={images} />
