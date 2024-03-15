@@ -1,16 +1,13 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 import NavigationBar from './components/NavigationBar';
 
-const HomePage = () => {
-
-    const navigate = useNavigate();
+const ActivitesPage = () => {
 
     return (
         <div>
             <NavigationBar />
             <h1>
-                Welcome to the Windermere Music Club!
+                Activities
             </h1>
 
         </div>
@@ -18,4 +15,4 @@ const HomePage = () => {
 
 }
 
-export default HomePage;
+export default ActivitesPage;

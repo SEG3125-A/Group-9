@@ -1,10 +1,9 @@
 import React, { ChangeEvent, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
 import { useLocation, useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
+import NavigationBar from './components/NavigationBar';
 
 const BookingPage = () => {
 
@@ -32,12 +31,12 @@ const BookingPage = () => {
     }
 
     const handleSubmit = () =>{
-        
+        //TODO
     }
 
     return(
         <>
-            {/* Put navbar here */}
+            <NavigationBar />
             <div className='bookingform-wrapper'>
                 <Form className="p-5 h-100" onSubmit={handleSubmit}>
                     <h1>
@@ -121,7 +120,6 @@ const BookingPage = () => {
             </div>
         </>
     )
-
 }
 
 export default BookingPage;
