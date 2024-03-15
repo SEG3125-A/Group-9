@@ -43,3 +43,15 @@
         margin: 20px 0;
     }
 }
+
+.description {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    text-align: justify;
+    height: 100%;
+}
+
+.title{
+    padding: 20px;
+}

@@ -14,9 +14,8 @@ export default function CarouselImage({ images }: CarouselImageProps) {
                         className="d-block w-100"
                         src={image}
                         alt={`Slide ${index + 1}`}
-                        style={{ width: '100%', height: '300px', objectFit: 'cover' }}
+                        style={{ width: '100%', height: '400px', objectFit: 'cover'}}
                     />
-                    {/* Optional: Add Carousel.Caption here if needed */}
                 </Carousel.Item>
             ))}
         </Carousel>
