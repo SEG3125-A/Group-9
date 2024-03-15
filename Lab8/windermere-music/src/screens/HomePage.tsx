@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import NavigationBar from './components/NavigationBar';
 import { Container, Col, Row } from 'react-bootstrap';
+import Footer from './components/Footer';
 import CarouselImage from './components/Carousel';
 import image_1 from '../images/home_image_1.jpg';
 import image_2 from '../images/home_image_2.jpg';
@@ -59,6 +60,7 @@ const HomePage = () => {
                     </Row>
                 </div>
             </Container>
+            <Footer />
         </div>
     );
 }
