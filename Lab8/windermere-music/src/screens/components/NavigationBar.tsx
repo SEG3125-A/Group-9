@@ -12,7 +12,7 @@ export default function NavigationBar() {
     }
 
     return (
-        <Navbar bg="light" expand="lg" style={{ margin: '0px 15px 0px 15px' }}>
+        <Navbar bg="light" expand="lg" style={{ padding: '0px 15px 0px 15px' }}>
             <Navbar.Brand href="">
                 <img
                     src={logo}

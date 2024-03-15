@@ -5,18 +5,21 @@ import TeamPage from './screens/TeamPage';
 import BookingPage from './screens/BookingPage';
 import ActivitesPage from './screens/ActivitiesPage';
 import RegisterPage from './screens/RegisterPage';
+import './screens/styles.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/activities" element={<ActivitesPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/booking" element={<BookingPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div className='app'>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/activities" element={<ActivitesPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/booking" element={<BookingPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
