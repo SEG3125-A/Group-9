@@ -114,7 +114,7 @@ const BookingPage = () => {
                     
                     <div>
                         <Button className="uottawa-btn" type="submit">
-                            Log in
+                            Submit
                         </Button>
                     </div>
                 </Form>
