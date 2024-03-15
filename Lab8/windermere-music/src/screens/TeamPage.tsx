@@ -1,7 +1,8 @@
 import React from 'react';
 import '../App.css';
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import NavigationBar from './components/NavigationBar';
 
 
 const TeamPage = () => {
@@ -32,9 +33,6 @@ const TeamPage = () => {
         }
       ];
     
-
-    const navigate = useNavigate();
-
     return(
        <>
         <Container>
@@ -56,7 +54,6 @@ const TeamPage = () => {
         </Container>
        </>
     )
-
 }
 
 export default TeamPage;
