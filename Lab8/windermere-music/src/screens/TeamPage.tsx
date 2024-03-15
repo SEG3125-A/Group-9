@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import { useLocation } from "react-router-dom";
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
@@ -35,6 +34,7 @@ const TeamPage = () => {
     
     return(
        <>
+       <NavigationBar />
         <Container>
             <h1 className="text-center mb-5">Meet the team</h1>
             <Row>
