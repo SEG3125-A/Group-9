@@ -20,7 +20,8 @@ export default function NavigationBar() {
                     height={45}
                     onClick={navigateToHomepage}
                     style={{ cursor: 'pointer' }}
-                />
+                /> 
+            <span className='p-3' style={{fontFamily: 'Brush Script MT', fontSize: '35px'}}>Windermere</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
