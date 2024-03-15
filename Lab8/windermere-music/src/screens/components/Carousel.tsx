@@ -1,0 +1,24 @@
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
+
+interface CarouselImageProps {
+    images: string[];
+}
+
+export default function CarouselImage({ images }: CarouselImageProps) {
+    return (
+        <Carousel>
+            {images.map((image: string, index: number) => (
+                <Carousel.Item key={index}>
+                    <img
+                        className="d-block w-100"
+                        src={image}
+                        alt={`Slide ${index + 1}`}
+                        style={{ width: '100%', height: '300px', objectFit: 'cover' }}
+                    />
+                    {/* Optional: Add Carousel.Caption here if needed */}
+                </Carousel.Item>
+            ))}
+        </Carousel>
+    );
+}
