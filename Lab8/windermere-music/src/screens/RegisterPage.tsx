@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavigationBar from "./components/NavigationBar";
+import Footer from './components/Footer';
 import "./RegisterPage.css"; // Assuming you have a CSS file for styling
 
 const RegisterPage = () => {
@@ -91,7 +92,9 @@ const RegisterPage = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
+      <Footer />
     </div>
+    
   );
 };
 

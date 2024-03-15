@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationBar from './components/NavigationBar';
 import Activity from './components/Activity';
+import Footer from './components/Footer';
 
 const ActivitesPage = () => {
 
@@ -48,7 +49,7 @@ const ActivitesPage = () => {
                     />
                 ))}
             </div>
-
+            <Footer />
         </div>
     )
 

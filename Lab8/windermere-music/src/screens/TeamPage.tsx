@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from "react-router-dom";
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import NavigationBar from './components/NavigationBar';
-
+import Footer from './components/Footer';
 
 const TeamPage = () => {
     const teamMembers = [
@@ -52,6 +52,7 @@ const TeamPage = () => {
                 ))}
             </Row>
         </Container>
+        <Footer />
        </>
     )
 }

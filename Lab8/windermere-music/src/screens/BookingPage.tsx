@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
 
 const BookingPage = () => {
 
@@ -118,6 +119,7 @@ const BookingPage = () => {
                     </div>
                 </Form>
             </div>
+            <Footer />
         </>
     )
 }
