@@ -28,7 +28,7 @@ const HomePage = () => {
         <div className="home-page">
             <NavigationBar />
             <Container className='title'>
-                <h3 className='text-center'>Welcome to the Windermere Music Club</h3>
+                <h2 className='text-center'>Welcome to the Windermere Music Club</h2>
             </Container>
             <Container fluid className="custom-container">
                 <div className="zigzag">

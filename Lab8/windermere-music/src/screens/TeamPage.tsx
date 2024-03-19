@@ -36,7 +36,9 @@ const TeamPage = () => {
        <>
        <NavigationBar />
         <Container>
-            <h1 className="text-center mb-5">Meet the team</h1>
+            <Container className='title'>
+              <h2 className='text-center mb-3'>Meet the team</h2>
+            </Container>
             <Row>
                 {teamMembers.map((member, index) => (
                 <Col key={index} md={6} lg={3} className="mb-4">

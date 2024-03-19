@@ -28,6 +28,7 @@ export default function NavigationBar() {
                 <Nav style={{ marginLeft: 'auto', fontSize: '18px' }}>
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="activities">Activities</Nav.Link>
+                    <Nav.Link href="booking">Booking</Nav.Link>
                     <Nav.Link href="team">Team</Nav.Link>
                     <Nav.Link href="register">Register</Nav.Link>
                 </Nav>
