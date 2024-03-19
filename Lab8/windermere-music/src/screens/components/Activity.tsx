@@ -25,7 +25,7 @@ const Activity: React.FC<ActivityInfoProps> = (props) => {
                     <p>{props.description}</p>
                     {props.name === 'Book a room' ?
                         <div className='d-flex justify-content-center'>
-                            <Button onClick={navigateToBooking} variant='secondary'>Book a room here</Button>
+                            <Button className='btn-booking' onClick={navigateToBooking} variant='secondary'>Book a room here</Button>
                         </div>
                         :
                         <></>
