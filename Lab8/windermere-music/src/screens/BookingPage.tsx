@@ -106,7 +106,7 @@ const BookingPage = () => {
 
                                 {/* email */}
                                 <Form.Group className="mt-2 mb-4" style={{ width: '50%' }}>
-                                    <Form.Label>uOttawa email address</Form.Label>
+                                    <Form.Label>uOttawa email</Form.Label>
                                     <Form.Control
                                         required
                                         id="email"
