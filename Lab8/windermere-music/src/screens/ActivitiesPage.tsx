@@ -44,7 +44,7 @@ const ActivitesPage = () => {
                         name={activity.name}
                         description={activity.description}
                         image={activity.image_source}
-                        imagePosition={index % 2 === 0 ? 'left' : 'right'}
+                        imagePosition={index % 2 === 0 ? 'right' : 'left'}
                     />
                 ))}
             </div>

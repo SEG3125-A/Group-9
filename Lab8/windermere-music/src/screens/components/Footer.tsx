@@ -6,7 +6,7 @@ import icon from '../../images/icon2.png'
 
 const Footer = () => {
   return (
-    <footer className="text-center text-dark mt-5" style={{ backgroundColor: "#797674", color: "white" }}>
+    <footer className="text-center text-dark mt-5 footer-container">
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2 footer-title">
@@ -29,19 +29,19 @@ const Footer = () => {
                 <p className="mb-0 ml-1">Instagram</p>
               </div>
               <div className="d-flex align-items-center mr-3" id="icon-container">
-                <FontAwesomeIcon icon={faTiktok} className="m-1 social-media-icon" size="lg" />
+                <FontAwesomeIcon icon={faTiktok} className="m-1 social-media-icon"/>
                 <p className="mb-0 ml-1">Tiktok</p>
               </div>
               <div className="d-flex align-items-center mr-3" id="icon-container">
-                <FontAwesomeIcon icon={faFacebook} className="m-1 social-media-icon" size="1x" />
+                <FontAwesomeIcon icon={faFacebook} className="m-1 social-media-icon" />
                 <p className="mb-0 ml-1">Facebook</p>
               </div>
               <div className="d-flex align-items-center mr-" id="icon-container">
-                <FontAwesomeIcon icon={faLinkedin} className="m-1 social-media-icon" size="lg" />
+                <FontAwesomeIcon icon={faLinkedin} className="m-1 social-media-icon"/>
                 <p className="mb-0 ml-1">Linkedin</p>
               </div>
               <div className="d-flex align-items-center" id="icon-container">
-                <FontAwesomeIcon icon={faTwitter} className="m-1 social-media-icon" size="lg" />
+                <FontAwesomeIcon icon={faTwitter} className="m-1 social-media-icon"/>
                 <p className="mb-0 ml-1">Twitter</p>
               </div>
             </section>

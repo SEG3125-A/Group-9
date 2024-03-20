@@ -67,10 +67,3 @@
     max-width: 900px; /*sets the widge of the div items in the form*/
     margin: 0 auto; /*aligns all the divs to the middle*/
 }
-
-.btn-booking{
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 12px;
-}
