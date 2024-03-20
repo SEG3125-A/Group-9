@@ -1,0 +1,15 @@
+.footer {
+    background-color: #797674;
+    color: black;
+    padding: 0;
+  }
+  
+  .footer .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
