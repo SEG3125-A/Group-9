@@ -24,5 +24,19 @@ address {
 }
 .social-media-icon{
     font-size: 2em;
+    
 }  
+
+.align-left {
+    text-align: left;
+  }
+  
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.socials > div {
+    margin-right: 3em; /* Adjust the value as per your preference */
+}
 
