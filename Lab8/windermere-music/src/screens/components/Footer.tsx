@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTiktok, faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faTiktok, faFacebook, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 import icon from '../../images/icon2.png'
 
@@ -11,14 +11,14 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-2 footer-title">
             <img className="icon-image" src={icon}></img>
-            <h5 style={{fontFamily: 'Brush Script MT', fontSize: '20px'}}>Windermere Music Club</h5>
+            <h5 style={{fontFamily: 'Brush Script MT', fontSize: '20px', color: "#2f2b39"}}>Windermere Music Club</h5>
           </div>
           <div className="col-md-4 d-flex flex-column justify-content-start">
             <address>
               <h6 className="text-dark" style={{ fontSize: "18px" }}>Location</h6>
               75 Laurier Ave E, Ottawa, ON K1N 6N5<br />
               Phone number: +1 212 799-5000<br />
-              Email: <a href="mailto:windermereMC@gmail.com" style={{ color: "black" }}>windermereMC@gmail.com</a>
+              Email: <a href="mailto:windermereMC@gmail.com" style={{ color: "#2f2b39" }}>windermereMC@gmail.com</a>
             </address>
           </div>
           <div className="col-md socials flex-column justify-content-start align-items-start">
@@ -27,6 +27,10 @@ const Footer = () => {
               <div className="d-flex align-items-center mr-3" id="icon-container">
                 <FontAwesomeIcon icon={faInstagram} className="m-1 social-media-icon" />
                 <p className="mb-0 ml-1">Instagram</p>
+              </div>
+              <div className="d-flex align-items-center" id="icon-container">
+                <FontAwesomeIcon icon={faYoutube} className="m-1 social-media-icon"/>
+                <p className="mb-0 ml-1">YouTube</p>
               </div>
               <div className="d-flex align-items-center mr-3" id="icon-container">
                 <FontAwesomeIcon icon={faTiktok} className="m-1 social-media-icon"/>
