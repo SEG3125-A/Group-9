@@ -1,8 +1,4 @@
-.footer {
-    background-color: #797674;
-    color: black;
-    padding: 0;
-  }
+
   
 .footer .container-fluid {
     padding-top: 0.5em;
@@ -34,9 +30,12 @@ address {
 .socials {
     display: flex;
     flex-wrap: wrap;
-  }
+}
   
 .socials > div {
-    margin-right: 3em; /* Adjust the value as per your preference */
+    margin-right: 3em; 
 }
 
+.icon-image{
+    height: 5em;
+}

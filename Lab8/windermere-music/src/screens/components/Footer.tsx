@@ -2,20 +2,22 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTiktok, faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
+import icon from '../../images/icon2.png'
 
 const Footer = () => {
   return (
-    <footer className="text-center text-dark mt-5" style={{ backgroundColor: "#797674", color: "black" }}>
+    <footer className="text-center text-dark mt-5" style={{ backgroundColor: "#797674", color: "white" }}>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-3 footer-title">
-            <h5>Windermere Music Club</h5>
+          <div className="col-md-2 footer-title">
+            <img className="icon-image" src={icon}></img>
+            <h5 style={{fontFamily: 'Brush Script MT', fontSize: '20px'}}>Windermere Music Club</h5>
           </div>
-          <div className="col-md-3 d-flex flex-column justify-content-start">
+          <div className="col-md-4 d-flex flex-column justify-content-start">
             <address>
               <h6 className="text-dark" style={{ fontSize: "18px" }}>Location</h6>
-              Lincoln Center Plaza, New York, NY 10023<br />
-              Phone number: 212-799-5000<br />
+              75 Laurier Ave E, Ottawa, ON K1N 6N5<br />
+              Phone number: +1 212 799-5000<br />
               Email: windermereMC@gmail.com
             </address>
           </div>
