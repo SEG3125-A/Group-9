@@ -6,16 +6,23 @@
   
 .footer .container-fluid {
     padding-top: 0.5em;
-    padding-left: 0em;
     padding-right: 0;
 }
 
 .footer p {
     margin: 0;
+    padding: 0;
 }
 
-.location-info {
-    padding-left: 15px; /* Adjust padding as needed */
+address {
+    text-align: left;
   }
-  
-  
+.location-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+}
+.social-media-icon{
+    font-size: 2em;
+}  
+
