@@ -14,19 +14,21 @@ address {
     text-align: left;
   }
 .location-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .social-media-icon{
     font-size: 2em;
-    
 }  
 
 .align-left {
     text-align: left;
-  }
-  
+}
+
+#icon-container{
+    cursor: pointer;
+}
 .socials {
     display: flex;
     flex-wrap: wrap;

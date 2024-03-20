@@ -18,29 +18,29 @@ const Footer = () => {
               <h6 className="text-dark" style={{ fontSize: "18px" }}>Location</h6>
               75 Laurier Ave E, Ottawa, ON K1N 6N5<br />
               Phone number: +1 212 799-5000<br />
-              Email: windermereMC@gmail.com
+              Email: <a href="mailto:windermereMC@gmail.com" style={{ color: "black" }}>windermereMC@gmail.com</a>
             </address>
           </div>
           <div className="col-md socials flex-column justify-content-start align-items-start">
             <h6 className="text-dark" style={{ fontSize: "18px" }}>Socials</h6>
             <section className="mb-3 socials d-flex align-items-center">
-              <div className="d-flex align-items-center mr-3">
+              <div className="d-flex align-items-center mr-3" id="icon-container">
                 <FontAwesomeIcon icon={faInstagram} className="m-1 social-media-icon" />
                 <p className="mb-0 ml-1">Instagram</p>
               </div>
-              <div className="d-flex align-items-center mr-3">
+              <div className="d-flex align-items-center mr-3" id="icon-container">
                 <FontAwesomeIcon icon={faTiktok} className="m-1 social-media-icon" size="lg" />
                 <p className="mb-0 ml-1">Tiktok</p>
               </div>
-              <div className="d-flex align-items-center mr-3">
+              <div className="d-flex align-items-center mr-3" id="icon-container">
                 <FontAwesomeIcon icon={faFacebook} className="m-1 social-media-icon" size="1x" />
                 <p className="mb-0 ml-1">Facebook</p>
               </div>
-              <div className="d-flex align-items-center mr-">
+              <div className="d-flex align-items-center mr-" id="icon-container">
                 <FontAwesomeIcon icon={faLinkedin} className="m-1 social-media-icon" size="lg" />
                 <p className="mb-0 ml-1">Linkedin</p>
               </div>
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center" id="icon-container">
                 <FontAwesomeIcon icon={faTwitter} className="m-1 social-media-icon" size="lg" />
                 <p className="mb-0 ml-1">Twitter</p>
               </div>
