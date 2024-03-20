@@ -11,12 +11,12 @@ import image_4 from '../images/home_image_5.jpg';
 
 const HomePage = () => {
     const navigate = useNavigate();
-    const images = [image_2, image_3, image_4]; 
+    const images = [image_2, image_3, image_4];
     const titles = ["What we do", "Join us!"];
     const paragraphs = [
         {
             title: "What we do",
-            description:"At Windermere Music Club, we orchestrate unforgettable experiences through the enchanting power of music! Our club is not merely a venue; it's a vibrant community where melodies intertwine with moments, creating memories that last a lifetime."
+            description: "At Windermere Music Club, we orchestrate unforgettable experiences through the enchanting power of music! Our club is not merely a venue; it's a vibrant community where melodies intertwine with moments, creating memories that last a lifetime."
         },
         {
             title: "Join us",
@@ -30,7 +30,7 @@ const HomePage = () => {
             <Container className='title'>
                 <h2 className='text-center'>Welcome to the Windermere Music Club</h2>
             </Container>
-            <Container fluid className="custom-container">
+            <Container fluid className="custom-container px-4">
                 <div className="zigzag">
                     <Row className="align-items-center">
                         <Col md={6} className="text-center">
