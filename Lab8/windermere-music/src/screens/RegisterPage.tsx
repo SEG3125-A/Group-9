@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
-import "bootstrap/dist/css/bootstrap.min.css"; // Make sure to import Bootstrap CSS
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const RegisterPage = () => {
   // State for the form fields
@@ -35,79 +40,87 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="register-page">
+    <>
       <NavigationBar />
-      <div className="container mt-5">
-        <h2 className="mb-4">Register here to join the music club</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              placeholder="First Name"
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              placeholder="Last Name"
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="studentNumber"
-              value={formData.studentNumber}
-              onChange={handleChange}
-              placeholder="Student Number"
-              maxLength={9}
-            />
-          </div>
-          <div className="mb-3">
-            <input
+      <Container className="mt-5">
+        <h2 className="mb-4 text-center">
+          Register here to join the music club
+        </h2>
+        <Form onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                placeholder="John"
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="6">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="Doe"
+              />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="4">
+              <Form.Label>Program</Form.Label>
+              <Form.Control
+                type="text"
+                name="program"
+                value={formData.program}
+                onChange={handleChange}
+                placeholder="Program"
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="4">
+              <Form.Label>Year</Form.Label>
+              <Form.Control
+                type="text"
+                name="year"
+                value={formData.year}
+                onChange={handleChange}
+                placeholder="XXXX"
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="4">
+              <Form.Label>Student Number</Form.Label>
+              <Form.Control
+                type="text"
+                name="studentNumber"
+                value={formData.studentNumber}
+                onChange={handleChange}
+                placeholder="XXXXXXXXX"
+                maxLength={9}
+              />
+            </Form.Group>
+          </Row>
+          <Form.Group className="mb-3">
+            <Form.Label>E-mail</Form.Label>
+            <Form.Control
               type="email"
-              className="form-control"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Email"
+              placeholder="example@gmail.com"
             />
+          </Form.Group>
+          <div className="d-flex justify-content-center">
+            <Button variant="secondary" type="submit">
+              Submit
+            </Button>
           </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="program"
-              value={formData.program}
-              onChange={handleChange}
-              placeholder="Program"
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="year"
-              value={formData.year}
-              onChange={handleChange}
-              placeholder="Year"
-            />
-          </div>
-          <button className="btn btn-primary" type="submit">
-            Submit
-          </button>
-        </form>
-      </div>
+        </Form>
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 };
 
