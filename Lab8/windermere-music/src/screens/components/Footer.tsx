@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-6">
-            <p>123 Example Street, City, Country</p>
+            <p>Example Street, City, Country</p>
           </div>
           <div className="col-sm-6 text-right">
             <SocialIcon className="m-1" url="https://www.instagram.com/" />
