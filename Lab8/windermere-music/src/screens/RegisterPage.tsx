@@ -18,6 +18,7 @@ const RegisterPage = () => {
     program: "",
     year: "",
   });
+  const [warning, setWarning] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -35,8 +36,21 @@ const RegisterPage = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    //TO DO
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.studentNumber ||
+      !formData.email ||
+      !formData.program ||
+      !formData.year
+    ) {
+      setWarning("Please fill in all the fields before submitting.");
+    } else {
+      setWarning("");
+      console.log("Form submitted", formData);
+    }
   };
 
   return (
@@ -46,6 +60,11 @@ const RegisterPage = () => {
         <h2 className="mb-4 text-center">
           Register here to join the music club
         </h2>
+        {warning && (
+          <div className="alert alert-warning" role="alert">
+            {warning}
+          </div>
+        )}
         <Form onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="6">
