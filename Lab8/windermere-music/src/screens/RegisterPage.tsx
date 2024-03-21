@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from 'react-bootstrap/Modal';
 
 const RegisterPage = () => {
   // State for the form fields
@@ -19,6 +20,7 @@ const RegisterPage = () => {
     year: "",
   });
   const [warning, setWarning] = useState("");
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -36,6 +38,10 @@ const RegisterPage = () => {
     }));
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (
@@ -50,6 +56,7 @@ const RegisterPage = () => {
     } else {
       setWarning("");
       console.log("Form submitted", formData);
+      setShowModal(true);
     }
   };
 
@@ -137,6 +144,19 @@ const RegisterPage = () => {
             </Button>
           </div>
         </Form>
+        <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal.Header>
+            <Modal.Title>Thank you for registering!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                A confirmation email has been sent to your uottawa email.
+            </Modal.Body>
+            <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+                Close
+            </Button>
+            </Modal.Footer>
+        </Modal>
       </Container>
       <Footer />
     </>
