@@ -66,4 +66,15 @@
     flex-direction: column;
     max-width: 900px; /*sets the widge of the div items in the form*/
     margin: 0 auto; /*aligns all the divs to the middle*/
+    padding: 2%;
+}
+
+.warning{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.warning-register{
+    max-width: 860px;
+    margin: 0 auto;
 }
