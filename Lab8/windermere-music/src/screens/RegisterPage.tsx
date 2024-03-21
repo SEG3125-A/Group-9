@@ -77,6 +77,7 @@ const RegisterPage = () => {
             <Form.Group as={Col} md="6">
               <Form.Label>First Name <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="firstName"
                 value={formData.firstName}
@@ -87,6 +88,7 @@ const RegisterPage = () => {
             <Form.Group as={Col} md="6">
               <Form.Label>Last Name <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="lastName"
                 value={formData.lastName}
@@ -99,6 +101,7 @@ const RegisterPage = () => {
             <Form.Group as={Col} md="4">
               <Form.Label>Program <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="program"
                 value={formData.program}
@@ -109,6 +112,7 @@ const RegisterPage = () => {
             <Form.Group as={Col} md="4">
               <Form.Label>Year <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="year"
                 value={formData.year}
@@ -119,6 +123,7 @@ const RegisterPage = () => {
             <Form.Group as={Col} md="4">
               <Form.Label>Student Number <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="studentNumber"
                 value={formData.studentNumber}
@@ -131,6 +136,7 @@ const RegisterPage = () => {
           <Form.Group className="mb-3">
             <Form.Label>uOttawa email <span style={{color:"red"}}>*</span></Form.Label>
             <Form.Control
+              required
               type="email"
               name="email"
               value={formData.email}
