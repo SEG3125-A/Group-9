@@ -46,7 +46,7 @@ const RegisterPage = () => {
       !formData.program ||
       !formData.year
     ) {
-      setWarning("Please fill in all the fields before submitting.");
+      setWarning("Please fill all the required fields.");
     } else {
       setWarning("");
       console.log("Form submitted", formData);
@@ -61,14 +61,14 @@ const RegisterPage = () => {
           Register here to join the music club
         </h2>
         {warning && (
-          <div className="alert alert-warning" role="alert">
+          <div className="alert alert-warning warning-register" role="alert">
             {warning}
           </div>
         )}
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="form-wrapper">
           <Row className="mb-3">
             <Form.Group as={Col} md="6">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label>First Name <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
                 type="text"
                 name="firstName"
@@ -78,7 +78,7 @@ const RegisterPage = () => {
               />
             </Form.Group>
             <Form.Group as={Col} md="6">
-              <Form.Label>Last Name</Form.Label>
+              <Form.Label>Last Name <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
                 type="text"
                 name="lastName"
@@ -90,7 +90,7 @@ const RegisterPage = () => {
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="4">
-              <Form.Label>Program</Form.Label>
+              <Form.Label>Program <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
                 type="text"
                 name="program"
@@ -100,7 +100,7 @@ const RegisterPage = () => {
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
-              <Form.Label>Year</Form.Label>
+              <Form.Label>Year <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
                 type="text"
                 name="year"
@@ -110,7 +110,7 @@ const RegisterPage = () => {
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
-              <Form.Label>Student Number</Form.Label>
+              <Form.Label>Student Number <span style={{color:"red"}}>*</span></Form.Label>
               <Form.Control
                 type="text"
                 name="studentNumber"
@@ -122,13 +122,13 @@ const RegisterPage = () => {
             </Form.Group>
           </Row>
           <Form.Group className="mb-3">
-            <Form.Label>E-mail</Form.Label>
+            <Form.Label>uOttawa email <span style={{color:"red"}}>*</span></Form.Label>
             <Form.Control
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="example@gmail.com"
+              placeholder="name@uottawa.ca"
             />
           </Form.Group>
           <div className="d-flex justify-content-center">
