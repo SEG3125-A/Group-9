@@ -43,7 +43,7 @@ const HomePage = () => {
                             <Col md={6} className="order-md-1">
                                 <div className="content">
                                     <h3>{paragraphs[0].title}</h3>
-                                    <p>{paragraphs[0].description}</p>
+                                    <p style={{ textAlign: "justify" }}>{paragraphs[0].description}</p>
                                 </div>
                             </Col>
                         </Row>
@@ -56,7 +56,7 @@ const HomePage = () => {
                             <Col md={6} className="order-md-1">
                                 <div className="content">
                                     <h3>{paragraphs[1].title}</h3>
-                                    <p>{paragraphs[1].description}</p>
+                                    <p style={{ textAlign: "justify" }}>{paragraphs[1].description}</p>
                                 </div>
                             </Col>
                         </Row>

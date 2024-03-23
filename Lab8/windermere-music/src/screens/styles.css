@@ -3,10 +3,10 @@
     height: 100%;
 }
 
-
-.page{
+.page {
     min-height: calc(100vh - 267px);
 }
+
 .activity {
     display: flex;
     align-items: center;
