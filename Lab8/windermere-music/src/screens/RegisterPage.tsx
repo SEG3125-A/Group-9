@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 
 const RegisterPage = () => {
   // State for the form fields
@@ -25,12 +25,9 @@ const RegisterPage = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
-    /*if (name === "email") {
-      if (!validateEmail(value)) {
-        console.error("Invalid email address");
-        return;
-      }
-    }*/
+    if (name === "studentNumber" && value.length > 9) {
+      return;
+    }
 
     setFormData((prevState) => ({
       ...prevState,
@@ -40,10 +37,15 @@ const RegisterPage = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
-  }
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const studentNumberStr = formData.studentNumber.toString();
+    if (studentNumberStr.length !== 9) {
+      setWarning("Student number must be exactly 9 digits.");
+      return;
+    }
     if (
       !formData.firstName ||
       !formData.lastName ||
@@ -75,7 +77,9 @@ const RegisterPage = () => {
         <Form onSubmit={handleSubmit} className="form-wrapper">
           <Row className="mb-3">
             <Form.Group as={Col} md="6">
-              <Form.Label>First Name <span style={{color:"red"}}>*</span></Form.Label>
+              <Form.Label>
+                First Name <span style={{ color: "red" }}>*</span>
+              </Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -86,7 +90,9 @@ const RegisterPage = () => {
               />
             </Form.Group>
             <Form.Group as={Col} md="6">
-              <Form.Label>Last Name <span style={{color:"red"}}>*</span></Form.Label>
+              <Form.Label>
+                Last Name <span style={{ color: "red" }}>*</span>
+              </Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -99,7 +105,9 @@ const RegisterPage = () => {
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="4">
-              <Form.Label>Program <span style={{color:"red"}}>*</span></Form.Label>
+              <Form.Label>
+                Program <span style={{ color: "red" }}>*</span>
+              </Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -110,7 +118,9 @@ const RegisterPage = () => {
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
-              <Form.Label>Year <span style={{color:"red"}}>*</span></Form.Label>
+              <Form.Label>
+                Year <span style={{ color: "red" }}>*</span>
+              </Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -121,10 +131,12 @@ const RegisterPage = () => {
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
-              <Form.Label>Student Number <span style={{color:"red"}}>*</span></Form.Label>
+              <Form.Label>
+                Student Number <span style={{ color: "red" }}>*</span>
+              </Form.Label>
               <Form.Control
                 required
-                type="text"
+                type="number"
                 name="studentNumber"
                 value={formData.studentNumber}
                 onChange={handleChange}
@@ -134,7 +146,9 @@ const RegisterPage = () => {
             </Form.Group>
           </Row>
           <Form.Group className="mb-3">
-            <Form.Label>uOttawa email <span style={{color:"red"}}>*</span></Form.Label>
+            <Form.Label>
+              uOttawa email <span style={{ color: "red" }}>*</span>
+            </Form.Label>
             <Form.Control
               required
               type="email"
@@ -151,17 +165,17 @@ const RegisterPage = () => {
           </div>
         </Form>
         <Modal show={showModal} onHide={handleCloseModal}>
-            <Modal.Header>
+          <Modal.Header>
             <Modal.Title>Thank you for registering!</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                A confirmation email has been sent to your uottawa email.
-            </Modal.Body>
-            <Modal.Footer>
+          </Modal.Header>
+          <Modal.Body>
+            A confirmation email has been sent to your uottawa email.
+          </Modal.Body>
+          <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>
-                Close
+              Close
             </Button>
-            </Modal.Footer>
+          </Modal.Footer>
         </Modal>
       </Container>
       <Footer />
