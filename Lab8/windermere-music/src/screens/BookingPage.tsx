@@ -82,7 +82,7 @@ const BookingPage = () => {
             <div>
                 <Form className="h-100 form-wrapper" onSubmit={handleSubmit}>
                     <div className='title'>
-                        <h2 className='text-center'>{t('booking.title')}</h2>
+                        <h2 className='text-center'><i className="fas fa-guitar"></i> Music{t('booking.title')}</h2>
                     </div>
                     {warning && (
                         <div className="alert alert-warning" role="alert">

@@ -39,7 +39,7 @@ const TeamPage = () => {
       <NavigationBar />
       <Container>
         <Container className='title'>
-          <h2 className='text-center mb-3'>{t('team.title')}</h2>
+          <h2 className='text-center mb-3'><i className="fas fa-users m-2"></i>{t('team.title')}</h2>
         </Container>
         <Row>
           {teamMembers.map((member, index) => (

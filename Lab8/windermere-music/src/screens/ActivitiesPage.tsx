@@ -38,7 +38,7 @@ const ActivitesPage = () => {
     return (
         <div>
             <NavigationBar />
-            <h2 className='text-center pt-4'>
+            <h2 className='text-center pt-4'> <i className="fas fa-headphones m-2"></i>
                 {t('activities.title')}
             </h2>
             <div className='px-4'>

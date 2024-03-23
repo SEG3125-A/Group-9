@@ -64,7 +64,7 @@ const RegisterPage = () => {
     <>
       <NavigationBar />
       <Container className="mt-5">
-        <h2 className="mb-4 text-center">
+        <h2 className="mb-4 text-center"> <i className="fas fa-user-plus m-2"></i>
           Register here to join the music club
         </h2>
         {warning && (
