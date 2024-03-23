@@ -1,9 +1,16 @@
 {
+    "clubName": "Windermere Music Club",
     "navbarHome": "Home",
     "navbarActivites": "Activities",
     "navbarBooking": "Booking",
     "navbarTeam": "Team",
     "navbarRegister": "Register",
+    "footerLocation": "Location",
+    "footerAddress": "75 Laurier Ave E, Ottawa, ON K1N 6N5",
+    "footerPhone": "Phone Number: +1 212 799-5000",
+    "footerEmail": "Email:",
+    "footerSocials": "Socials",
+    "footerCopyright": "All Rights Reserved",
     "home": {
         "welcomeMessage": "Welcome to the Windermere Music Club",
         "goal": {
@@ -57,13 +64,7 @@
         },
         "inputName": "Name",
         "inputEmail": "uOttawa email",
-        "bookButton": "Book",
-        "modal": {
-            "title": "Thank you for booking!",
-            "message": "A confirmation email has been sent to your uOttawa email.",
-            "close": "Close"
-        },
-        "warning": "Please fill all the required fields."
+        "bookButton": "Book"
     },
     "team": {
         "title": "Meet the team",
@@ -87,5 +88,33 @@
             "role": "Social Media Manager",
             "description": "Hi! I am the social media manager of the Windermere Music Club."
         }
-    }
+    },
+    "register": {
+        "title": "Register here to join the club",
+        "inputFirstName": "First Name",
+        "inputLastName": "Last Name",
+        "inputProgram": "Program",
+        "yearSelection": {
+            "title": "Year",
+            "select": "Select a year",
+            "firstYear": "First Year",
+            "secondYear": "Second Year",
+            "thirdYear": "Third Year",
+            "fourthYear": "Fourth Year",
+            "fifthYear": "Fifth Year",
+            "master": "Master's",
+            "phd": "PhD"
+        },
+        "inputStudentNum": "Student Number",
+        "inputEmail": "uOttawa email",
+        "submitButton": "Submit"
+    },
+    "modal": {
+        "registerTitle": "Thank you for registering!",
+        "bookTitle": "Thank you for booking!",
+        "message": "A confirmation email has been sent to your uOttawa email.",
+        "close": "Close"
+    },
+    "warning": "Please fill all the required fields.",
+    "studentNumWarning": "Student number must be exactly 9 digits."
 }

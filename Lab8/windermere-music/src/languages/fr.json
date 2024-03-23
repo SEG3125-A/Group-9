@@ -1,9 +1,16 @@
 {
+    "clubName": "Club de musique Windermere",
     "navbarHome": "Accueil",
     "navbarActivites": "Activités",
     "navbarBooking": "Réservation",
     "navbarTeam": "Équipe",
-    "navbarRegister": "Nous rejoindre",
+    "navbarRegister": "S'inscrire",
+    "footerLocation": "Localisation",
+    "footerAddress": "75 Avenue Laurier Est, Ottawa, ON K1N 6N5",
+    "footerPhone": "Numéro de télépone: +1 212 799-5000",
+    "footerEmail": "Courriel:",
+    "footerSocials": "Réseaux sociaux",
+    "footerCopyright": "Tous droits réservés",
     "home": {
         "welcomeMessage": "Bienvenue au club de musique Windermere",
         "goal": {
@@ -57,13 +64,7 @@
         },
         "inputName": "Nom",
         "inputEmail": "Courriel uOttawa",
-        "bookButton": "Réserver",
-        "modal": {
-            "title": "Merci pour votre réservation!",
-            "message": "Un courriel de confirmation a été envoyé à votre courriel uOttawa.",
-            "close": "Fermer"
-        },
-        "warning": "Remplir tous les champs requis."
+        "bookButton": "Réserver"
     },
     "team": {
         "title": "Rencontrer l'équipe",
@@ -87,5 +88,33 @@
             "role": "Responsable des médias sociaux",
             "description": "Salut! Je suis le responsable des médias sociaux du club de musique Windermere."
         }
-    }
+    },
+    "register": {
+        "title": "Inscrivez-vous ici pour rejoindre le club",
+        "inputFirstName": "Prénom",
+        "inputLastName": "Nom de famille",
+        "inputProgram": "Programme",
+        "yearSelection": {
+            "title": "Année",
+            "select": "Choisir une année",
+            "firstYear": "Premier cycle",
+            "secondYear": "Deuxième cycle",
+            "thirdYear": "Troisième cycle",
+            "fourthYear": "Quatrième cycle",
+            "fifthYear": "Cinquième cycle",
+            "master": "Maîtrise",
+            "phd": "Doctorat"
+        },
+        "inputStudentNum": "Numéro étudiant",
+        "inputEmail": "Courriel uOttawa",
+        "submitButton": "Soumettre"
+    },
+    "modal": {
+        "registerTitle": "Merci pour votre inscription!!",
+        "bookTitle": "Merci pour votre réservation!",
+        "message": "Un courriel de confirmation a été envoyé à votre courriel uOttawa.",
+        "close": "Fermer"
+    },
+    "warning": "Remplir tous les champs requis.",
+    "studentNumWarning": "Le numéro étudiant doit être exactement 9 chiffres."
 }

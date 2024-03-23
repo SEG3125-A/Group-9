@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
 import Container from "react-bootstrap/Container";
@@ -8,8 +8,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
+import { useTranslation } from 'react-i18next';
 
 const RegisterPage = () => {
+
+  const { t, i18n } = useTranslation();
+
   // State for the form fields
   const [formData, setFormData] = useState({
     firstName: "",
@@ -21,6 +25,15 @@ const RegisterPage = () => {
   });
   const [warning, setWarning] = useState("");
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Update warning message when language changes
+    if (submitted) {
+      setWarning(t('studentNumWarning'));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i18n.language]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -35,11 +48,11 @@ const RegisterPage = () => {
     }));
   };
 
-  const handleProgramChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     setFormData((prevState) => ({
       ...prevState,
-      program: value,
+      year: value,
     }));
   };
 
@@ -51,22 +64,14 @@ const RegisterPage = () => {
     event.preventDefault();
     const studentNumberStr = formData.studentNumber.toString();
     if (studentNumberStr && studentNumberStr.length !== 9) {
-      setWarning("Student number must be exactly 9 digits.");
+      setWarning(t('studentNumWarning'));
+      setSubmitted(true);
       return;
     }
-    if (
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.studentNumber ||
-      !formData.email ||
-      !formData.program ||
-      !formData.year
-    ) {
-      setWarning("Please fill all the required fields.");
-    } else {
+    else {
       setWarning("");
-      console.log("Form submitted", formData);
       setShowModal(true);
+      setSubmitted(true);
     }
   };
 
@@ -75,7 +80,7 @@ const RegisterPage = () => {
       <NavigationBar />
       <Container className="mt-5">
         <h2 className="mb-4 text-center"> <i className="fas fa-user-plus m-2"></i>
-          Register here to join the music club
+          {t('register.title')}
         </h2>
         {warning && (
           <div className="alert alert-warning warning-register" role="alert">
@@ -86,7 +91,7 @@ const RegisterPage = () => {
           <Row className="mb-3">
             <Form.Group as={Col} md="6">
               <Form.Label>
-                First Name <span style={{ color: "red" }}>*</span>
+                {t('register.inputFirstName')} <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 required
@@ -99,7 +104,7 @@ const RegisterPage = () => {
             </Form.Group>
             <Form.Group as={Col} md="6">
               <Form.Label>
-                Last Name <span style={{ color: "red" }}>*</span>
+                {t('register.inputLastName')} <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 required
@@ -114,40 +119,40 @@ const RegisterPage = () => {
           <Row className="mb-3">
             <Form.Group as={Col} md="4">
               <Form.Label>
-                Program <span style={{ color: "red" }}>*</span>
+                {t('register.inputProgram')} <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 required
                 type="text"
-                name="year"
-                value={formData.year}
+                name="program"
+                value={formData.program}
                 onChange={handleChange}
-                placeholder="Program"
+                placeholder={t('register.inputProgram')}
               />
             </Form.Group>
             <Form.Group as={Col} md="4">
               <Form.Label>
-                Year <span style={{ color: "red" }}>*</span>
+                {t('register.yearSelection.title')} <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Select
                 required
                 name="year"
-                value={formData.program}
-                onChange={handleProgramChange}
+                value={formData.year}
+                onChange={handleYearChange}
               >
-                <option value="">Choose...</option>
-                <option value="first year">First Year</option>
-                <option value="second year">Second Year</option>
-                <option value="third year">Third Year</option>
-                <option value="fourth year">Fourth Year</option>
-                <option value="fifth year">Fifth Year</option>
-                <option value="master's">Master's</option>
-                <option value="phd">PhD</option>
+                <option value="">{t('register.yearSelection.select')}</option>
+                <option value="first year">{t('register.yearSelection.firstYear')}</option>
+                <option value="second year">{t('register.yearSelection.secondYear')}</option>
+                <option value="third year">{t('register.yearSelection.thirdYear')}</option>
+                <option value="fourth year">{t('register.yearSelection.fourthYear')}</option>
+                <option value="fifth year">{t('register.yearSelection.fifthYear')}</option>
+                <option value="master's">{t('register.yearSelection.master')}</option>
+                <option value="phd">{t('register.yearSelection.phd')}</option>
               </Form.Select>
             </Form.Group>
             <Form.Group as={Col} md="4">
               <Form.Label>
-                Student Number <span style={{ color: "red" }}>*</span>
+                {t('register.inputStudentNum')} <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 required
@@ -162,7 +167,7 @@ const RegisterPage = () => {
           </Row>
           <Form.Group className="mb-3">
             <Form.Label>
-              uOttawa email <span style={{ color: "red" }}>*</span>
+              {t('register.inputEmail')} <span style={{ color: "red" }}>*</span>
             </Form.Label>
             <Form.Control
               required
@@ -170,25 +175,25 @@ const RegisterPage = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="name@uottawa.ca"
+              placeholder="abcde058@uottawa.ca"
             />
           </Form.Group>
           <div className="d-flex justify-content-center">
             <Button variant="secondary" type="submit">
-              Submit
+              {t('register.submitButton')}
             </Button>
           </div>
         </Form>
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header>
-            <Modal.Title>Thank you for registering!</Modal.Title>
+            <Modal.Title>{t('modal.registerTitle')}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            A confirmation email has been sent to your uottawa email.
+            {t('modal.message')}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>
-              Close
+              {t('modal.close')}
             </Button>
           </Modal.Footer>
         </Modal>

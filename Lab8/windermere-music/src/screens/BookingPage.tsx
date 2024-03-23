@@ -12,12 +12,12 @@ const BookingPage = () => {
     const { t } = useTranslation();
 
     const [bookingDate, setBookingDate] = useState<string>('');
-    const [bookingTime, setBookingTime] = useState<string>('Select a time');
+    const [bookingTime, setBookingTime] = useState<string>(t('booking.timeSelection.select'));
     const [bookingName, setBookingName] = useState<string>('');
     const [bookingEmail, setBookingEmail] = useState<string>('');
     const [isRoomValid, setIsRoomValid] = useState<boolean>(false);
     const [isTimeValid, setIsTimeValid] = useState<boolean>(false);
-    const [bookingRoom, setBookingRoom] = useState<string>(t('booking.select'));
+    const [bookingRoom, setBookingRoom] = useState<string>(t('booking.roomSelection.select'));
     const [showModal, setShowModal] = useState<boolean>(false);
     const [warning, setWarning] = useState("");
 
@@ -25,7 +25,7 @@ const BookingPage = () => {
         const selectedRoom = event.target.value;
         setBookingRoom(selectedRoom)
 
-        if (selectedRoom === "Select a room" || selectedRoom === "Réserver une salle") {
+        if (selectedRoom === "") {
             setIsRoomValid(false);
         } else {
             setIsRoomValid(true);
@@ -36,7 +36,7 @@ const BookingPage = () => {
         const selectedTime = event.target.value;
         setBookingTime(selectedTime)
 
-        if (selectedTime === "Select a time") {
+        if (selectedTime === "") {
             setIsTimeValid(false);
         } else {
             setIsTimeValid(true);
@@ -68,7 +68,7 @@ const BookingPage = () => {
             setShowModal(true);
             setWarning("");
         } else {
-            setWarning(t('booking.warning'));
+            setWarning(t('warning'));
         }
     }
 
@@ -82,7 +82,7 @@ const BookingPage = () => {
             <div>
                 <Form className="h-100 form-wrapper" onSubmit={handleSubmit}>
                     <div className='title'>
-                        <h2 className='text-center'><i className="fas fa-guitar"></i> Music{t('booking.title')}</h2>
+                        <h2 className='text-center'><i className="fas fa-guitar"></i> {t('booking.title')}</h2>
                     </div>
                     {warning && (
                         <div className="alert alert-warning" role="alert">
@@ -95,11 +95,12 @@ const BookingPage = () => {
                             <Form.Group className="mt-2 mb-4" style={{ width: '100%' }}>
                                 <Form.Label>{t('booking.roomSelection.title')} <span style={{ color: "red" }}>*</span></Form.Label>
                                 <Form.Select
+                                    required
                                     id="selectRoom"
                                     value={bookingRoom}
                                     onChange={handleRoomChange}
                                 >
-                                    <option disabled>{t('booking.roomSelection.select')}</option>
+                                    <option value="">{t('booking.roomSelection.select')}</option>
                                     <option value="amphi">{t('booking.roomSelection.amphi')}</option>
                                     <option value="piano">{t('booking.roomSelection.piano')}</option>
                                     <option value="karaoke">{t('booking.roomSelection.karaoke')}</option>
@@ -129,11 +130,12 @@ const BookingPage = () => {
                                 <Form.Group className="mt-2 mb-4" style={{ width: '50%' }} >
                                     <Form.Label>{t('booking.timeSelection.title')} <span style={{ color: "red" }}>*</span></Form.Label>
                                     <Form.Select
+                                        required
                                         id="selectTime"
                                         value={bookingTime}
                                         onChange={handleTimeChange}
                                     >
-                                        <option disabled>{t('booking.timeSelection.select')}</option>
+                                        <option value="">{t('booking.timeSelection.select')}</option>
                                         <option value="9">9:00-10:00</option>
                                         <option value="10">10:00-11:00</option>
                                         <option value="12">12:00-13:00</option>
@@ -184,14 +186,14 @@ const BookingPage = () => {
                 </Form>
                 <Modal show={showModal} onHide={handleCloseModal}>
                     <Modal.Header>
-                        <Modal.Title>{t('booking.modal.title')}</Modal.Title>
+                        <Modal.Title>{t('modal.bookTitle')}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {t('booking.modal.message')}
+                        {t('modal.message')}
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleCloseModal}>
-                            {t('booking.modal.close')}
+                            {t('modal.close')}
                         </Button>
                     </Modal.Footer>
                 </Modal>

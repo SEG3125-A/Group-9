@@ -26,10 +26,10 @@ const HomePage = () => {
     ];
 
     return (
-        <div className="home-page">
+        <div className="page-container">
             <NavigationBar />
             <Container className='title'>
-                <h2 className='text-center'><i className="fas fa-music"></i> {t('home.welcomeMessage')} </h2>
+                <h2 className='text-center'>{t('home.welcomeMessage')}!</h2>
             </Container>
             <Container fluid className="custom-container px-4">
                 <div className="zigzag">
