@@ -49,7 +49,8 @@ const TeamPage = () => {
                 <Card.Body>
                   <Card.Title>{member.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{member.title}</Card.Subtitle>
-                  <Card.Text>{member.description}</Card.Text>
+                  <br></br>
+                  <Card.Text style={{height:'90px'}}>{member.description}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
