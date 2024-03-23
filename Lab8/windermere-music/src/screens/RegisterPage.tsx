@@ -35,6 +35,14 @@ const RegisterPage = () => {
     }));
   };
 
+  const handleProgramChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      program: value,
+    }));
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -42,7 +50,7 @@ const RegisterPage = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const studentNumberStr = formData.studentNumber.toString();
-    if (studentNumberStr.length !== 9) {
+    if (studentNumberStr && studentNumberStr.length !== 9) {
       setWarning("Student number must be exactly 9 digits.");
       return;
     }
@@ -111,8 +119,8 @@ const RegisterPage = () => {
               <Form.Control
                 required
                 type="text"
-                name="program"
-                value={formData.program}
+                name="year"
+                value={formData.year}
                 onChange={handleChange}
                 placeholder="Program"
               />
@@ -121,14 +129,21 @@ const RegisterPage = () => {
               <Form.Label>
                 Year <span style={{ color: "red" }}>*</span>
               </Form.Label>
-              <Form.Control
+              <Form.Select
                 required
-                type="text"
                 name="year"
-                value={formData.year}
-                onChange={handleChange}
-                placeholder="XXXX"
-              />
+                value={formData.program}
+                onChange={handleProgramChange}
+              >
+                <option value="">Choose...</option>
+                <option value="first year">First Year</option>
+                <option value="second year">Second Year</option>
+                <option value="third year">Third Year</option>
+                <option value="fourth year">Fourth Year</option>
+                <option value="fifth year">Fifth Year</option>
+                <option value="master's">Master's</option>
+                <option value="phd">PhD</option>
+              </Form.Select>
             </Form.Group>
             <Form.Group as={Col} md="4">
               <Form.Label>
