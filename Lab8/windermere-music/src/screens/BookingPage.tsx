@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import { Container, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -79,7 +80,7 @@ const BookingPage = () => {
     return (
         <>
             <NavigationBar />
-            <div>
+            <Container className="page">
                 <Form className="h-100 form-wrapper" onSubmit={handleSubmit}>
                     <div className='title'>
                         <h2 className='text-center'><i className="fas fa-guitar"></i> {t('booking.title')}</h2>
@@ -198,7 +199,7 @@ const BookingPage = () => {
                     </Modal.Footer>
                 </Modal>
 
-            </div>
+            </Container>
             <Footer />
         </>
     )

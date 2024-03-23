@@ -37,7 +37,7 @@ const TeamPage = () => {
   return (
     <>
       <NavigationBar />
-      <Container>
+      <Container className="page">
         <Container className='title'>
           <h2 className='text-center mb-3'><i className="fas fa-users m-2"></i>{t('team.title')}</h2>
         </Container>

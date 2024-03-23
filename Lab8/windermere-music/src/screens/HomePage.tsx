@@ -28,38 +28,40 @@ const HomePage = () => {
     return (
         <div className="page-container">
             <NavigationBar />
-            <Container className='title'>
-                <h2 className='text-center'>{t('home.welcomeMessage')}!</h2>
-            </Container>
-            <Container fluid className="custom-container px-4">
-                <div className="zigzag">
-                    <Row className="align-items-center">
-                        <Col md={6} className="text-center">
-                            <div className='image'>
-                                <img src={image_1} alt="Home" className="img-fluid" />
-                            </div>
-                        </Col>
-                        <Col md={6} className="order-md-1">
-                            <div className="content">
-                                <h3>{paragraphs[0].title}</h3>
-                                <p>{paragraphs[0].description}</p>
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
-                <div className="mt-5 zigzag">
-                    <Row className="align-items-center">
-                        <Col md={6} className="text-center order-md-2">
-                            <CarouselImage images={images} />
-                        </Col>
-                        <Col md={6} className="order-md-1">
-                            <div className="content">
-                                <h3>{paragraphs[1].title}</h3>
-                                <p>{paragraphs[1].description}</p>
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
+            <Container className="page">
+                <Container className='title'>
+                    <h2 className='text-center'>{t('home.welcomeMessage')}!</h2>
+                </Container>
+                <Container fluid className="custom-container px-4">
+                    <div className="zigzag">
+                        <Row className="align-items-center">
+                            <Col md={6} className="text-center">
+                                <div className='image'>
+                                    <img src={image_1} alt="Home" className="img-fluid" />
+                                </div>
+                            </Col>
+                            <Col md={6} className="order-md-1">
+                                <div className="content">
+                                    <h3>{paragraphs[0].title}</h3>
+                                    <p>{paragraphs[0].description}</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className="mt-5 zigzag">
+                        <Row className="align-items-center">
+                            <Col md={6} className="text-center order-md-2">
+                                <CarouselImage images={images} />
+                            </Col>
+                            <Col md={6} className="order-md-1">
+                                <div className="content">
+                                    <h3>{paragraphs[1].title}</h3>
+                                    <p>{paragraphs[1].description}</p>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                </Container>
             </Container>
             <Footer />
         </div>

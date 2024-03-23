@@ -2,6 +2,7 @@ import NavigationBar from './components/NavigationBar';
 import Activity from './components/Activity';
 import Footer from './components/Footer';
 import { useTranslation } from 'react-i18next';
+import { Container, Col, Row } from 'react-bootstrap';
 
 const ActivitesPage = () => {
 
@@ -38,19 +39,22 @@ const ActivitesPage = () => {
     return (
         <div>
             <NavigationBar />
-            <h2 className='text-center pt-4'> <i className="fas fa-headphones m-2"></i>
-                {t('activities.title')}
-            </h2>
-            <div className='px-4'>
-                {activities.map((activity, index) => (
-                    <Activity
-                        name={activity.name}
-                        description={activity.description}
-                        image={activity.image_source}
-                        imagePosition={index % 2 === 0 ? 'left' : 'right'}
-                    />
-                ))}
-            </div>
+            <Container className="page">
+                <h2 className='text-center pt-4'> <i className="fas fa-headphones m-2"></i>
+                    {t('activities.title')}
+                </h2>
+                <div className='px-4'>
+                    {activities.map((activity, index) => (
+                        <Activity
+                            name={activity.name}
+                            description={activity.description}
+                            image={activity.image_source}
+                            imagePosition={index % 2 === 0 ? 'left' : 'right'}
+                        />
+                    ))}
+                </div>
+            </Container>
+
             <Footer />
         </div>
     )

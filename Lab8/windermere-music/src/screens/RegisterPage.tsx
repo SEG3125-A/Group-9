@@ -78,7 +78,7 @@ const RegisterPage = () => {
   return (
     <>
       <NavigationBar />
-      <Container className="mt-5">
+      <Container className="mt-5 page">
         <h2 className="mb-4 text-center"> <i className="fas fa-user-plus m-2"></i>
           {t('register.title')}
         </h2>
