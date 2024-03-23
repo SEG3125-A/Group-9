@@ -5,37 +5,40 @@ import Button from 'react-bootstrap/Button';
 import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import Modal from 'react-bootstrap/Modal';
+import { useTranslation } from 'react-i18next';
 
 const BookingPage = () => {
 
+    const { t } = useTranslation();
+
     const [bookingDate, setBookingDate] = useState<string>('');
-    const [bookingTime, setBookingTime] = useState<string>('Select a time');
+    const [bookingTime, setBookingTime] = useState<string>(t('booking.timeSelection.select'));
     const [bookingName, setBookingName] = useState<string>('');
     const [bookingEmail, setBookingEmail] = useState<string>('');
     const [isRoomValid, setIsRoomValid] = useState<boolean>(false);
     const [isTimeValid, setIsTimeValid] = useState<boolean>(false);
-    const [bookingRoom, setBookingRoom] = useState<string>('Select a room');
+    const [bookingRoom, setBookingRoom] = useState<string>(t('booking.roomSelection.select'));
     const [showModal, setShowModal] = useState<boolean>(false);
     const [warning, setWarning] = useState("");
 
-    const handleRoomChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+    const handleRoomChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedRoom = event.target.value;
         setBookingRoom(selectedRoom)
-        
-        if (selectedRoom == "Select a room"){
+
+        if (selectedRoom === "") {
             setIsRoomValid(false);
-        }else{
+        } else {
             setIsRoomValid(true);
         }
     }
 
-    const handleTimeChange = (event: React.ChangeEvent<HTMLSelectElement>) =>{
+    const handleTimeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedTime = event.target.value;
         setBookingTime(selectedTime)
-        
-        if (selectedTime == "Select a time"){
+
+        if (selectedTime === "") {
             setIsTimeValid(false);
-        }else{
+        } else {
             setIsTimeValid(true);
         }
     }
@@ -60,12 +63,12 @@ const BookingPage = () => {
         event?.preventDefault();
 
         //check if all fields valid
-        if (isRoomValid && isTimeValid){
+        if (isRoomValid && isTimeValid) {
             //show modal
             setShowModal(true);
             setWarning("");
-        }else{
-            setWarning("Please select all the required fields.");
+        } else {
+            setWarning(t('warning'));
         }
     }
 
@@ -79,30 +82,30 @@ const BookingPage = () => {
             <div>
                 <Form className="h-100 form-wrapper" onSubmit={handleSubmit}>
                     <div className='title'>
-                        <h2 className='text-center'>Book a room</h2>
+                        <h2 className='text-center'><i className="fas fa-guitar"></i> {t('booking.title')}</h2>
                     </div>
                     {warning && (
-                    <div className="alert alert-warning" role="alert">
-                        {warning}
-                    </div>
+                        <div className="alert alert-warning" role="alert">
+                            {warning}
+                        </div>
                     )}
                     <div className='mb-3'>
                         <div className='small-container'>
                             {/* Rooms to choose */}
                             <Form.Group className="mt-2 mb-4" style={{ width: '100%' }}>
-                                <Form.Label>Room <span style={{color:"red"}}>*</span></Form.Label>
-                                <Form.Select 
+                                <Form.Label>{t('booking.roomSelection.title')} <span style={{ color: "red" }}>*</span></Form.Label>
+                                <Form.Select
+                                    required
                                     id="selectRoom"
-                                    aria-label="Choose a room:"
                                     value={bookingRoom}
                                     onChange={handleRoomChange}
                                 >
-                                    <option disabled>Select a room</option>
-                                    <option value="amphi">Amphitheatre</option>
-                                    <option value="piano">Piano room</option>
-                                    <option value="karaoke">Karaoke room</option>
-                                    <option value="mp1">Music practice room 1</option>
-                                    <option value="mp2">Music practice room 2</option>
+                                    <option value="">{t('booking.roomSelection.select')}</option>
+                                    <option value="amphi">{t('booking.roomSelection.amphi')}</option>
+                                    <option value="piano">{t('booking.roomSelection.piano')}</option>
+                                    <option value="karaoke">{t('booking.roomSelection.karaoke')}</option>
+                                    <option value="mp1">{t('booking.roomSelection.mp1')}</option>
+                                    <option value="mp2">{t('booking.roomSelection.mp2')}</option>
                                 </Form.Select>
                             </Form.Group>
 
@@ -112,27 +115,27 @@ const BookingPage = () => {
                             <div className='small-container'>
                                 {/* Date  */}
                                 <Form.Group className="mt-2 mb-4" style={{ width: '50%' }} >
-                                    <Form.Label>Date <span style={{color:"red"}}>*</span></Form.Label>
-                                        <Form.Control
-                                            required
-                                            id="date"
-                                            type="date"
-                                            value={bookingDate}
-                                            onChange={handleDateChange}
-                                            min={new Date().toISOString().split('T')[0]} // Set minimum selectable date to today
-                                        />
+                                    <Form.Label>{t('booking.selectDate')} <span style={{ color: "red" }}>*</span></Form.Label>
+                                    <Form.Control
+                                        required
+                                        id="date"
+                                        type="date"
+                                        value={bookingDate}
+                                        onChange={handleDateChange}
+                                        min={new Date().toISOString().split('T')[0]} // Set minimum selectable date to today
+                                    />
                                 </Form.Group>
 
                                 {/* Time */}
                                 <Form.Group className="mt-2 mb-4" style={{ width: '50%' }} >
-                                    <Form.Label>Time <span style={{color:"red"}}>*</span></Form.Label>
-                                    <Form.Select 
-                                        aria-label="Choose a time:" 
+                                    <Form.Label>{t('booking.timeSelection.title')} <span style={{ color: "red" }}>*</span></Form.Label>
+                                    <Form.Select
+                                        required
                                         id="selectTime"
                                         value={bookingTime}
                                         onChange={handleTimeChange}
                                     >
-                                        <option disabled>Select a time</option>
+                                        <option value="">{t('booking.timeSelection.select')}</option>
                                         <option value="9">9:00-10:00</option>
                                         <option value="10">10:00-11:00</option>
                                         <option value="12">12:00-13:00</option>
@@ -146,7 +149,7 @@ const BookingPage = () => {
                             <div className='small-container'>
                                 {/* name */}
                                 <Form.Group className="mt-2 mb-4" style={{ width: '50%' }}>
-                                    <Form.Label>Name <span style={{color:"red"}}>*</span></Form.Label>
+                                    <Form.Label>{t('booking.inputName')} <span style={{ color: "red" }}>*</span></Form.Label>
                                     <Form.Control
                                         required
                                         id="name"
@@ -159,12 +162,12 @@ const BookingPage = () => {
 
                                 {/* email */}
                                 <Form.Group className="mt-2 mb-4" style={{ width: '50%' }}>
-                                    <Form.Label>uOttawa email <span style={{color:"red"}}>*</span></Form.Label>
+                                    <Form.Label>{t('booking.inputEmail')} <span style={{ color: "red" }}>*</span></Form.Label>
                                     <Form.Control
                                         required
                                         id="email"
                                         type="email"
-                                        placeholder="name@uottawa.ca"
+                                        placeholder="abcde058@uottawa.ca"
                                         value={bookingEmail}
                                         onChange={handleEmailChange}
                                     />
@@ -177,21 +180,21 @@ const BookingPage = () => {
 
                     <div className='text-center'>
                         <Button className="btn btn-booking" type="submit" variant='secondary'>
-                            Book
+                            {t('booking.bookButton')}
                         </Button>
                     </div>
                 </Form>
                 <Modal show={showModal} onHide={handleCloseModal}>
                     <Modal.Header>
-                    <Modal.Title>Thank you for booking!</Modal.Title>
+                        <Modal.Title>{t('modal.bookTitle')}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        A confirmation email has been sent to your uottawa email.
+                        {t('modal.message')}
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseModal}>
-                        Close
-                    </Button>
+                        <Button variant="secondary" onClick={handleCloseModal}>
+                            {t('modal.close')}
+                        </Button>
                     </Modal.Footer>
                 </Modal>
 

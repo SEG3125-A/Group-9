@@ -6,6 +6,7 @@ import BookingPage from './screens/BookingPage';
 import ActivitesPage from './screens/ActivitiesPage';
 import RegisterPage from './screens/RegisterPage';
 import './screens/styles.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 function App() {
   return (

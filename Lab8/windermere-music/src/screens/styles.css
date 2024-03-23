@@ -52,29 +52,32 @@
     height: 100%;
 }
 
-.title{
+.title {
     padding: 20px;
 }
 
-.small-container{
-    display: flex; /*to position the textboxes next to each other*/
+.small-container {
+    display: flex;
+    /*to position the textboxes next to each other*/
     gap: 15px;
 }
 
-.form-wrapper{
-    display:flex;
+.form-wrapper {
+    display: flex;
     flex-direction: column;
-    max-width: 900px; /*sets the widge of the div items in the form*/
-    margin: 0 auto; /*aligns all the divs to the middle*/
+    max-width: 900px;
+    /*sets the widge of the div items in the form*/
+    margin: 0 auto;
+    /*aligns all the divs to the middle*/
     padding: 2%;
 }
 
-.warning{
+.warning {
     max-width: 900px;
     margin: 0 auto;
 }
 
-.warning-register{
+.warning-register {
     max-width: 860px;
     margin: 0 auto;
 }
