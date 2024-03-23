@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface ActivityInfoProps {
     name: string;
@@ -10,6 +11,8 @@ interface ActivityInfoProps {
 }
 
 const Activity: React.FC<ActivityInfoProps> = (props) => {
+
+    const { t } = useTranslation();
 
     const navigate = useNavigate();
 
@@ -23,9 +26,9 @@ const Activity: React.FC<ActivityInfoProps> = (props) => {
                 <div>
                     <h3>{props.name}</h3>
                     <p>{props.description}</p>
-                    {props.name === 'Book a room' ?
+                    {(props.name === 'Book a room' || props.name === 'Réserver une salle') ?
                         <div className='d-flex justify-content-center'>
-                            <Button className='btn-booking' onClick={navigateToBooking} variant='secondary'>Book a room here</Button>
+                            <Button className='btn-booking' onClick={navigateToBooking} variant='secondary'>{t('activities.bookARoom.button')}</Button>
                         </div>
                         :
                         <></>

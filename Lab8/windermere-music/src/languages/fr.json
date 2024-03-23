@@ -1,0 +1,91 @@
+{
+    "navbarHome": "Accueil",
+    "navbarActivites": "Activités",
+    "navbarBooking": "Réservation",
+    "navbarTeam": "Équipe",
+    "navbarRegister": "Nous rejoindre",
+    "home": {
+        "welcomeMessage": "Bienvenue au club de musique Windermere",
+        "goal": {
+            "title": "Notre but",
+            "description": "Au club de musique Windermere, nous orchestrons des expériences inoubliables grâce au pouvoir enchanteur de la musique ! Notre club n'est pas seulement un lieu, c'est une communauté dynamique où les mélodies s'entremêlent avec les moments, créant des souvenirs qui durent toute une vie."
+        },
+        "joinUs": {
+            "title": "Rejoignez-nous",
+            "description": "Le club de musique Windermere est plus qu'un simple espace de représentation. C'est un centre de créativité et de collaboration, où les musiciens en herbe trouvent leur voix et les artistes chevronnés leur inspiration. Nos ateliers, nos classes de maître et nos sessions de jam offrent une plateforme qui permet aux talents et aux relations de se développer."
+        }
+    },
+    "activities": {
+        "title": "Activités du club",
+        "musicAppreciationSessions": {
+            "name": "Séances d'appréciation de la musique",
+            "description": "Les séances d'appréciation de la musique sont conçues pour les étudiants afin d'approfondir la compréhension et l'appréciation de divers genres, artistes et mouvements musicaux. Ces sessions offrent une plateforme permettant aux passionnés de musique de tous niveaux de se réunir, d'écouter diverses sélections musicales et de discuter de leurs idées et interprétations dans un environnement accueillant et inclusif. Chaque session a lieu le mercredi soir et chaque semaine se concentre sur un genre/mouvement musical ou un artiste spécifique. Grâce à des exercices d'écoute guidés et des discussions animées, les participants acquièrent des informations précieuses sur la signification historique, culturelle et artistique de la musique et de l'artiste présentés."
+        },
+        "musicWorkshops": {
+            "name": "Ateliers de musique",
+            "description": "Les ateliers de musique sont des sessions dynamiques et pratiques, les lundis et jeudis soir, visant à favoriser la croissance musicale, le développement des compétences et l'exploration créative des étudiants. Ces ateliers offrent un environnement favorable aux participants pour améliorer leurs talents musicaux, apprendre de nouvelles techniques et collaborer avec d'autres musiciens. Chaque atelier est conçu pour répondre à un aspect spécifique de la musique, allant de la maîtrise instrumentale et des techniques vocales à l'écriture de chansons, à la production musicale et à l'improvisation. Dirigées par les étudiants les plus expérimentés et quelques professeurs bénévoles, ces sessions offrent des informations utiles, des exercices pratiques et des commentaires personnalisés pour aider les participants à perfectionner leur art et à libérer leur potentiel artistique. De plus, nous invitons parfois des intervenants pour partager leur expérience avec les étudiants."
+        },
+        "concertsEvents": {
+            "name": "Concerts/Événements",
+            "description": "Le club Windermere Music organise des représentations sur le campus afin d'aider les étudiants à faire connaître leur talent et leur sens artistique à la communauté. Ces événements, qui vont de concerts acoustiques intimes à des performances d'ensemble électrisantes, favorisent un sentiment d'appartenance et célèbrent les divers talents musicaux qui se développent au sein de l'université. Parallèlement, le club organise des sorties pour permettre aux étudiants d'assister à des concerts et à des événements en dehors de l'université. Les membres du club peuvent ainsi s'immerger dans la communauté musicale au sens large, assister à des concerts et s'inspirer de musiciens et d'artistes professionnels. Qu'il s'agisse de concerts locaux, de représentations d'orchestres en direct ou de grands concerts et festivals de musique, le club propose un calendrier varié d'événements, garantissant qu'il y en a pour tous les goûts musicaux et tous les centres d'intérêt. L'objectif n'est pas seulement d'apprécier la musique en direct, mais aussi de favoriser un sentiment de camaraderie, de partager des expériences inoubliables et de créer des souvenirs durables avec d'autres passionnés de musique."
+        },
+        "gamesKaraokeNight": {
+            "name": "Soirée Jeux/Karaoké",
+            "description": "La nuit des jeux et du karaoké est une soirée de divertissement et de camaraderie qui a lieu tous les derniers vendredis du mois. L'événement propose une variété de jeux attrayants, allant de jeux-questionnaires sur le thème de la musique à des activités de groupe interactives et à des compétitions amicales. En outre, le clou de la soirée est la séance de karaoké, au cours de laquelle les étudiants montent sur scène pour chanter leurs morceaux préférés, qu'il s'agisse de grands classiques ou de tubes contemporains. La soirée Jeux/Karaoké promet une expérience inoubliable remplie de rires, de musique et de souvenirs inoubliables."
+        },
+        "bookARoom": {
+            "name": "Réserver une salle",
+            "description": "Le club offre à ses membres la possibilité de réserver des espaces dédiés à la pratique de leurs instruments de musique ou de leur chant. Qu'il s'agisse de collaborer avec des amis ou de rechercher la solitude pour une pratique ciblée, les étudiants ont la possibilité de réserver des salles adaptées à leurs besoins. Ces salles sont équipées des commodités essentielles, telles que l'insonorisation et l'équipement de base, pour faciliter des séances de pratique productives et immersives. Les étudiants disposent des ressources et de l'environnement nécessaires pour développer leurs talents musicaux.",
+            "button": "Réservez une salle ici"
+        }
+    },
+    "booking": {
+        "title": "Réserver une salle",
+        "roomSelection": {
+            "title": "Salle",
+            "select": "Choisir une salle",
+            "amphi": "Amphithéatre",
+            "piano": "Salle de piano",
+            "karaoke": "Salle de karaoke",
+            "mp1": "Salle de répétition musicale 1",
+            "mp2": "Salle de répétition musicale 2"
+        },
+        "selectDate": "Date",
+        "timeSelection": {
+            "title": "Horaire",
+            "select": "Choisir un horaire"
+        },
+        "inputName": "Nom",
+        "inputEmail": "Courriel uOttawa",
+        "bookButton": "Réserver",
+        "modal": {
+            "title": "Merci pour votre réservation!",
+            "message": "Un courriel de confirmation a été envoyé à votre courriel uOttawa.",
+            "close": "Fermer"
+        },
+        "warning": "Remplir tous les champs requis."
+    },
+    "team": {
+        "title": "Rencontrer l'équipe",
+        "president": {
+            "name": "Rick Windermere",
+            "role": "Président",
+            "description": "Salut! Je suis le président du club de musique Windermere."
+        },
+        "vicePresident": {
+            "name": "Ilsa Lund",
+            "role": "Vice-Président",
+            "description": "Salut! Je suis la vice-présidente du club de musique Windermere."
+        },
+        "eventCoordinator": {
+            "name": "Sam Smith",
+            "role": "Coordinateur d'événements",
+            "description": "Salut! Je suis le coordinateur d'événements du club de musique Windermere."
+        },
+        "socialMediaManager": {
+            "name": "Viktor Lazlo",
+            "role": "Responsable des médias sociaux",
+            "description": "Salut! Je suis le responsable des médias sociaux du club de musique Windermere."
+        }
+    }
+}
